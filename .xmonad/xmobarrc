@@ -1,0 +1,29 @@
+Config { font = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Mononoki Nerd Font:weight=bold:pixelsize=11", 
+                             "xft:Font Awesome 5 Brands:weight=bold:pixelsize=11",
+                             "xft:Font Awesome 5 Free:pixelsize=11"
+                           ]
+       , borderColor = "#282c34"
+       , border = TopB
+       , bgColor = "#282c34"
+       , fgColor = "#ff6c6b"
+       , alpha = 255
+       , position = Static { xpos = 0, ypos = 0, width = 1848, height = 24 }
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "/home/zahin/.xmonad/"  -- default: "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "<fn=3>\xf133</fn>   %b %d %Y - (%H:%M) " "date" 50
+                    , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "    <action=`xdotool key control+alt+g`><icon=xmonad_xpm_haskell_20.xpm/> </action><fc=#666666>    |    </fc> %UnsafeStdinReader% }{    <fc=#666666>    |    </fc> <fc=#b3afc2><fn=2></fn>  %uname% </fc><fc=#666666>    |    </fc> <fc=#46d9ff> %date%  </fc>    "
+
+       }
