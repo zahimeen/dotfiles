@@ -9,24 +9,22 @@ nnoremap <c-u> viwU<Esc>
 nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <S-TAB> :bprevious<CR>
-" BS in general mode will close the buffer
+" Leader BC in general mode will close the buffer
 noremap <leader>bc :bdelete<CR>
-
-" Run a Python file from inside of Vim
-nnoremap <Leader>r :!python %<CR>
 
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
 " Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
 
-nnoremap <Leader>o o<Esc>^Da
-nnoremap <Leader>O O<Esc>^
+" Better window splitting
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
 
 " HARD MODE!
 noremap <Up> :echo "No up for you!"<CR>

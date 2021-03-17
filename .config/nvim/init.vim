@@ -17,8 +17,11 @@ source $HOME/.config/nvim/themes/syntax.vim
 
 " Plugin Configuration
 source $HOME/.config/nvim/themes/airline.vim
-source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
-source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
+
+" LSP
+source $HOME/.config/nvim/lsp/lsp-config.vim
+luafile $HOME/.config/nvim/lsp/compe-config.lua
+luafile $HOME/.config/nvim/lsp/python-lsp.lua

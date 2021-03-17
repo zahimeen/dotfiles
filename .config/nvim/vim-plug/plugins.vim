@@ -25,11 +25,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ryanoasis/vim-devicons'
     " Git
     Plug 'tpope/vim-fugitive'
-    " Autocomplete
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Notetaking
-    Plug 'vimwiki/vimwiki'
+    Plug 'airblade/vim-gitgutter'
     " Nice Commenting
     Plug 'tpope/vim-commentary'
+    " LSP
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
