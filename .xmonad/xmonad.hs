@@ -10,6 +10,7 @@ import System.Exit
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.Fullscreen
+import XMonad.Layout.NoBorders
 
     -- Utilities
 
@@ -41,6 +42,9 @@ myFileBrowser   = "thunar"
 myMenu :: String
 myMenu          = "dmenu_run -fn 'Mononoki Nerd Font-12' -nb '#282c34' -nf '#46d9ff' -sf '#282c34' -sb '#46d9ff'"
 
+myEditor :: String
+myEditor        = "emacs"
+
 myModMask :: KeyMask
 myModMask       = mod4Mask
 
@@ -61,8 +65,13 @@ myClickJustFocuses = False
 ---  BORDER  ---
 
 
+myBorderWidth :: Dimension
 myBorderWidth   = 2
+
+myNormalBorderColor :: String
 myNormalBorderColor  = "#282c34"
+
+myFocusedBorderColor :: String
 myFocusedBorderColor = "#46d9ff"
 
 
@@ -92,6 +101,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), spawn myBrowser ) -- launch browser
 
     , ((modm .|. shiftMask, xK_Return), spawn myFileBrowser ) -- launch file browser
+
+    , ((modm,               xK_e     ), spawn myEditor ) -- launch editor
 
     , ((modm,               xK_d     ), spawn "discord" ) -- launch discord
 
@@ -172,7 +183,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 ---  LAYOUT  ---
 
 
-myLayout = avoidStruts $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True $ (tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True $ (tiled)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -254,7 +265,7 @@ main = do
         mouseBindings      = myMouseBindings,
 
         -- hooks, layouts
-        layoutHook         = myLayout,
+        layoutHook         = myLayout ||| noBorders Full,
         manageHook         = fullscreenManageHook,
         handleEventHook    = fullscreenEventHook,
         logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP
