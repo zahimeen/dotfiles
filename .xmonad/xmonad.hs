@@ -40,7 +40,7 @@ myFileBrowser :: String
 myFileBrowser   = "thunar"
 
 myMenu :: String
-myMenu          = "dmenu_run -fn 'Mononoki Nerd Font-12' -nb '#282c34' -nf '#46d9ff' -sf '#282c34' -sb '#46d9ff'"
+myMenu          = "dmenu_run -p 'Run: '"
 
 myEditor :: String
 myEditor        = "emacs"
@@ -66,20 +66,20 @@ myClickJustFocuses = False
 
 
 myBorderWidth :: Dimension
-myBorderWidth   = 2
+myBorderWidth   = 3
 
 myNormalBorderColor :: String
-myNormalBorderColor  = "#282c34"
+myNormalBorderColor  = "#474646"
 
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#46d9ff"
+myFocusedBorderColor = "#83a598"
 
 
 ---  WOKSPACES  ---
 
 
 myWorkspaces :: [String]
-myWorkspaces = ["dev", "web", "mai", "con", "ran"]
+myWorkspaces = ["www", "dev", "dis", "mai", "ran"]
 
 
 ------------------------------------------------------------------------
@@ -228,12 +228,12 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 
 myStartupHook = do
-    spawnOnce "stalonetray &"
     spawnOnce "volumeicon &"
     spawnOnce "blueberry-tray &"
     spawnOnce "nitrogen --restore &"
     spawnOnce "picom &"
     spawnOnce "discord &"
+    spawnOnce "stalonetray &"
 
 
 ------------------------------------------------------------------------
@@ -270,13 +270,14 @@ main = do
         handleEventHook    = fullscreenEventHook,
         logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn h
-                        , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]"           -- Current workspace in xmobar
+                        , ppCurrent = xmobarColor "#83a598" "" . wrap "[" "]"   -- #9BC1B2 #69DFFA
                         , ppExtras  = [windowCount]                                     -- # of windows current workspace
-                        , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window in xmobar
+                        , ppTitle = xmobarColor "#d3869b" "" . shorten 50       -- #9BC1B2 #69DFFA
                         , ppVisible = xmobarColor "#98be65" ""                          -- Visible but not current workspace
                         , ppHiddenNoWindows = xmobarColor "#c792ea" "" 
                         , ppSep =  "<fc=#666666> <fn=1> | </fn> </fc>"                  -- Separators in xmobar
                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
+                        , ppVisible = xmobarColor "#98be65" ""                          -- Visible but not current workspace
                         },
         startupHook        = myStartupHook
     }

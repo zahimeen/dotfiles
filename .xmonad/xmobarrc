@@ -5,10 +5,10 @@ Config { font = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true
                            ]
        , borderColor = "#282c34"
        , border = TopB
-       , bgColor = "#282c34"
-       , fgColor = "#ff6c6b"
+       , bgColor = "#282828"
+       , fgColor = "#ebdbb2"
        , alpha = 255
-       , position = Static { xpos = 0, ypos = 0, width = 1848, height = 24 }
+       , position = Static { xpos = 0, ypos = 0, width = 1920, height = 24 }
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -24,6 +24,6 @@ Config { font = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "    <action=`xdotool key control+alt+g`><icon=xmonad_xpm_haskell_20.xpm/> </action><fc=#666666>    |    </fc> %UnsafeStdinReader% }{    <fc=#666666>    |    </fc> <fc=#b3afc2><fn=2></fn>  %uname% </fc><fc=#666666>    |    </fc> <fc=#46d9ff> %date%  </fc>    "
+       , template = "    <fc=#666666></fc> %UnsafeStdinReader% }{    <fc=#666666>    |    </fc> <fc=#ebdbb2><fn=2></fn>  %uname% </fc><fc=#666666>    |    </fc> <fc=#fabd2f> %date%  </fc>                        "
 
        }
