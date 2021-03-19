@@ -273,7 +273,6 @@ main = do
                         , ppCurrent = xmobarColor "#83a598" "" . wrap "[" "]"   -- #9BC1B2 #69DFFA
                         , ppExtras  = [windowCount]                                     -- # of windows current workspace
                         , ppTitle = xmobarColor "#d3869b" "" . shorten 50       -- #9BC1B2 #69DFFA
-                        , ppVisible = xmobarColor "#98be65" ""                          -- Visible but not current workspace
                         , ppHiddenNoWindows = xmobarColor "#c792ea" "" 
                         , ppSep =  "<fc=#666666> <fn=1> | </fn> </fc>"                  -- Separators in xmobar
                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
