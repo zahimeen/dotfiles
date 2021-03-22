@@ -42,9 +42,6 @@ myFileBrowser   = "thunar"
 myMenu :: String
 myMenu          = "dmenu_run -p 'Run: '"
 
-myEditor :: String
-myEditor        = "emacs"
-
 myModMask :: KeyMask
 myModMask       = mod4Mask
 
@@ -79,7 +76,7 @@ myFocusedBorderColor = "#83a598"
 
 
 myWorkspaces :: [String]
-myWorkspaces = ["www", "dev", "dis", "mai", "ran"]
+myWorkspaces = ["www", "dev", "dis", "mus", "ran"]
 
 
 ------------------------------------------------------------------------
@@ -101,8 +98,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), spawn myBrowser ) -- launch browser
 
     , ((modm .|. shiftMask, xK_Return), spawn myFileBrowser ) -- launch file browser
-
-    , ((modm,               xK_e     ), spawn myEditor ) -- launch editor
 
     , ((modm,               xK_d     ), spawn "discord" ) -- launch discord
 
@@ -233,7 +228,9 @@ myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "picom &"
     spawnOnce "discord &"
-    spawnOnce "stalonetray &"
+    -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0xFF282828 --height 24 &"
+    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0xFF282828  --height 24 &"
+
 
 
 ------------------------------------------------------------------------
