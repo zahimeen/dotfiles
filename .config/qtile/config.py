@@ -271,7 +271,8 @@ screens = [
                 widget.WindowName(
                        foreground = "#98be65",
                        background = "#282828",
-                       padding = 0
+                       padding = 0,
+                       max_chars = 40
                        ),
                 widget.Systray(
                        background = "#282828",
@@ -290,9 +291,63 @@ screens = [
                        padding = 0,
                        fontsize = 37
                        ),
-                widget.CurrentLayout(
+                widget.CheckUpdates(
+                       background = "#282828",
+                       foreground = "#83a598",
+                       colour_have_updates = "#83a598",
+                       colour_no_updates = "#c792ea",
+                       update_interval = 1800,
+                       distro = "Arch_checkupdates",
+                       display_format = "{updates} Updates",
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e sudo pacman -Syu')},
+                       ),
+                widget.TextBox(
+                       text = '',
                        foreground = "#282828",
-                       background = "#83a598"
+                       background = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
+                widget.CurrentLayoutIcon(
+                       background = "#282828",
+                       foreground = "#83a598"
+                       ),
+                widget.CurrentLayout(
+                       background = "#282828",
+                       foreground = "#83a598"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
+                widget.CapsNumLockIndicator(
+                       foreground = "#282828",
+                       background = "#83a598",
+                       ),
+                widget.TextBox(
+                       text = '',
+                       foreground = "#282828",
+                       background = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
+                widget.CPU(
+                       background = "#282828",
+                       foreground = "#83a598",
+                       ),
+                widget.TextBox(
+                       text = '',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
+                widget.Battery(
+                       foreground = "#282828",
+                       background = "#83a598",
                        ),
                 widget.TextBox(
                        text = '',
@@ -306,7 +361,6 @@ screens = [
                        background = "#282828",
                        format = "%A, %B %d - %H:%M "
                        ),
-
             ],
             20,
         ),
