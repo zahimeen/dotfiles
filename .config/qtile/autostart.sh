@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-feh --bg-scale ~/Pictures/Wallpapers/Your\ Name.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/Anime/Unknown\ 1.jpg &
 picom &
 blueberry-tray &
 volumeicon &
-/usr/bin/emacs --daemon &
 discord &

@@ -6,7 +6,6 @@ from typing import List
 from libqtile import qtile, bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 import os
 import subprocess
@@ -20,7 +19,7 @@ mod = "mod4"
 terminal        = "alacritty"
 browser         = "brave"
 file_browser    = "pcmanfm"
-editor          = "emacs"
+editor          = terminal + " -e nvim"
 
 
 #-------------------------------------------------------------------------------#
@@ -196,7 +195,7 @@ layout_defaults = {
     "border_normal": "#474646",
     "border_width": 4,
     "fullscreen_border_width": 0,
-    "margin": 10,
+    "margin": 18,
 }
 
 layouts = [
@@ -291,15 +290,13 @@ screens = [
                        padding = 0,
                        fontsize = 37
                        ),
-                widget.CheckUpdates(
-                       background = "#282828",
-                       foreground = "#83a598",
-                       colour_have_updates = "#83a598",
-                       colour_no_updates = "#c792ea",
-                       update_interval = 1800,
-                       distro = "Arch_checkupdates",
-                       display_format = "{updates} Updates",
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e sudo pacman -Syu')},
+                widget.CurrentLayoutIcon(
+                       foreground = "#282828",
+                       background = "#83a598"
+                       ),
+                widget.CurrentLayout(
+                       foreground = "#282828",
+                       background = "#83a598"
                        ),
                 widget.TextBox(
                        text = '',
@@ -308,13 +305,9 @@ screens = [
                        padding = 0,
                        fontsize = 37
                        ),
-                widget.CurrentLayoutIcon(
+                widget.CapsNumLockIndicator(
                        background = "#282828",
-                       foreground = "#83a598"
-                       ),
-                widget.CurrentLayout(
-                       background = "#282828",
-                       foreground = "#83a598"
+                       foreground = "#83a598",
                        ),
                 widget.TextBox(
                        text = '',
@@ -323,7 +316,7 @@ screens = [
                        padding = 0,
                        fontsize = 37
                        ),
-                widget.CapsNumLockIndicator(
+                widget.Memory(
                        foreground = "#282828",
                        background = "#83a598",
                        ),
