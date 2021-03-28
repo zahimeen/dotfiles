@@ -268,7 +268,7 @@ screens = [
                        background = "#282828"
                        ),
                 widget.WindowName(
-                       foreground = "#98be65",
+                       foreground = "#282828",
                        background = "#282828",
                        padding = 0,
                        max_chars = 40
