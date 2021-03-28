@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
     Plug 'gruvbox-community/gruvbox'
+    Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    Plug 'nvim-treesitter/nvim-treesitter'
 
     " Status Line
     Plug 'vim-airline/vim-airline'

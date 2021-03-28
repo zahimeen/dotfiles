@@ -9,4 +9,5 @@ source $HOME/.config/nvim/plug/plugins.vim
     source $HOME/.config/nvim/plugin-config/airline.vim
     source $HOME/.config/nvim/plugin-config/start-screen.vim
 
-source $HOME/.config/nvim/themes/gruvbox.vim
+" source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/nvcode.vim
