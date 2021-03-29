@@ -29,9 +29,6 @@ echo "###################################"
 
 yay -Syu picom lightdm lightdm-gtk-greeter python-pip
 
-pip install xcffib
-pip install --no-cache-dir cairocffi
-pip install dbus-next
 pip install psutil
 yay -Syu qtile
 
