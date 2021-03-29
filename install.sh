@@ -21,17 +21,18 @@ echo "###############################"
 echo "# Installing Graphics Support #"
 echo "###############################"
 
-yay -Syu xorg mesa xf86-video-intel vulkan-intel
+yay -Syu xorg mesa xf86-video-intel
 
 echo "###################################"
 echo "# Installing Qtile Window Manager #"
 echo "###################################"
 
-yay -Syu picom lightdm lightdm-gtk-greeter python-pip pango-ubuntu
+yay -Syu picom lightdm lightdm-gtk-greeter python-pip
 
 pip install xcffib
 pip install --no-cache-dir cairocffi
 pip install dbus-next
+pip install psutil
 yay -Syu qtile
 
 echo "########################"
