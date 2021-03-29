@@ -38,7 +38,7 @@ echo "########################"
 echo "# Installing Utilities #"
 echo "########################"
 
-yay -Syu alacritty dmenu brave-bin neovim-nightly-bin feh volumeicon blueberry-tray discord nodejs npm yay zsh oh-my-zsh-git starship exa ripgrep xsel nerd-fonts-hack ttf-ubuntu-font-family
+yay -Syu alacritty dmenu brave-bin neovim-nightly-bin feh volumeicon blueberry discord nodejs npm yay zsh oh-my-zsh-git starship exa ripgrep xsel nerd-fonts-hack ttf-ubuntu-font-family pcmanfm
 pip install pynvim
 npm install -g neovim
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

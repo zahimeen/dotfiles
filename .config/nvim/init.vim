@@ -11,3 +11,4 @@ source $HOME/.config/nvim/plug/plugins.vim
 
 " source $HOME/.config/nvim/themes/gruvbox.vim
 source $HOME/.config/nvim/themes/nvcode.vim
+source $HOME/.config/nvim/themes/syntax.vim
