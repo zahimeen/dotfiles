@@ -39,7 +39,7 @@ echo "########################"
 echo "# Installing Utilities #"
 echo "########################"
 
-yay -Syu alacritty dmenu brave-bin neovim-nightly-bin feh volumeicon blueberry discord nodejs npm yay zsh starship exa ripgrep xsel nerd-fonts-hack ttf-ubuntu-font-family pcmanfm
+yay -Syu alacritty dmenu brave-bin neovim-nightly-bin feh volumeicon blueberry discord nodejs npm yay zsh starship exa ripgrep xsel nerd-fonts-hack pcmanfm
 pip install pynvim
 npm install -g neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
