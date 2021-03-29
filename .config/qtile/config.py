@@ -219,9 +219,9 @@ layouts = [
 
 
 widget_defaults = dict(
-    font='Ubuntu',
+    font='Ubuntu Bold',
     fontsize=12,
-    padding=4,
+    padding=12,
 )
 
 extension_defaults = widget_defaults.copy()
@@ -273,82 +273,109 @@ screens = [
                        padding = 0,
                        max_chars = 40
                        ),
+                widget.TextBox(
+                       text = '|',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 25
+                       ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 50,
+                       foreground = "#83a598",
+                       background = "#282828"
+                       ),
                 widget.Systray(
                        background = "#282828",
                        padding = 5
                        ),
                 widget.Sep(
                        linewidth = 0,
-                       padding = 10,
+                       padding = 50,
                        foreground = "#83a598",
                        background = "#282828"
                        ),
                 widget.TextBox(
-                       text = '',
+                       text = '|',
                        background = "#282828",
                        foreground = "#83a598",
                        padding = 0,
-                       fontsize = 37
+                       fontsize = 25
                        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 50,
+                       foreground = "#83a598",
+                       background = "#282828"
+                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        background = "#282828",
+                #        foreground = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.CurrentLayoutIcon(
                        foreground = "#282828",
-                       background = "#83a598"
+                       background = "#83a598",
+                       padding = 4
                        ),
                 widget.CurrentLayout(
                        foreground = "#282828",
                        background = "#83a598"
                        ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        foreground = "#282828",
+                #        background = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.CapsNumLockIndicator(
                        background = "#282828",
                        foreground = "#83a598",
                        ),
-                widget.TextBox(
-                       text = '',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        background = "#282828",
+                #        foreground = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.Memory(
                        foreground = "#282828",
                        background = "#83a598",
                        ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        foreground = "#282828",
+                #        background = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.CPU(
                        background = "#282828",
                        foreground = "#83a598",
                        ),
-                widget.TextBox(
-                       text = '',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        background = "#282828",
+                #        foreground = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.Battery(
                        foreground = "#282828",
                        background = "#83a598",
                        ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
+                # widget.TextBox(
+                #        text = '',
+                #        foreground = "#282828",
+                #        background = "#83a598",
+                #        padding = 0,
+                #        fontsize = 37
+                #        ),
                 widget.Clock(
                        foreground = "#83a598",
                        background = "#282828",
@@ -356,6 +383,8 @@ screens = [
                        ),
             ],
             20,
+            margin = [4, 4, 4, 4],
+            opacity = 0.85,
         ),
     ),
 ]
