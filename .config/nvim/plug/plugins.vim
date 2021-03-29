@@ -40,4 +40,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Notetaking
     Plug 'vimwiki/vimwiki'
 
+    " Syntax Highlighting
+    Plug 'vim-python/python-syntax'
+
 call plug#end()
