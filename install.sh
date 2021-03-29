@@ -54,7 +54,7 @@ mv ~/Dotfiles/.config/qtile/ ~/.config
 mv ~/Dotfiles/.config/picom.conf ~/.config
 mv ~/Dotfiles/.zshrc ~
 mv ~/Dotfiles/.bashrc ~
-mv ~/Dotfiles/anime-scenery-01.jpg ~
+mv ~/Dotfiles/Wallpapers ~
 
 echo "#############################"
 echo "# Enabling Certain Services #"
