@@ -221,7 +221,7 @@ layouts = [
 widget_defaults = dict(
     font='Ubuntu Bold',
     fontsize=12,
-    padding=12,
+    padding=4,
 )
 
 extension_defaults = widget_defaults.copy()
@@ -309,13 +309,13 @@ screens = [
                        foreground = "#83a598",
                        background = "#282828"
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        background = "#282828",
-                #        foreground = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.TextBox(
+                       text = '',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.CurrentLayoutIcon(
                        foreground = "#282828",
                        background = "#83a598",
@@ -325,61 +325,97 @@ screens = [
                        foreground = "#282828",
                        background = "#83a598"
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        foreground = "#282828",
-                #        background = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       background = "#83a598",
+                       foreground = "#282828"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       foreground = "#282828",
+                       background = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.CapsNumLockIndicator(
                        background = "#282828",
                        foreground = "#83a598",
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        background = "#282828",
-                #        foreground = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       foreground = "#83a598",
+                       background = "#282828"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.Memory(
                        foreground = "#282828",
                        background = "#83a598",
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        foreground = "#282828",
-                #        background = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       background = "#83a598",
+                       foreground = "#282828"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       foreground = "#282828",
+                       background = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.CPU(
                        background = "#282828",
                        foreground = "#83a598",
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        background = "#282828",
-                #        foreground = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       foreground = "#83a598",
+                       background = "#282828"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       background = "#282828",
+                       foreground = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.Battery(
                        foreground = "#282828",
                        background = "#83a598",
                        ),
-                # widget.TextBox(
-                #        text = '',
-                #        foreground = "#282828",
-                #        background = "#83a598",
-                #        padding = 0,
-                #        fontsize = 37
-                #        ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       background = "#83a598",
+                       foreground = "#282828"
+                       ),
+                widget.TextBox(
+                       text = '',
+                       foreground = "#282828",
+                       background = "#83a598",
+                       padding = 0,
+                       fontsize = 37
+                       ),
                 widget.Clock(
                        foreground = "#83a598",
                        background = "#282828",
                        format = "%A, %B %d - %H:%M "
+                       ),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 14,
+                       foreground = "#83a598",
+                       background = "#282828"
                        ),
             ],
             20,
