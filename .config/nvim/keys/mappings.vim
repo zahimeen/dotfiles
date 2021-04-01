@@ -15,6 +15,9 @@ nnoremap <leader>wl <C-w>l
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>wv <C-w>v
 
+nnoremap <leader>mw :set wrap linebreak<CR>
+nnoremap <leader>mwo :set nowrap nolinebreak<CR>
+
 noremap <Up> :echo "No up for you!"<CR>
 noremap <Down> :echo "No down for you!"<CR>
 noremap <Left> :echo "No left for you!"<CR>

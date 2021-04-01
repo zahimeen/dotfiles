@@ -17,10 +17,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
-    " Fuzzy Finding
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-
     " Nice Commenting
     Plug 'tpope/vim-commentary'
 
@@ -42,5 +38,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Syntax Highlighting
     Plug 'vim-python/python-syntax'
+
+    " Terminal
+    Plug 'voldikss/vim-floaterm'
 
 call plug#end()

@@ -1,4 +1,6 @@
+filetype plugin indent on
 syntax enable
+syntax on
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -39,6 +41,7 @@ set nostartofline
 set noendofline
 
 set autochdir
+set runtimepath^=/path/to/vim-floaterm
 
 set scrolloff=8
 set sidescrolloff=8

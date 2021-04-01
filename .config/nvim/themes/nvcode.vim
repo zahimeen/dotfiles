@@ -3,4 +3,4 @@ colorscheme nvcode
 
 let g:airline_theme = 'onedark'
 
-set guicursor=
+" set guicursor=
