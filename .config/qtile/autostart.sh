@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-feh --bg-scale ~/Wallpapers/5.jpg &
+xwallpaper --maximize ~/wallpapers/girl-question-mark.jpg &
 picom &
-blueberry-tray &
 volumeicon &
-discord &
+blueberry-tray &
+nm-applet &
+element-desktop-nightly &

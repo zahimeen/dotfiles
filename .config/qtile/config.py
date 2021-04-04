@@ -17,9 +17,9 @@ import subprocess
 mod = "mod4"
 
 terminal        = "alacritty"
-browser         = "brave"
+browser         = "librewolf"
 file_browser    = "pcmanfm"
-editor          = terminal + " -e nvim"
+editor          = "neovide"
 
 
 #-------------------------------------------------------------------------------#
@@ -53,8 +53,8 @@ keys = [
         desc='Launches the Editor'
         ),
     Key([mod], "d",
-        lazy.spawn("discord"),
-        desc='Launches Discord'
+        lazy.spawn("element-desktop-nightly"),
+        desc='Launches Element'
         ),
 
     ## WINDOW FOCUS MOVEMENT ##
@@ -72,8 +72,7 @@ keys = [
         desc="Move focus down"
         ),
     Key([mod], "k",
-        lazy.layout.up(),
-        desc="Move focus up"
+        lazy.layout.up(), desc="Move focus up"
         ),
     Key([mod], "space",
         lazy.layout.next(),
@@ -193,14 +192,15 @@ for index, group in enumerate(groups):
 layout_defaults = {
     "border_focus": "#83a598",
     "border_normal": "#474646",
-    "border_width": 4,
+    "border_width": 3,
     "fullscreen_border_width": 0,
-    "margin": 18,
+    "margin": 14,
 }
 
 layouts = [
     layout.MonadTall(**layout_defaults),
     layout.Max(),
+    layout.Columns(border_focus="#83a598", border_normal="#474646", margin=0)
     # Try more layouts by unleashing below layouts.
     # layout.Columns(border_focus_stack='#d75f5f'),
     # layout.Stack(num_stacks=2),
@@ -219,7 +219,7 @@ layouts = [
 
 
 widget_defaults = dict(
-    font='Ubuntu Bold',
+    font='Ubuntu Mono',
     fontsize=12,
     padding=4,
 )
@@ -419,7 +419,6 @@ screens = [
                        ),
             ],
             20,
-            margin = [4, 4, 4, 4],
             opacity = 0.85,
         ),
     ),
