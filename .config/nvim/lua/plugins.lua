@@ -21,6 +21,7 @@ return require('packer').startup(function()
     use { 'christianchiarulli/nvcode-color-schemes.vim', requires = { 'nvim-treesitter/nvim-treesitter' } }
     use 'vim-python/python-syntax'
     use 'ap/vim-css-color'
+    use 'euclidianAce/BetterLua.vim'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
@@ -40,12 +41,17 @@ return require('packer').startup(function()
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
 
+    -- Writing
+    use 'junegunn/goyo.vim'
+    use 'junegunn/limelight.vim'
+    use 'vimwiki/vimwiki'
+
     -- Miscellaneous
     use 'kyazdani42/nvim-tree.lua'
     use 'tpope/vim-commentary'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
     use 'mhinz/vim-startify'
-    use 'voldikss/vim-floaterm'
     use 'glepnir/dashboard-nvim'
+    use 'voldikss/vim-floaterm'
 
 end)

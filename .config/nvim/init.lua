@@ -17,3 +17,6 @@ require('telescope-conf') -- ~/.config/nvim/lua/telescope-conf/init.lua
 require('dashboard-conf') -- ~/.config/nvim/lua/dashboard-conf/init.lua
 require('floaterm-conf') -- ~/.config/nvim/lua/floaterm-conf/init.lua
 require('fugitive-conf') -- ~/.config/nvim/lua/fugitive-conf/init.lua
+require('limelight-conf') -- ~/.config/nvim/lua/limelight-conf/init.lua
+require('goyo-conf') -- ~/.config/nvim/lua/goyo-conf/init.lua
+require('vimwiki-conf') -- ~/.config/nvim/lua/vimwiki-conf/init.lua
