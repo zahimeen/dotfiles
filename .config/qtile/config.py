@@ -175,7 +175,7 @@ mouse = [
 ###  WORKSPACES  ###
 
 
-groups = [Group(group) for group in ("WWW", "DEV", "DIS", "MUS", "RAN")]
+groups = [Group(group) for group in ("WWW", "DEV", "ELE", "MUS", "RAN")]
 
 for index, group in enumerate(groups):
     keys.extend([
@@ -273,39 +273,13 @@ screens = [
                        padding = 0,
                        max_chars = 40
                        ),
-                widget.TextBox(
-                       text = '|',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 25
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 50,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
                 widget.Systray(
                        background = "#282828",
                        padding = 5
                        ),
                 widget.Sep(
                        linewidth = 0,
-                       padding = 50,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '|',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 25
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 50,
+                       padding = 15,
                        foreground = "#83a598",
                        background = "#282828"
                        ),

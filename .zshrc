@@ -11,8 +11,8 @@ export VISUAL="nvim"
 alias ls='exa -al --color=always --group-directories-first'
 alias grep='rg'
 alias cat='bat'
-alias nvim='devour nvim'
-alias note='devour nvim ~/vimwiki/index.wiki'
+alias nvim='devour neovide'
+alias note='devour neovide ~/vimwiki/index.wiki'
 
 eval "$(starship init zsh)"
 
