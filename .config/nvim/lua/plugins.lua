@@ -22,6 +22,7 @@ return require('packer').startup(function()
     use 'vim-python/python-syntax'
     use 'ap/vim-css-color'
     use 'euclidianAce/BetterLua.vim'
+    use 'dart-lang/dart-vim-plugin'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
@@ -31,10 +32,8 @@ return require('packer').startup(function()
     use { 'glepnir/galaxyline.nvim', branch = 'main', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use 'romgrk/barbar.nvim'
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
-    use 'kabouzeid/nvim-lspinstall'
+    -- Autocomplete
+    use 'neoclide/coc.nvim'
 
     -- Git
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
