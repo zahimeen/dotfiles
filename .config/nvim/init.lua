@@ -4,7 +4,7 @@ require('plugins') -- ~/.config/nvim/lua/plugins.lua
 require('theme') -- ~/.config/nvim/lua/theme.lua
 require('syntax') -- ~/.config/nvim/lua/syntax.lua
 
-vim.cmd('source ~/.config/nvim/lua/coc-conf/init.vim')
+vim.cmd('source ~/.config/nvim/vimscript/coc-conf/init.vim')
 
 require('limelight-conf') -- ~/.config/nvim/lua/limelight-conf/init.lua
 require('vimwiki-conf') -- ~/.config/nvim/lua/vimwiki-conf/init.lua

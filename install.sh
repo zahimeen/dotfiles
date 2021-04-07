@@ -28,18 +28,33 @@ echo "# Installing Graphics Drivers #"
 echo "###############################"
 echo ""
 
-yay --noconfirm -Syu xorg mesa xf86-video-intel vulkan-intel intel-ucode
+yay --noconfirm -Syu xorg xorg-xinit xorg-server mesa xf86-video-intel vulkan-intel intel-ucode
 
 echo ""
-echo "###################################"
-echo "# Installing Qtile Window Manager #"
-echo "###################################"
+echo "############################"
+echo "# Installing Audio Support #"
+echo "############################"
 echo ""
 
-yay --noconfirm -Syu picom lightdm lightdm-gtk-greeter python-pip qtile
-pip install psutil
+yay --noconfirm -Syu alsa alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth volumeicon
+pulseaudio -D
 
-mv ~/Dotfiles/.config/qtile ~/.config
+echo ""
+echo "################################"
+echo "# Installing Bluetooth Support #"
+echo "################################"
+echo ""
+
+yay --noconfirm -Syu bluez bluez-utils blueberry
+
+echo ""
+echo "########################"
+echo "# Installing Utilities #"
+echo "########################"
+echo ""
+
+yay --noconfirm -Syu alacritty brave-bin pcmanfgm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-hack\
+    nerd-fonts-jetbrains-mono network-manager-applet neofetch
 
 echo ""
 echo "#####################"
@@ -69,15 +84,6 @@ mv ~/Dotfiles/.zshrc ~
 mv ~/Dotfiles/.bashrc ~
 
 echo ""
-echo "########################"
-echo "# Installing Utilities #"
-echo "########################"
-echo ""
-
-yay --noconfirm -Syu alacritty librewolf-bin pcmanfm element-desktop-nightly-bin xwallpaper blueberry volumeicon xsel nerd-fonts-hack\
-    nerd-fonts-jetbrains-mono pavucontrol network-manager-applet neofetch
-
-echo ""
 echo "#######################"
 echo "# Moving Config Files #"
 echo "#######################"
@@ -87,9 +93,11 @@ mv ~/Dotfiles/.config/alacritty ~/.config
 mv ~/Dotfiles/.config/picom.conf ~/.config
 mv ~/Dotfiles/.config/starship.toml ~/.config
 
+echo ""
 echo "#############################"
 echo "# Enabling Certain Services #"
 echo "#############################"
+echo ""
 
 systemctl enable lightdm
 
