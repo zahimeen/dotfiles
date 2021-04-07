@@ -53,8 +53,28 @@ echo "# Installing Utilities #"
 echo "########################"
 echo ""
 
-yay --noconfirm -Syu alacritty brave-bin pcmanfgm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-hack\
-    nerd-fonts-jetbrains-mono network-manager-applet neofetch
+yay --noconfirm -Syu alacritty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-hack\
+    nerd-fonts-jetbrains-mono network-manager-applet neofetch tree ranger
+
+echo""
+echo"####################"
+echo"# Installing Qtile #"
+echo"####################"
+echo""
+
+yay --noconfirm picom qtile
+pip install psutil
+
+cp -r ~/Dotfiles/.config/qtile ~/.config
+
+echo""
+echo"#####################"
+echo"# Installing LightDM #"
+echo"#####################"
+echo""
+
+yay --noconfirm -Syu lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
 
 echo ""
 echo "#####################"
@@ -66,7 +86,7 @@ yay --noconfirm -Syu neovim-nightly-bin neovide nodejs npm
 pip install pynvim
 npm -i -g neovim
 
-mv ~/Dotfiles/.config/nvim ~/.config
+cp -r ~/Dotfiles/.config/nvim ~/.config
 
 echo ""
 echo "##################"
@@ -80,8 +100,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-mv ~/Dotfiles/.zshrc ~
-mv ~/Dotfiles/.bashrc ~
+cp -r ~/Dotfiles/.zshrc ~
+cp -r ~/Dotfiles/.bashrc ~
 
 echo ""
 echo "#######################"
@@ -89,17 +109,9 @@ echo "# Moving Config Files #"
 echo "#######################"
 echo ""
 
-mv ~/Dotfiles/.config/alacritty ~/.config
-mv ~/Dotfiles/.config/picom.conf ~/.config
-mv ~/Dotfiles/.config/starship.toml ~/.config
-
-echo ""
-echo "#############################"
-echo "# Enabling Certain Services #"
-echo "#############################"
-echo ""
-
-systemctl enable lightdm
+cp -r ~/Dotfiles/.config/alacritty ~/.config
+cp -r ~/Dotfiles/.config/picom.conf ~/.config
+cp -r ~/Dotfiles/.config/starship.toml ~/.config
 
 echo ""
 echo "#########################"
