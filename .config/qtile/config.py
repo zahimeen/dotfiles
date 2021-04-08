@@ -102,24 +102,28 @@ keys = [
     ## WINDOW MANIPULATION ##
 
     Key([mod, "control"], "h",
-        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
         desc="Grow window to the left"
         ),
     Key([mod, "control"], "l",
-        lazy.layout.grow_right(),
+        lazy.layout.grow(),
         desc="Grow window to the right"
         ),
     Key([mod, "control"], "j",
-        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
         desc="Grow window down"
         ),
     Key([mod, "control"], "k",
-        lazy.layout.grow_up(),
+        lazy.layout.grow(),
         desc="Grow window up"
         ),
     Key([mod], "n",
         lazy.layout.normalize(),
         desc="Reset all window sizes"
+        ),
+    Key([mod], "t",
+        lazy.window.toggle_floating(),
+        desc='toggle floating'
         ),
 
     ## LAYOUTS ##
@@ -136,6 +140,11 @@ keys = [
         lazy.window.kill(),
         desc="Kill focused window"
         ),
+    Key([mod], "f",
+        lazy.window.toggle_fullscreen(),
+        desc='toggle fullscreen'
+        ),
+
 
     ## IMPORTANT ##
 
@@ -171,7 +180,7 @@ mouse = [
 ###  WORKSPACES  ###
 
 
-groups = [Group(group) for group in ("WWW", "DEV", "ELE", "MUS", "RAN")]
+groups = [Group(group) for group in ("WWW", "DEV", "SCH", "ELE", "MUS", "RAN")]
 
 for index, group in enumerate(groups):
     keys.extend([
@@ -182,12 +191,21 @@ for index, group in enumerate(groups):
             desc="Switch to & move focused window to group {}".format(group.name)),
     ])
 
+###  COLOURS  ###
+
+colours = (
+        "#282a36",
+        "#434758",
+        "#ABB2BF",
+        "#ff6e67",
+        "#bd93f9",
+        )
 
 ###  LAYOUTS  ###
 
 layout_defaults = {
-    "border_focus": "#83a598",
-    "border_normal": "#474646",
+    "border_focus": "#ABB2BF",
+    "border_normal": "#1E1E1E",
     "border_width": 3,
     "fullscreen_border_width": 0,
     "margin": 14,
@@ -196,9 +214,8 @@ layout_defaults = {
 layouts = [
     layout.MonadTall(**layout_defaults),
     layout.Max(),
-    layout.Columns(border_focus="#83a598", border_normal="#474646", margin=0)
-    # Try more layouts by unleashing below layouts.
-    # layout.Columns(border_focus_stack='#d75f5f'),
+    # layout.Columns(),
+    # layout.Columns(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
@@ -213,6 +230,14 @@ layouts = [
 
 ###  BAR  ###
 
+def powerline(fg: str, bg: str):
+    return widget.TextBox(
+        background = bg,
+        foreground = fg,
+        text=u"\ue0be",  # Icon: nf-oct-triangle_left
+        fontsize=23,
+        padding=0,
+    )
 
 widget_defaults = dict(
     font='Ubuntu Mono',
@@ -226,170 +251,81 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 6,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.GroupBox(
-                       font = "Ubuntu Bold",
-                       fontsize = 9,
-                       margin_y = 3,
-                       margin_x = 0,
-                       padding_y = 5,
-                       padding_x = 3,
-                       borderwidth = 3,
-                       active = "#83a598",
-                       inactive = "#c792ea",
-                       rounded = False,
-                       highlight_method = "line",
-                       this_current_screen_border = "#98be65",
-                       this_screen_border = "#c792ea",
-                       other_current_screen_border = "#98be65",
-                       other_screen_border = "#c792ea",
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.Prompt(
-                       font = "Ubuntu Mono",
-                       padding = 10,
-                       foreground = "#d3869b",
-                       background = "#282828"
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 40,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.WindowName(
-                       foreground = "#282828",
-                       background = "#282828",
-                       padding = 0,
-                       max_chars = 40
-                       ),
-                widget.Systray(
-                       background = "#282828",
-                       padding = 5
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 15,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.CurrentLayoutIcon(
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 4
-                       ),
-                widget.CurrentLayout(
-                       foreground = "#282828",
-                       background = "#83a598"
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       background = "#83a598",
-                       foreground = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.CapsNumLockIndicator(
-                       background = "#282828",
-                       foreground = "#83a598",
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.Memory(
-                       foreground = "#282828",
-                       background = "#83a598",
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       background = "#83a598",
-                       foreground = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.CPU(
-                       background = "#282828",
-                       foreground = "#83a598",
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       background = "#282828",
-                       foreground = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.Battery(
-                       foreground = "#282828",
-                       background = "#83a598",
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       background = "#83a598",
-                       foreground = "#282828"
-                       ),
-                widget.TextBox(
-                       text = '',
-                       foreground = "#282828",
-                       background = "#83a598",
-                       padding = 0,
-                       fontsize = 37
-                       ),
-                widget.Clock(
-                       foreground = "#83a598",
-                       background = "#282828",
-                       format = "%A, %B %d - %H:%M "
-                       ),
-                widget.Sep(
-                       linewidth = 0,
-                       padding = 14,
-                       foreground = "#83a598",
-                       background = "#282828"
-                       ),
+            widget.Sep(
+                linewidth = 0,
+                padding = 6,
+                foreground = colours[0],
+                background = colours[0],
+                ),
+            widget.GroupBox(
+                font = "Ubuntu Bold",
+                fontsize = 9,
+                margin_y = 3,
+                margin_x = 0,
+                padding_y = 5,
+                padding_x = 3,
+                borderwidth = 3,
+                active = colours[2],
+                inactive = colours[4],
+                rounded = False,
+                highlight_color = colours[1],
+                highlight_method = "line",
+                this_current_screen_border = colours[4],
+                this_screen_border = colours[3],
+                other_current_screen_border = colours[4],
+                other_screen_border = colours[3],
+                foreground = colours[2],
+                background = colours[0],
+                ),
+            widget.WindowName(
+                foreground = colours[0],
+                background = colours[0],
+                padding = 0
+                ),
+            powerline(colours[4], colours[0]),
+            widget.CurrentLayout(
+                foreground = colours[0],
+                background = colours[4],
+                ),
+            powerline(colours[0], colours[4]),
+            widget.CapsNumLockIndicator(
+                foreground = colours[4],
+                background = colours[0],
+                ),
+            powerline(colours[4], colours[0]),
+            widget.Memory(
+                foreground = colours[0],
+                background = colours[4],
+                ),
+            powerline(colours[0], colours[4]),
+            widget.CPU(
+                foreground = colours[4],
+                background = colours[0],
+                ),
+            powerline(colours[4], colours[0]),
+            widget.Battery(
+                foreground = colours[0],
+                background = colours[4],
+                ),
+            powerline(colours[0], colours[4]),
+            widget.Clock(
+                foreground = colours[4],
+                background = colours[0],
+                format = "%A, %B %d - %H:%M "
+                ),
+            powerline(colours[4], colours[0]),
+            widget.Systray(
+                background = colours[4],
+                padding = 4,
+                ),
+            widget.Sep(
+                linewidth = 0,
+                padding = 6,
+                foreground = colours[4],
+                background = colours[4],
+                ),
             ],
             20,
-            opacity = 0.85,
         ),
     ),
 ]
