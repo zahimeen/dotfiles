@@ -62,7 +62,7 @@ echo"# Installing Qtile #"
 echo"####################"
 echo""
 
-yay --noconfirm picom qtile
+yay --noconfirm -Syu picom qtile python-pip
 pip install psutil
 
 cp -r ~/Dotfiles/.config/qtile ~/.config
