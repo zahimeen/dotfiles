@@ -17,7 +17,7 @@ import subprocess
 mod = "mod4"
 
 terminal        = "alacritty"
-browser         = "librewolf"
+browser         = "brave"
 file_browser    = "pcmanfm"
 editor          = "neovide"
 chat_app        = "element-desktop-nightly"

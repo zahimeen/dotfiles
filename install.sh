@@ -36,7 +36,7 @@ echo "# Installing Audio Support #"
 echo "############################"
 echo ""
 
-yay --noconfirm -Syu alsa alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth volumeicon
+yay --noconfirm -Syu alsa alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth volumeicon pavucontrol
 pulseaudio -D
 
 echo ""

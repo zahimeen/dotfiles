@@ -18,7 +18,7 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Color
-    use { 'christianchiarulli/nvcode-color-schemes.vim', requires = { 'nvim-treesitter/nvim-treesitter' } }
+    use 'joshdick/onedark.vim'
     use 'vim-python/python-syntax'
     use 'ap/vim-css-color'
     use 'euclidianAce/BetterLua.vim'
@@ -50,7 +50,7 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
     use 'mhinz/vim-startify'
-    use 'glepnir/dashboard-nvim'
     use 'voldikss/vim-floaterm'
+    use 'glepnir/dashboard-nvim'
 
 end)
