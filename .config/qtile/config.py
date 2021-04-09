@@ -34,8 +34,8 @@ keys = [
     ## APPLICATIONS ##
 
     Key([mod], "p",
-        lazy.spawn("dmenu_run -p 'Run: '"),
-        desc='Launches Dmenu'
+        lazy.spawn("rofi -show run"),
+        desc='Launches Rofi'
         ),
     Key([mod], "Return",
         lazy.spawn(terminal),
