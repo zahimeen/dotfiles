@@ -54,7 +54,7 @@ echo "########################"
 echo ""
 
 yay --noconfirm -Syu alacritty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-hack\
-    nerd-fonts-jetbrains-mono network-manager-applet neofetch tree ranger
+    nerd-fonts-jetbrains-mono network-manager-applet neofetch tree ranger lxappearance qt5ct
 
 echo""
 echo"####################"
@@ -109,6 +109,8 @@ echo "# Moving Config Files #"
 echo "#######################"
 echo ""
 
+cp -r ~/Dotfiles/.themes ~
+cp -r ~/Dotfiles/.icons ~
 cp -r ~/Dotfiles/.config/alacritty ~/.config
 cp -r ~/Dotfiles/.config/picom.conf ~/.config
 cp -r ~/Dotfiles/.config/starship.toml ~/.config
