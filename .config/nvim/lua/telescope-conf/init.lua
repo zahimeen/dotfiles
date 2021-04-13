@@ -2,3 +2,4 @@ vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { noremap = true, silent = true } )
 vim.api.nvim_set_keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true, silent = true } )
 vim.api.nvim_set_keymap("n", "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { noremap = true, silent = true } )
+vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd>lua require('telescope.builtin').oldfiles()<CR>", { noremap = true, silent = true } )

@@ -52,8 +52,8 @@ echo "# Installing Utilities #"
 echo "########################"
 echo ""
 
-yay --noconfirm -S alacritty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-hack\
-    nerd-fonts-jetbrains-mono network-manager-applet neofetch tree ranger lxappearance qt5ct rofi
+yay --noconfirm -S alacritty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-fira-code\
+    network-manager-applet neofetch tree ranger lxappearance qt5ct rofi
 
 echo""
 echo"####################"

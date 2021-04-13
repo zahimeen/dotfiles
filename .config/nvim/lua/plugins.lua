@@ -19,10 +19,8 @@ return require('packer').startup(function()
 
     -- Color
     use 'joshdick/onedark.vim'
-    use 'vim-python/python-syntax'
     use 'ap/vim-css-color'
-    use 'euclidianAce/BetterLua.vim'
-    use 'dart-lang/dart-vim-plugin'
+    use 'sheerun/vim-polyglot'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
@@ -31,9 +29,14 @@ return require('packer').startup(function()
     -- Status Line and Bufferline
     use { 'glepnir/galaxyline.nvim', branch = 'main', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use 'romgrk/barbar.nvim'
+    
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
+    use 'hrsh7th/nvim-compe'
 
-    -- Autocomplete
-    use 'neoclide/coc.nvim'
+    -- Python
+    use 'Vimjas/vim-python-pep8-indent'
 
     -- Git
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -46,11 +49,12 @@ return require('packer').startup(function()
     use 'vimwiki/vimwiki'
 
     -- Miscellaneous
+    use 'liuchengxu/vista.vim'
     use 'kyazdani42/nvim-tree.lua'
     use 'tpope/vim-commentary'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
     use 'mhinz/vim-startify'
-    use 'voldikss/vim-floaterm'
     use 'glepnir/dashboard-nvim'
+    use 'voldikss/vim-floaterm'
 
 end)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-xwallpaper --zoom ~/wallpapers/cX3nrNq.png &
+xwallpaper --zoom ~/wallpapers/6.png &
 picom &
 volumeicon &
 blueberry-tray &
