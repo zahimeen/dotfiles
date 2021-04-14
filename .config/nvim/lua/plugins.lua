@@ -53,8 +53,7 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-tree.lua'
     use 'tpope/vim-commentary'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
-    use 'mhinz/vim-startify'
-    use 'glepnir/dashboard-nvim'
     use 'voldikss/vim-floaterm'
+    use 'glepnir/dashboard-nvim'
 
 end)

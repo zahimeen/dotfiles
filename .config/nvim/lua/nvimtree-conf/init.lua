@@ -1,7 +1,7 @@
 vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
-vim.g.nvim_tree_auto_ignore_ft = { 'dashboard', 'startify' }
+vim.g.nvim_tree_auto_ignore_ft = { 'dashboard' }
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_indent_markers = 1
 

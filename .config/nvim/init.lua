@@ -4,7 +4,7 @@ require('plugins') -- ~/.config/nvim/lua/plugins.lua
 require('theme') -- ~/.config/nvim/lua/theme.lua
 require('syntax') -- ~/.config/nvim/lua/syntax.lua
 
-require('lsp') -- ~/.config/nvim/lua/lsp/init.lua
+require('lsp-conf') -- ~/.config/nvim/lua/lsp/init.lua
 require('lspinstall-conf') -- ~/.config/nvim/lua/lspinstall-conf/init.lua
 require('compe-conf') -- ~/.config/nvim/lua/compe-conf/init.lua
 
@@ -14,8 +14,8 @@ require('goyo-conf') -- ~/.config/nvim/lua/goyo-conf/init.lua
 require('galaxyline-conf') -- ~/.config/nvim/lua/galaxyline-conf/init.lua
 require('gitsigns-conf') -- ~/.config/nvim/lua/gitsigns-conf/init.lua
 require('nvimtree-conf') -- ~/.config/nvim/lua/nvimtree-conf/init.lua
-require('startify-conf') -- ~/.config/nvim/lua/startify-conf/init.lua
 require('telescope-conf') -- ~/.config/nvim/lua/telescope-conf/init.lua
 require('dashboard-conf') -- ~/.config/nvim/lua/dashboard-conf/init.lua
 require('floaterm-conf') -- ~/.config/nvim/lua/floaterm-conf/init.lua
 require('fugitive-conf') -- ~/.config/nvim/lua/fugitive-conf/init.lua
+require('vista-conf') -- ~/.config/nvim/lua/vista-conf/init.lua
