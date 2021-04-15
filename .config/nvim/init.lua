@@ -4,7 +4,7 @@ require('plugins') -- ~/.config/nvim/lua/plugins.lua
 require('theme') -- ~/.config/nvim/lua/theme.lua
 require('syntax') -- ~/.config/nvim/lua/syntax.lua
 
-require('lsp-conf') -- ~/.config/nvim/lua/lsp/init.lua
+require('lsp-conf') -- ~/.config/nvim/lua/lsp-conf/init.lua
 require('lspinstall-conf') -- ~/.config/nvim/lua/lspinstall-conf/init.lua
 require('compe-conf') -- ~/.config/nvim/lua/compe-conf/init.lua
 
@@ -19,3 +19,5 @@ require('dashboard-conf') -- ~/.config/nvim/lua/dashboard-conf/init.lua
 require('floaterm-conf') -- ~/.config/nvim/lua/floaterm-conf/init.lua
 require('fugitive-conf') -- ~/.config/nvim/lua/fugitive-conf/init.lua
 require('vista-conf') -- ~/.config/nvim/lua/vista-conf/init.lua
+
+vim.cmd('source ~/.config/nvim/vimscript/whichkey-conf/init.vim') -- ~/.config/nvim/vimscript/whichkey-conf/init.vim
