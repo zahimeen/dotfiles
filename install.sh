@@ -52,7 +52,7 @@ echo "# Installing Utilities #"
 echo "########################"
 echo ""
 
-yay --noconfirm -S alacritty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-fira-code\
+yay --noconfirm -S kitty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-fira-code\
     network-manager-applet neofetch tree ranger lxappearance qt5ct rofi
 
 echo""
@@ -108,9 +108,8 @@ echo "# Moving Config Files #"
 echo "#######################"
 echo ""
 
-cp -r ~/Dotfiles/.themes ~
-cp -r ~/Dotfiles/.icons ~
-cp -r ~/Dotfiles/.config/alacritty ~/.config
+cp ~/Dotfiles/.config/wall.jpeg ~/.config
+cp -r ~/Dotfiles/.config/kitty ~/.config
 cp -r ~/Dotfiles/.config/rofi ~/.config
 cp -r ~/Dotfiles/.config/picom.conf ~/.config
 cp -r ~/Dotfiles/.config/starship.toml ~/.config
