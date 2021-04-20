@@ -1,23 +1,44 @@
-require('settings') -- ~/.config/nvim/lua/settings.lua
-require('keymaps') -- ~/.config/nvim/lua/keymaps.lua
-require('plugins') -- ~/.config/nvim/lua/plugins.lua
-require('theme') -- ~/.config/nvim/lua/theme.lua
-require('syntax') -- ~/.config/nvim/lua/syntax.lua
+require('plugins')
+require('globals')
+require('settings')
+require('keymappings')
+require('colorscheme')
 
-require('lsp-conf') -- ~/.config/nvim/lua/lsp-conf/init.lua
-require('lspinstall-conf') -- ~/.config/nvim/lua/lspinstall-conf/init.lua
-require('compe-conf') -- ~/.config/nvim/lua/compe-conf/init.lua
+require('compe-conf')
+require('galaxyline-conf')
+require('dashboard-conf')
+require('treesitter-conf')
+require('telescope-conf')
+require('nvimtree-conf')
+require('vimwiki-conf')
+require('goyo-conf')
+require('floaterm-conf')
+require('gitsigns-conf')
 
-require('limelight-conf') -- ~/.config/nvim/lua/limelight-conf/init.lua
-require('vimwiki-conf') -- ~/.config/nvim/lua/vimwiki-conf/init.lua
-require('goyo-conf') -- ~/.config/nvim/lua/goyo-conf/init.lua
-require('galaxyline-conf') -- ~/.config/nvim/lua/galaxyline-conf/init.lua
-require('gitsigns-conf') -- ~/.config/nvim/lua/gitsigns-conf/init.lua
-require('nvimtree-conf') -- ~/.config/nvim/lua/nvimtree-conf/init.lua
-require('telescope-conf') -- ~/.config/nvim/lua/telescope-conf/init.lua
-require('dashboard-conf') -- ~/.config/nvim/lua/dashboard-conf/init.lua
-require('floaterm-conf') -- ~/.config/nvim/lua/floaterm-conf/init.lua
-require('fugitive-conf') -- ~/.config/nvim/lua/fugitive-conf/init.lua
-require('vista-conf') -- ~/.config/nvim/lua/vista-conf/init.lua
+-- LSP
+require('lsp')
+require('lsp.clangd')
+require('lsp.php-ls')
+require('lsp.dart-ls')
+require('lsp.lua-ls')
+require('lsp.bash-ls')
+require('lsp.go-ls')
+require('lsp.js-ts-ls')
+require('lsp.python-ls')
+require('lsp.rust-ls')
+require('lsp.json-ls')
+require('lsp.yaml-ls')
+require('lsp.terraform-ls')
+require('lsp.vim-ls')
+require('lsp.graphql-ls')
+require('lsp.docker-ls')
+require('lsp.html-ls')
+require('lsp.css-ls')
+require('lsp.emmet-ls')
+require('lsp.efm-general-ls')
+require('lsp.latex-ls')
+require('lsp.svelte-ls')
+require('lsp.tailwindcss-ls')
+require('lsp.ruby-ls')
+require('lsp.kotlin-ls')
 
-vim.cmd('source ~/.config/nvim/vimscript/whichkey-conf/init.vim') -- ~/.config/nvim/vimscript/whichkey-conf/init.vim

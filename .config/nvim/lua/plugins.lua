@@ -12,49 +12,57 @@ vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 require('packer').init({display = {auto_clean = false}})
 
-return require('packer').startup(function()
+return require('packer').startup(
+    function(use)
 
-    -- Packer
-    use 'wbthomason/packer.nvim'
+        -- Packer can manage itself as an optional plugin
+        use "wbthomason/packer.nvim"
 
-    -- Color
-    use 'joshdick/onedark.vim'
-    use 'ap/vim-css-color'
-    use 'sheerun/vim-polyglot'
+        -- LSP
+        use "neovim/nvim-lspconfig"
+        use "glepnir/lspsaga.nvim"
+        use "kabouzeid/nvim-lspinstall"
 
-    -- Icons
-    use 'kyazdani42/nvim-web-devicons'
-    use 'ryanoasis/vim-devicons'
+        -- Telescope
+        use "nvim-lua/popup.nvim"
+        use "nvim-lua/plenary.nvim"
+        use "nvim-telescope/telescope.nvim"
 
-    -- Status Line and Bufferline
-    use { 'glepnir/galaxyline.nvim', branch = 'main', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    use 'romgrk/barbar.nvim'
-    
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
-    use 'hrsh7th/nvim-compe'
+        -- Debuging
+        use "mfussenegger/nvim-dap"
 
-    -- Python
-    use 'Vimjas/vim-python-pep8-indent'
+        -- Autocomplete
+        use "hrsh7th/nvim-compe"
+        use "hrsh7th/vim-vsnip"
 
-    -- Git
-    use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
+        -- Treesitter
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
-    -- Writing
-    use 'junegunn/goyo.vim'
-    use 'junegunn/limelight.vim'
-    use 'vimwiki/vimwiki'
+        -- Writing
+        use 'junegunn/goyo.vim'
+        use { 'vimwiki/vimwiki', branch = "dev" }
 
-    -- Miscellaneous
-    use 'liuchengxu/vista.vim'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'tpope/vim-commentary'
-    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
-    use 'voldikss/vim-floaterm'
-    use 'glepnir/dashboard-nvim'
-    use 'liuchengxu/vim-which-key'
+        -- Explorer
+        use "kyazdani42/nvim-tree.lua"
 
-end)
+        use "lewis6991/gitsigns.nvim"
+        use "liuchengxu/vim-which-key"
+        use "glepnir/dashboard-nvim"
+        use "tpope/vim-commentary"
+        use "kevinhwang91/nvim-bqf"
+        use 'Vimjas/vim-python-pep8-indent'
+        use 'voldikss/vim-floaterm'
+
+        -- Color
+        use "christianchiarulli/nvcode-color-schemes.vim"
+
+        -- Icons
+        use "kyazdani42/nvim-web-devicons"
+        use 'ryanoasis/vim-devicons'
+
+        -- Status Line and Bufferline
+        use "glepnir/galaxyline.nvim"
+        use "romgrk/barbar.nvim"
+
+    end
+)

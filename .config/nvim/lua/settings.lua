@@ -3,7 +3,7 @@ vim.cmd('set shortmess+=c')
 vim.cmd('syntax on')
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 
-vim.o.autochdir = true
+-- vim.o.autochdir = true
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 2
@@ -22,7 +22,7 @@ vim.o.sidescrolloff = 8
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
-vim.o.t_Co = "256"
+vim.o.termguicolors = true
 vim.o.timeoutlen = 1000
 vim.o.updatetime = 150
 vim.o.writebackup = false
