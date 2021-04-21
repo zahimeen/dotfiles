@@ -2,7 +2,7 @@ O = {
     -- @usage pass a table with your desired languages
     treesitter = {
         ensure_installed = "all",
-        ignore_install = {"haskell"},
+        ignore_install = {},
         highlight = {enabled = true},
         playground = {enabled = true},
         rainbow = {enabled = false}

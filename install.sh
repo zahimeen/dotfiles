@@ -52,7 +52,7 @@ echo "# Installing Utilities #"
 echo "########################"
 echo ""
 
-yay --noconfirm -S kitty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xsel nerd-fonts-fira-code\
+yay --noconfirm -S kitty brave-bin pcmanfm element-desktop-nightly-bin xwallpaper xclip nerd-fonts-fira-code\
     network-manager-applet neofetch tree ranger lxappearance qt5ct rofi
 
 echo""
