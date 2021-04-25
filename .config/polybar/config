@@ -1,0 +1,157 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[colors]
+background = #66232731
+background-alt = #81a1c1
+foreground = #eeeeee
+foreground-alt = #232731
+primary = #D7BA7D
+secondary = #bf616a
+alert = #C68A75
+
+;#############;
+;###  BAR  ###;
+;#############;
+
+[bar/bar]
+background = ${colors.background}
+foreground = ${colors.foreground}
+separator = " | "
+
+line-size = 3
+line-color = #f00
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = UbuntuMono Nerd Font:fixed:pixelsize=11;1
+
+modules-left = ewmh
+modules-right = kernel arch-updates aur-updates pulseaudio date
+
+tray-position = right
+tray-padding = 4
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;#################;
+;###  MODULES  ###;
+;#################;
+
+;############################################################################;
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+format = <label-state>
+label-monitor = %name%
+
+label-active = %name%
+label-active-foreground = ${colors.foreground-alt}
+label-active-background = ${colors.background-alt}
+label-active-padding = 2
+
+label-occupied = %name%
+label-occupied-background = ${colors.background}
+label-occupied-padding = 2
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+;############################################################################;
+
+[module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
+type = internal/date
+; Seconds to sleep between updates
+interval = 5
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = "%Y-%m-%d%"
+date-alt = "%d-%m-%Y"
+time = %H:%M
+time-alt = %H:%M
+format-prefix = "  "
+format-prefix-foreground = ${colors.background-alt}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label = %date% %time%
+
+;############################################################################;
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+
+label-volume = "%percentage%%"
+label-volume-foreground = ${colors.foreground}
+label-volume-background = ${colors.background}
+
+label-muted =   muted
+label-muted-foreground = #666
+
+format-volume-prefix = "  "
+format-volume-prefix-foreground = ${colors.background-alt}
+
+;############################################################################;
+
+[module/kernel]
+type = custom/script
+exec = uname -r
+tail = false
+interval = 1024
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = ${colors.background-alt}
+
+;############################################################################;
+
+[module/arch-updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-arch-updates.sh
+interval = 1000
+label = Arch: %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = ${colors.background-alt}
+
+[module/aur-updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-aur-updates.sh
+interval = 1000
+label = Aur: %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = ${colors.background-alt}
+
+; vim:ft=dosini
