@@ -32,10 +32,10 @@ module-margin-right = 1
 font-0 = UbuntuMono Nerd Font:fixed:pixelsize=11;1
 
 modules-left = ewmh
-modules-right = kernel arch-updates aur-updates pulseaudio date
+modules-right = kernel arch-updates aur-updates battery pulseaudio date
 
 tray-position = right
-tray-padding = 4
+tray-padding = 1
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -131,6 +131,45 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = ${colors.background-alt}
+
+;############################################################################;
+
+[module/battery]
+;https://github.com/jaagr/polybar/wiki/Module:-battery
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+label-charging =  %percentage%%
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging =  %percentage%%
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.background-alt}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
+
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
+ramp-capacity-foreground = ${colors.background-alt}
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-foreground = ${colors.background-alt}
+animation-charging-framerate = 750
 
 ;############################################################################;
 

@@ -44,7 +44,8 @@ myTerminal :: String
 myTerminal          = "kitty"
 
 myEditor :: String
-myEditor            = myTerminal ++ " -e nvim"
+-- myEditor            = myTerminal ++ " -e nvim"
+myEditor            = "emacsclient -c -a 'emacs'"
 
 myBrowser :: String
 myBrowser           = "brave"
@@ -217,8 +218,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 myLayout = smartBorders 
            $ avoidStruts
-           $  mkToggle (NBFULL ?? NOBORDERS ?? EOT)
-           $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
+           $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
+           $ spacingRaw False (Border 14 10 10 10) True (Border 10 10 10 10) True
            (tiled)
     where
         -- default tiling algorithm partitions the screen into two panes
@@ -288,6 +289,7 @@ myStartupHook = do
     spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall.jpeg &"
     spawnOnce "polybar bar &"
     spawnOnce "blueberry-tray"
+    spawnOnce "/usr/bin/emacs --daemon &"
     -- spawnOnce "element-desktop-nightly"
 
 
