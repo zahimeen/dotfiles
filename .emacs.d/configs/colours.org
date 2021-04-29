@@ -1,0 +1,18 @@
+#+TITLE: Colours
+#+AUTHOR: Zahin Muhaimeen
+#+DESCRIPTION: Colours and syntax highlighing
+
+** Setting the Theme
+I love onedark, but I am looking for a theme that is closer to my XMonad colorscheme. Maybe make my own?
+
+#+begin_src elisp
+(use-package doom-themes)
+(setq doom-themes-enable-bold t
+      doom-themes-enable-italic t)
+(load-theme 'doom-one t)
+#+end_src
+
+** More Syntax Highlighting
+#+begin_src elisp
+(use-package haskell-mode)
+#+end_src

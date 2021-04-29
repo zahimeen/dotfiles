@@ -1,0 +1,90 @@
+#+TITLE: Keybindings
+#+AUTHOR: Zahin Muhaimeen
+#+DESCRIPTION: Setting keybindings in emacs
+
+** Installing and Enabling Evil-Mode
+The default emacs keybindings are painful for my tiny hands. I am also used to using vim so I don't need to remap my musle memory.
+
+#+begin_src elisp
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (evil-mode))
+#+end_src
+
+** Evil-Collection
+This just makes it easier to configure and use evil keybindings in not text editing buffers.
+
+#+begin_src elisp
+(use-package evil-collection
+  :after evil
+  :config
+  (setq evil-collection-mode-list '(dashboard dired ibuffer))
+  (evil-collection-init))
+#+end_src
+
+** 'general.el' For Evil
+Convinient. The only reason I have. I don't even use 'general.el' that much so why am I doing this in the first place.
+
+#+begin_src elisp
+(use-package general
+  :config
+  (general-evil-setup t))
+#+end_src
+
+** Setting up Which Key
+This is just to look cool and have special features that is nothing but bloat. I memorized all my keybindings, but this is just the extra mile.
+
+#+begin_src elisp
+(use-package which-key
+  :init
+  (setq which-key-sort-order #'which-key-key-order-alpha
+        which-key-sort-uppercase-first nil
+        which-key-add-column-padding 1
+        which-key-max-display-columns nil
+        which-key-min-display-lines 6
+        which-key-side-window-slot -10))
+(which-key-mode)
+#+end_src
+
+** Buffer Related Keybindings
+#+begin_src elisp
+(nvmap :prefix "SPC" :state 'normal
+       "b i"   '(ibuffer :which-key "Ibuffer")
+       "b k"   '(kill-current-buffer :which-key "Kill current buffer")
+       "b n"   '(next-buffer :which-key "Next buffer")
+       "b p"   '(previous-buffer :which-key "Previous buffer")
+       "b I"   '(ibuffer-list-buffers :which-key "Ibuffer list buffers")
+       "b K"   '(kill-buffer :which-key "Kill buffer"))
+#+end_src
+
+** Window Related Keybindings
+#+begin_src elisp
+(winner-mode 1)
+(nvmap :prefix "SPC" :state 'normal
+       ;; Window splits
+       "w k"   '(evil-window-delete :which-key "Close window")
+       "w n"   '(evil-window-new :which-key "New window")
+       "w s"   '(evil-window-split :which-key "Horizontal split window")
+       "w v"   '(evil-window-vsplit :which-key "Vertical split window")
+       ;; Window motions
+       "w h"   '(evil-window-left :which-key "Window left")
+       "w j"   '(evil-window-down :which-key "Window down")
+       "w k"   '(evil-window-up :which-key "Window up")
+       "w l"   '(evil-window-right :which-key "Window right")
+       "w w"   '(evil-window-next :which-key "Goto next window")
+       ;; winner mode
+       "w <left>"  '(winner-undo :which-key "Winner undo")
+       "w <right>" '(winner-redo :which-key "Winner redo"))
+#+end_src
+
+** Keybindings for Zooming in and Out
+#+begin_src elisp
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+#+end_src

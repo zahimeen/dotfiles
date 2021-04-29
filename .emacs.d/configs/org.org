@@ -1,0 +1,69 @@
+#+TITLE: Org Mode
+#+AUTHOR: Zahin Muhaimeen
+#+DESCRIPTION: Activating and configuring org mode
+
+** Requiring Org Mode
+How on earth would I configure it otherwise.
+
+#+begin_src elisp
+(require 'org)
+#+end_src
+
+** Configuring Org
+Copied and pasted from DT's config again but I think these are some sane defaults.
+
+#+begin_src elisp
+(add-hook 'org-mode-hook 'org-indent-mode)
+(setq org-directory "~/Org/"
+      org-agenda-files '("~/Org/agenda.org")
+      org-default-notes-file (expand-file-name "notes.org" org-directory)
+      org-ellipsis " ▼ "
+      org-log-done 'time
+      org-journal-dir "~/Org/journal/"
+      org-journal-date-format "%B %d, %Y (%A) "
+      org-journal-file-format "%d-%m-%Y.org"
+      org-hide-emphasis-markers t)
+#+end_src
+
+** Indentation
+Makes things easier in life. Plus, I don't need to unindent to the start of the line to create a new heading.
+
+#+begin_src elisp
+(setq org-src-preserve-indentation nil
+      org-src-tab-acts-natively t
+      org-edit-src-content-indentation 0)
+#+end_src
+
+** Source Code Block Syntax Highlighting
+Mainly for aesthetic purposes.
+
+#+begin_src elisp
+(setq org-src-fontify-natively t
+    org-src-tab-acts-natively t
+    org-confirm-babel-evaluate nil
+    org-edit-src-content-indentation 0)
+#+end_src
+
+** Source Code Block Tag Expansion
+I actually wrote this entire .emacs.d directory in Doom Emacs (without knowing if anything works) and without the '<s' then pressing tab shortcut, I would have gone through a lot of copying and pasting. So, I went back to DT.
+
+#+begin_src elisp
+(use-package org-tempo
+  :ensure nil) ;; tell use-package not to try to install org-tempo since it's already there.
+#+end_src
+
+** No Blank Lines
+DT had it so I am adding it as well. Not really sure what difference it makes though.
+
+#+begin_src elisp
+(setq org-blank-before-new-entry (quote ((heading . nil)
+                                         (plain-list-item . nil))))
+#+end_src
+
+** Enabling Org Bullets
+Instead of disgusting looking asterisks, we get these weird UTF-8 characters to make the file look better. Also DT inspired.
+
+#+begin_src elisp
+(use-package org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
