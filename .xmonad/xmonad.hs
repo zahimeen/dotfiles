@@ -286,7 +286,7 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall.jpeg &"
+    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall2.jpg &"
     spawnOnce "polybar bar &"
     spawnOnce "blueberry-tray"
     spawnOnce "/usr/bin/emacs --daemon &"
