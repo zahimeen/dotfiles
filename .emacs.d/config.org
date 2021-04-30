@@ -3,7 +3,7 @@
 #+DESCRIPTION: Basic configurations to make my text editing life easier
 
 ** Disabling Certain Creations of Unnecessary Files
-I know these files could be very helpful at times and could save me once, but I don't like random files sitting in a folder with no reason.
+I know these files could be very helpful at times and could save me once, but I don't like random files sitting in a folder with no reason. So, this removes the files ending with the ".el~" extension, starting with and ending with "#" files and the ones starting with ".#".
 
 #+begin_src elisp
 (setq make-backup-files nil)
@@ -12,7 +12,7 @@ I know these files could be very helpful at times and could save me once, but I 
 #+end_src
 
 ** Disabling Unnecessary Visual Tools
-All of this just looks disgusting in my opinion. I like my editor clean! Also, who needs this when you have keybindings. 
+All of this just looks disgusting in my opinion. I like my editor clean! Also, who needs this stuff when you know most of the keybindings, or just made your own.
 
 #+begin_src elisp
 (setq inhibit-startup-message t)        ; Disable the startup message
@@ -20,27 +20,6 @@ All of this just looks disgusting in my opinion. I like my editor clean! Also, w
 (tool-bar-mode -1)      ; Disable the toolbar
 (tooltip-mode -1)       ; Disable tooltips
 (menu-bar-mode -1)      ; Disable the menu bar
-#+end_src
-
-** Relative Line Numbers
-I came from Vim, and am used to jumping around with typing a certain number of lines by looking at the relative line numbers. Also, it looks cooler and more confusing for people that don't know WTF is going on. 
-
-#+begin_src elisp
-(global-display-line-numbers-mode t)
-(setq-default display-line-numbers-type 'relative)
-(setq-default display-line-numbers-width 3)
-(setq-default display-line-numbers-widen t)
-(add-hook 'which-key-hook global-display-line-numbers-mode nil)
-#+end_src
-
-** The 'TAB' Key
-So, emacs is the only editor that I have seen that can't tab normally. I like making my code look good so I 'TAB' things to place. I had no choice but to do this. 
-
-#+begin_src elisp
-(setq-default indent-tabs-mode nil
-              tab-width 4
-              tab-stop-list (number-sequence 4 120 4))
-(global-set-key (kbd "TAB") 'tab-to-tab-stop)
 #+end_src
 
 ** Setting the Font Face
@@ -62,15 +41,37 @@ I don't really know how this works, since I just copied it from DT's config. At 
 (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-13"))
 #+end_src
 
-** Line Spacing
+** The 'TAB' Key
+So, emacs is the only editor that I have seen that can't tab normally. I like making my code look good so I 'TAB' things to place. I had no choice but to do this. 
+
+#+begin_src elisp
+(setq-default indent-tabs-mode nil
+              tab-width 4
+              tab-stop-list (number-sequence 4 120 4))
+(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+#+end_src
+
+** Line Related Stuff
+*** Relative Line Numbers
+I came from Vim, and am used to jumping around with typing a certain number of lines by looking at the relative line numbers. Not only this, I am also widening the space between the left side and the line numbers because it was too cramped with higher numbers. Which key has to be clean, so I disable line numbers for it too.
+
+#+begin_src elisp
+(global-display-line-numbers-mode t)
+(setq-default display-line-numbers-type 'relative)
+(setq-default display-line-numbers-width 4)
+(setq-default display-line-numbers-widen t)
+(add-hook 'which-key-hook global-display-line-numbers-mode nil)
+#+end_src
+
+*** Line Spacing
 How much space is added between each line.
 
 #+begin_src elisp
-(setq-default line-spacing 0.3)
+(setq-default line-spacing 0.0)
 #+end_src
 
-** Line Wrapping
-I don't want to see random letters continue to the next line, but rather whole words. I also just want to see lines that cannot fit go on, because it can cause me confusions.
+*** Line Wrapping
+I don't want to see random letters continue to the next line, but rather whole words. I also just want to see lines that cannot fit go on, because it can cause me confusions. However for something like org-mode, I would like for words to be wrapped because I sometimes write my stories in it.
 
 #+begin_src elisp
 (setq-default word-wrap t
@@ -80,8 +81,8 @@ I don't want to see random letters continue to the next line, but rather whole w
 (add-hook 'text-mode-hook #'visual-line-mode)
 #+end_src
 
-** Line Highlighting
-It just adds contrast to the background of the line my cursor is on. The only reason I have this enabled is because it looks good. By the way, I stole most of this from Doom Emacs and tweaked it a bit.
+*** Line Highlighting
+It just adds contrast to the background of the line my cursor is on. The only reason I have this enabled is because it looks good. By the way, I stole this from Doom Emacs and tweaked it a bit.
 
 #+begin_src elisp
 (use-package hl-line

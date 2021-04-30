@@ -2,7 +2,7 @@
 #+AUTHOR: Zahin Muhaimeen
 #+DESCRIPTION: Allows us to install packages quick and easily
 
-* Setup package.el
+** Setup package.el
 #+begin_src elisp
 (require 'package)
 
@@ -16,7 +16,7 @@
   (package-refresh-contents))
 #+end_src
 
-* Use-Package
+** Use-Package
 Install use-package. This is what will be used for configuring, organizing and install packages.
 
 #+begin_src elisp

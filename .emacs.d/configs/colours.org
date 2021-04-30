@@ -12,7 +12,7 @@ I love onedark, but I am looking for a theme that is closer to my XMonad colorsc
 (load-theme 'doom-one t)
 #+end_src
 
-** More Syntax Highlighting
+** More Language Support
 #+begin_src elisp
 (use-package haskell-mode)
 #+end_src

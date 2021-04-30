@@ -15,7 +15,7 @@ The default emacs keybindings are painful for my tiny hands. I am also used to u
   (evil-mode))
 #+end_src
 
-** Evil-Collection
+*** Evil-Collection
 This just makes it easier to configure and use evil keybindings in not text editing buffers.
 
 #+begin_src elisp
@@ -26,8 +26,8 @@ This just makes it easier to configure and use evil keybindings in not text edit
   (evil-collection-init))
 #+end_src
 
-** 'general.el' For Evil
-Convenient. The only reason I have. I don't even use 'general.el' that much so why am I doing this in the first place. 
+*** 'general.el' For Evil
+Convenient. I now use 'nvmap' more and it is way easier to bind keys with it, especially when it comes that I need to do something with the modes in evil.
 
 #+begin_src elisp
 (use-package general
@@ -50,7 +50,9 @@ This is just to look cool and have special features that is nothing but bloat. I
 (which-key-mode)
 #+end_src
 
-** Buffer Related Keybindings
+** Setting Keybindings
+
+*** Buffer Related Keybindings
 I have also created (copied from stackoverflow) a function that skips buffers beggining with "*" when switching buffers.
 
 #+begin_src elisp
@@ -83,7 +85,7 @@ I have also created (copied from stackoverflow) a function that skips buffers be
        "b K"   '(kill-buffer :which-key "Kill buffer"))
 #+end_src
 
-** Window Related Keybindings
+*** Window Related Keybindings
 #+begin_src elisp
 (winner-mode 1)
 (nvmap :prefix "SPC" :state 'normal
@@ -103,7 +105,7 @@ I have also created (copied from stackoverflow) a function that skips buffers be
        "w <right>" '(winner-redo :which-key "Winner redo"))
 #+end_src
 
-** Keybindings for Zooming in and Out
+*** Keybindings for Zooming in and Out
 #+begin_src elisp
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)

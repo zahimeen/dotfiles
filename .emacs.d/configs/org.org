@@ -9,7 +9,7 @@ How on earth would I configure it otherwise.
 (require 'org)
 #+end_src
 
-** Configuring Org
+*** Configuring Org
 Copied and pasted from DT's config again but I think these are some sane defaults.
 
 #+begin_src elisp
@@ -25,7 +25,7 @@ Copied and pasted from DT's config again but I think these are some sane default
       org-hide-emphasis-markers t)
 #+end_src
 
-** Indentation
+*** Indentation
 Makes things easier in life. Plus, I don't need to unindent to the start of the line to create a new heading.
 
 #+begin_src elisp
@@ -34,7 +34,7 @@ Makes things easier in life. Plus, I don't need to unindent to the start of the 
       org-edit-src-content-indentation 0)
 #+end_src
 
-** Source Code Block Syntax Highlighting
+*** Source Code Block Syntax Highlighting
 Mainly for aesthetic purposes.
 
 #+begin_src elisp
@@ -44,7 +44,7 @@ Mainly for aesthetic purposes.
     org-edit-src-content-indentation 0)
 #+end_src
 
-** Source Code Block Tag Expansion
+*** Source Code Block Tag Expansion
 I actually wrote this entire .emacs.d directory in Doom Emacs (without knowing if anything works) and without the '<s' then pressing tab shortcut, I would have gone through a lot of copying and pasting. So, I went back to DT.
 
 #+begin_src elisp
@@ -52,7 +52,7 @@ I actually wrote this entire .emacs.d directory in Doom Emacs (without knowing i
   :ensure nil) ;; tell use-package not to try to install org-tempo since it's already there.
 #+end_src
 
-** No Blank Lines
+*** No Blank Lines
 DT had it so I am adding it as well. Not really sure what difference it makes though.
 
 #+begin_src elisp
@@ -60,7 +60,7 @@ DT had it so I am adding it as well. Not really sure what difference it makes th
                                          (plain-list-item . nil))))
 #+end_src
 
-** Enabling Org Bullets
+*** Enabling Org Bullets
 Instead of disgusting looking asterisks, we get these weird UTF-8 characters to make the file look better. Also DT inspired.
 
 #+begin_src elisp

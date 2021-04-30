@@ -13,7 +13,7 @@ Configuring and installing the doom modeline.
   )
 #+end_src
 
-** Icons
+*** Icons
 Who doesn't like icons everywhere? I sure do.
 
 #+begin_src elisp
