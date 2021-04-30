@@ -1,52 +1,24 @@
-#+TITLE: Config
-#+AUTHOR: Zahin Muhaimeen
-#+DESCRIPTION: Basic configurations to make my text editing life easier
-
-** Disabling Certain Creations of Unnecessary Files
-I know these files could be very helpful at times and could save me once, but I don't like random files sitting in a folder with no reason.
-
-#+begin_src elisp
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
-#+end_src
 
-** Disabling Unnecessary Visual Tools
-All of this just looks disgusting in my opinion. I like my editor clean! Also, who needs this when you have keybindings. 
-
-#+begin_src elisp
 (setq inhibit-startup-message t)        ; Disable the startup message
 (scroll-bar-mode -1)    ; Disable visible scrollbar
 (tool-bar-mode -1)      ; Disable the toolbar
 (tooltip-mode -1)       ; Disable tooltips
 (menu-bar-mode -1)      ; Disable the menu bar
-#+end_src
 
-** Relative Line Numbers
-I came from Vim, and am used to jumping around with typing a certain number of lines by looking at the relative line numbers. Also, it looks cooler and more confusing for people that don't know WTF is going on. 
-
-#+begin_src elisp
 (global-display-line-numbers-mode t)
 (setq-default display-line-numbers-type 'relative)
 (setq-default display-line-numbers-width 3)
 (setq-default display-line-numbers-widen t)
 (add-hook 'which-key-hook global-display-line-numbers-mode nil)
-#+end_src
 
-** The 'TAB' Key
-So, emacs is the only editor that I have seen that can't tab normally. I like making my code look good so I 'TAB' things to place. I had no choice but to do this. 
-
-#+begin_src elisp
 (setq-default indent-tabs-mode nil
               tab-width 4
               tab-stop-list (number-sequence 4 120 4))
 (global-set-key (kbd "TAB") 'tab-to-tab-stop)
-#+end_src
 
-** Setting the Font Face
-I don't really know how this works, since I just copied it from DT's config. At least it does its job. 
-
-#+begin_src elisp
 (set-face-attribute 'default nil :font "FiraCode Nerd Font"
   :height 130
   :weight 'medium)
@@ -60,30 +32,15 @@ I don't really know how this works, since I just copied it from DT's config. At 
   :weight 'medium)
 
 (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-13"))
-#+end_src
 
-** Line Spacing
-How much space is added between each line.
-
-#+begin_src elisp
 (setq-default line-spacing 0.3)
-#+end_src
 
-** Line Wrapping
-I don't want to see random letters continue to the next line, but rather whole words. I also just want to see lines that cannot fit go on, because it can cause me confusions.
-
-#+begin_src elisp
 (setq-default word-wrap t
               truncate-lines t)
 (setq truncate-partial-width-windows nil)
 
 (add-hook 'text-mode-hook #'visual-line-mode)
-#+end_src
 
-** Line Highlighting
-It just adds contrast to the background of the line my cursor is on. The only reason I have this enabled is because it looks good. By the way, I stole most of this from Doom Emacs and tweaked it a bit.
-
-#+begin_src elisp
 (use-package hl-line
   :init
   (defvar global-hl-line-modes
@@ -97,33 +54,17 @@ It just adds contrast to the background of the line my cursor is on. The only re
         global-hl-line-sticky-flag nil)
 
 (global-hl-line-mode)
-#+end_src
 
-** Highlighting Numbers
-It just looks nice. Also Doom Emacs inspired.
-
-#+begin_src elisp
 (use-package highlight-numbers
   :hook ((prog-mode conf-mode) . highlight-numbers-mode)
   :config (setq highlight-numbers-generic-regexp "\\_<[[:digit:]]+\\(?:\\.[0-9]*\\)?\\_>"))
-#+end_src
 
-** Smooth Scrolling
-Scrolling in default emacs is choppy and slow and bad for the eye. So like ThePrimegean says, "coconut oil smooth". Also copied from DT's config. 
-
-#+begin_src elisp
 (setq scroll-conservatively 101) ;; value greater than 100 gets rid of half page jumping
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; how many lines at a time
 ;; (setq mouse-wheel-progressive-speed t) ;; accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-#+end_src
 
-** Icons
-Well we all like to look at pretty stuff, so why not put icons and emoji's in your text editor (I know Emacs is not just a text editor, but that is what I mainly use it as). 
-
-#+begin_src elisp
 (setq global-prettify-symbols-mode t)
 (use-package all-the-icons)
 (use-package emojify
   :hook (after-init . global-emojify-mode))
-#+end_src

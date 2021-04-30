@@ -1,11 +1,3 @@
-#+TITLE: Keybindings
-#+AUTHOR: Zahin Muhaimeen
-#+DESCRIPTION: Setting keybindings in emacs
-
-** Installing and Enabling Evil-Mode
-The default emacs keybindings are painful for my tiny hands. I am also used to using vim so I don't need to remap my musle memory.
-
-#+begin_src elisp
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -13,32 +5,17 @@ The default emacs keybindings are painful for my tiny hands. I am also used to u
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
   (evil-mode))
-#+end_src
 
-** Evil-Collection
-This just makes it easier to configure and use evil keybindings in not text editing buffers.
-
-#+begin_src elisp
 (use-package evil-collection
   :after evil
   :config
   (setq evil-collection-mode-list '(dashboard dired ibuffer))
   (evil-collection-init))
-#+end_src
 
-** 'general.el' For Evil
-Convenient. The only reason I have. I don't even use 'general.el' that much so why am I doing this in the first place. 
-
-#+begin_src elisp
 (use-package general
   :config
   (general-evil-setup t))
-#+end_src
 
-** Setting up Which Key
-This is just to look cool and have special features that is nothing but bloat. I memorized all my keybindings, but this is just the extra mile.
-
-#+begin_src elisp
 (use-package which-key
   :init
   (setq which-key-sort-order #'which-key-key-order-alpha
@@ -48,12 +25,7 @@ This is just to look cool and have special features that is nothing but bloat. I
         which-key-min-display-lines 6
         which-key-side-window-slot -10))
 (which-key-mode)
-#+end_src
 
-** Buffer Related Keybindings
-I have also created (copied from stackoverflow) a function that skips buffers beggining with "*" when switching buffers.
-
-#+begin_src elisp
 (defun my-next-buffer ()
   (interactive)
   (let (( bread-crumb (buffer-name) ))
@@ -81,10 +53,7 @@ I have also created (copied from stackoverflow) a function that skips buffers be
        "b p"   '(my-prev-buffer :which-key "Previous buffer")
        "b I"   '(ibuffer-list-buffers :which-key "Ibuffer list buffers")
        "b K"   '(kill-buffer :which-key "Kill buffer"))
-#+end_src
 
-** Window Related Keybindings
-#+begin_src elisp
 (winner-mode 1)
 (nvmap :prefix "SPC" :state 'normal
        ;; Window splits
@@ -101,12 +70,8 @@ I have also created (copied from stackoverflow) a function that skips buffers be
        ;; winner mode
        "w <left>"  '(winner-undo :which-key "Winner undo")
        "w <right>" '(winner-redo :which-key "Winner redo"))
-#+end_src
 
-** Keybindings for Zooming in and Out
-#+begin_src elisp
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
-#+end_src

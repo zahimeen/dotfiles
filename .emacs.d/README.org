@@ -1,13 +1,11 @@
 #+TITLE: README
 #+AUTHOR: Zahin Muhaimeen
-#+DESCRIPTION: README
 
 * My Emacs Config
 This is my .emacs.d. The reason I switched from neovim to emacs is purely because of org mode. It is by far the killer feature of this program in my opinion!
 
 * TODO Fix Errors
-- [ ] Fix centaur tabs color error
-- [ ] Dashboard bottom-line icon
+No Errors at the Moment
 
 * TODO Add Features
 - [ ] Autocomplete

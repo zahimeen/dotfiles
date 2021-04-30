@@ -1,11 +1,3 @@
-#+TITLE: Emacs Dashboard
-#+AUTHOR: Zahin Muhaimeen
-#+DESCRIPTION: Configuring the dashboard in emacs
-
-** Installing and Configuring Dashboard
-I had a pretty nifty dashboard configuration in my neovim config, so I tried something similar. This still needs some work but it is what it is.
-
-#+begin_src elisp
 (use-package dashboard
     :ensure t
     :init
@@ -26,11 +18,5 @@ I had a pretty nifty dashboard configuration in my neovim config, so I tried som
     (dashboard-setup-startup-hook))
     (dashboard-modify-heading-icons '((recents . "file-text")
                                       (bookmarks . "book")))
-#+end_src
 
-** Startup with Dashboard
-When I am not opening a file with emacs, display dashboard.
-
-#+begin_src elisp
 (setq initial-buffer-choice (lambda () (dashboard-refresh-buffer)))
-#+end_src

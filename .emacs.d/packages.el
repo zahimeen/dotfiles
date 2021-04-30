@@ -1,9 +1,3 @@
-#+TITLE: Packages
-#+AUTHOR: Zahin Muhaimeen
-#+DESCRIPTION: Allows us to install packages quick and easily
-
-* Setup package.el
-#+begin_src elisp
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -14,13 +8,7 @@
 
 (unless package-archive-contents
   (package-refresh-contents))
-#+end_src
 
-* Use-Package
-Install use-package. This is what will be used for configuring, organizing and install packages.
-
-#+begin_src elisp
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (setq use-package-always-ensure t)
-#+end_src
