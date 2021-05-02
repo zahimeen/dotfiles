@@ -67,7 +67,7 @@ I came from Vim, and am used to jumping around with typing a certain number of l
 How much space is added between each line.
 
 #+begin_src elisp
-(setq-default line-spacing 0.0)
+(setq-default line-spacing 0)
 #+end_src
 
 *** Line Wrapping
@@ -117,6 +117,13 @@ Scrolling in default emacs is choppy and slow and bad for the eye. So like ThePr
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; how many lines at a time
 ;; (setq mouse-wheel-progressive-speed t) ;; accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+#+end_src
+
+** Make 'ESC' quit prompts
+It just seems convinient and it makes sense.
+
+#+begin_src elisp
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 #+end_src
 
 ** Icons

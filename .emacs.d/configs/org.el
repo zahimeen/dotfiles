@@ -28,3 +28,8 @@
 
 (use-package org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(nvmap :prefix "SPC" :state 'normal
+    "o a"   '(org-agenda :which-key "Org Agenda")
+    "o s"   '(org-schedule :which-key "Org Schedule")
+    "o d"   '(org-deadline :which-key "Org Deadline"))

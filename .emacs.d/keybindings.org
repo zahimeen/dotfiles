@@ -105,10 +105,17 @@ I have also created (copied from stackoverflow) a function that skips buffers be
        "w <right>" '(winner-redo :which-key "Winner redo"))
 #+end_src
 
-*** Keybindings for Zooming in and Out
+*** Keybindings for Zooming In and Out
 #+begin_src elisp
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+#+end_src
+
+*** Other Keybindings
+#+begin_src elisp
+(nvmap :prefix "SPC" :state 'normal
+    "SPC"      '(counsel-find-file :which-key "Find file")
+    "."        '(counsel-find-file :which-key "Find file"))
 #+end_src

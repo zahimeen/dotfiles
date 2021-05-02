@@ -1,0 +1,36 @@
+#+TITLE: Ivy
+#+AUTHOR: Zahin Muhaimeen
+#+DESCRIPTION: I like better descriptions
+
+** Installation and Configuration
+Who doesn't like better completion and description that makes your programming life 10x easier.
+
+#+begin_src elisp
+(use-package ivy
+  :diminish
+  :bind
+  (("C-c C-r" . ivy-resume)
+   ("C-x B" . ivy-switch-buffer-other-window))
+  :config
+  (ivy-mode 1))
+#+end_src
+
+*** Nice Descriptions
+This gives a description of commands beside the command in M-x, using ivy-rich. 
+
+#+begin_src elisp
+(use-package ivy-rich
+  :custom
+  (ivy-virtual-abbreviate 'full
+   ivy-rich-switch-buffer-align-virtual-buffer t
+   ivy-rich-path-style 'abbrev)
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer
+                               'ivy-rich-switch-buffer-transformer)
+  (ivy-rich-mode 1))
+#+end_src
+
+*** Removes the '^' character at the start of M-x
+#+begin_src elisp
+(setq ivy-initial-inputs-alist nil)
+#+end_src

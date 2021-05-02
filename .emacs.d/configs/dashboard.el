@@ -10,9 +10,9 @@
     (setq dashboard-startup-banner "~/.emacs.d/images/emacs-dash.png")
     (setq dashboard-center-content t)
     (setq dashboard-items '((recents . 5)
-                            ;; (agenda . 5)
+                            (agenda . 5)
                             (bookmarks . 3)))
-                            ;; (projects . 3) get projectile first
+                            ;; (projects . 3)
                             ;; (registers . 3)))
     :config
     (dashboard-setup-startup-hook))

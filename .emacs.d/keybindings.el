@@ -75,3 +75,7 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+
+(nvmap :prefix "SPC" :state 'normal
+    "SPC"      '(counsel-find-file :which-key "Find file")
+    "."        '(counsel-find-file :which-key "Find file"))

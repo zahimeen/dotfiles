@@ -67,3 +67,11 @@ Instead of disgusting looking asterisks, we get these weird UTF-8 characters to 
 (use-package org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 #+end_src
+
+*** Keybindings
+#+begin_src elisp
+(nvmap :prefix "SPC" :state 'normal
+    "o a"   '(org-agenda :which-key "Org Agenda")
+    "o s"   '(org-schedule :which-key "Org Schedule")
+    "o d"   '(org-deadline :which-key "Org Deadline"))
+#+end_src

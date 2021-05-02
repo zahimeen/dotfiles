@@ -3,14 +3,3 @@
 
 * My Emacs Config
 This is my .emacs.d. The reason I switched from neovim to emacs is purely because of org mode. It is by far the killer feature of this program in my opinion!
-
-* TODO Fix Errors
-No Errors at the Moment
-
-* TODO Add Features
-- [ ] Autocomplete
-- [ ] Org Agenda
-- [ ] Projectile project management
-- [ ] Some sort of file tree
-- [ ] Magit
-- [ ] Email client

@@ -8,17 +8,6 @@
 (tooltip-mode -1)       ; Disable tooltips
 (menu-bar-mode -1)      ; Disable the menu bar
 
-(global-display-line-numbers-mode t)
-(setq-default display-line-numbers-type 'relative)
-(setq-default display-line-numbers-width 3)
-(setq-default display-line-numbers-widen t)
-(add-hook 'which-key-hook global-display-line-numbers-mode nil)
-
-(setq-default indent-tabs-mode nil
-              tab-width 4
-              tab-stop-list (number-sequence 4 120 4))
-(global-set-key (kbd "TAB") 'tab-to-tab-stop)
-
 (set-face-attribute 'default nil :font "FiraCode Nerd Font"
   :height 130
   :weight 'medium)
@@ -33,7 +22,18 @@
 
 (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font-13"))
 
-(setq-default line-spacing 0.3)
+(setq-default indent-tabs-mode nil
+              tab-width 4
+              tab-stop-list (number-sequence 4 120 4))
+(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+
+(global-display-line-numbers-mode t)
+(setq-default display-line-numbers-type 'relative)
+(setq-default display-line-numbers-width 4)
+(setq-default display-line-numbers-widen t)
+(add-hook 'which-key-hook global-display-line-numbers-mode nil)
+
+(setq-default line-spacing 0)
 
 (setq-default word-wrap t
               truncate-lines t)
@@ -63,6 +63,8 @@
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; how many lines at a time
 ;; (setq mouse-wheel-progressive-speed t) ;; accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (setq global-prettify-symbols-mode t)
 (use-package all-the-icons)
