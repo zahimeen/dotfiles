@@ -47,4 +47,5 @@
 (nvmap :prefix "SPC" :state 'normal
     "o a"   '(org-agenda :which-key "Org Agenda")
     "o s"   '(org-schedule :which-key "Org Schedule")
-    "o d"   '(org-deadline :which-key "Org Deadline"))
+    "o d"   '(org-deadline :which-key "Org Deadline")
+    "o t"   '(org-toggle-checkbox :which-key "Org Toggle Checkbox"))

@@ -14,7 +14,7 @@ I think one dark is nice, but city lights with transparency is amazing!
 
 ** Transparency
 #+begin_src elisp
-(defvar efs/frame-transparency '(95 . 95))
+(defvar efs/frame-transparency '(85 . 85))
 (set-frame-parameter (selected-frame) 'alpha efs/frame-transparency)
 (add-to-list 'default-frame-alist `(alpha . ,efs/frame-transparency))
 #+end_src
