@@ -52,15 +52,23 @@ So, emacs is the only editor that I have seen that can't tab normally. I like ma
 #+end_src
 
 ** Line Related Stuff
+
 *** Relative Line Numbers
-I came from Vim, and am used to jumping around with typing a certain number of lines by looking at the relative line numbers. Not only this, I am also widening the space between the left side and the line numbers because it was too cramped with higher numbers. Which key has to be clean, so I disable line numbers for it too.
+I came from Vim, and am used to jumping around with typing a certain number of lines by looking at the relative line numbers. Not only this, I am also widening the space between the left side and the line numbers because it was too cramped with higher numbers. Which key has to be clean, so I disable line numbers for it too. But I also don't want line numbers for everthing.
 
 #+begin_src elisp
 (global-display-line-numbers-mode t)
 (setq-default display-line-numbers-type 'relative)
 (setq-default display-line-numbers-width 4)
 (setq-default display-line-numbers-widen t)
-(add-hook 'which-key-hook global-display-line-numbers-mode nil)
+
+;; disable line numbers for some modes
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                shell-mode-hook
+                eshell-mode-hook
+                which-key-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 #+end_src
 
 *** Line Spacing

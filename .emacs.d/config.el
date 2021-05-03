@@ -31,7 +31,14 @@
 (setq-default display-line-numbers-type 'relative)
 (setq-default display-line-numbers-width 4)
 (setq-default display-line-numbers-widen t)
-(add-hook 'which-key-hook global-display-line-numbers-mode nil)
+
+;; disable line numbers for some modes
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                shell-mode-hook
+                eshell-mode-hook
+                which-key-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (setq-default line-spacing 0)
 
