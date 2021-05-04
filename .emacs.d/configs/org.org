@@ -45,7 +45,7 @@ Mainly for aesthetic purposes.
 #+end_src
 
 *** Source Code Block Tag Expansion
-I actually wrote this entire .emacs.d directory in Doom Emacs (without knowing if anything works) and without the '<s' then pressing tab shortcut, I would have gone through a lot of copying and pasting. So, I went back to DT.
+I actually wrote the intial .emacs.d directory in Doom Emacs (without knowing if anything works) and without the '<s' then pressing tab shortcut, I would have gone through a lot of copying and pasting. So, I went back to DT.
 
 #+begin_src elisp
 (use-package org-tempo
@@ -94,5 +94,6 @@ After I looked at how System Crafters had org mode look so nice, being centered 
     "o a"   '(org-agenda :which-key "Org Agenda")
     "o s"   '(org-schedule :which-key "Org Schedule")
     "o d"   '(org-deadline :which-key "Org Deadline")
+    "o o"   '(org-open-at-point :which-key "Org Open Link")
     "o t"   '(org-toggle-checkbox :which-key "Org Toggle Checkbox"))
 #+end_src
