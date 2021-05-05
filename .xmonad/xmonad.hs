@@ -1,17 +1,18 @@
------------------
----  IMPORTS  ---
------------------
+------------------------------------------------------------------------
+---  IMPORTS
+------------------------------------------------------------------------
 
 
 -- Base
 import XMonad
 import System.Exit
-import qualified Codec.Binary.UTF8.String              as UTF8
+import qualified Codec.Binary.UTF8.String as UTF8
 import qualified XMonad.StackSet as W
+
 
     -- Data
 import Data.Monoid
-import qualified Data.Map        as M
+import qualified Data.Map as M
 
     -- Hooks
 import XMonad.Hooks.EwmhDesktops
@@ -32,9 +33,9 @@ import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
 
-------------------
----  DEFAULTS  ---
-------------------
+------------------------------------------------------------------------
+---  DEFAULTS
+------------------------------------------------------------------------
 
 
 myModMask :: KeyMask
@@ -57,9 +58,9 @@ myMenu :: String
 myMenu              = "rofi -show run"
 
 
----------------
----  OTHER  ---
----------------
+------------------------------------------------------------------------
+---  OTHER
+------------------------------------------------------------------------
     
 
 myShowWNameTheme :: SWNConfig
@@ -71,9 +72,9 @@ myShowWNameTheme = def
     }
 
 
----------------
----  MOUSE  ---
----------------
+------------------------------------------------------------------------
+---  MOUSE
+------------------------------------------------------------------------
 
 
 myFocusFollowsMouse :: Bool
@@ -83,9 +84,9 @@ myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
 
-----------------
----  BORDER  ---
-----------------
+------------------------------------------------------------------------
+---  BORDER
+------------------------------------------------------------------------
 
 
 myBorderWidth :: Dimension
@@ -98,9 +99,9 @@ myFocusedBorderColor :: String
 myFocusedBorderColor    = "#ABB2BF"
 
 
--------------------
----  WOKSPACES  ---
--------------------
+------------------------------------------------------------------------
+---  WOKSPACES
+------------------------------------------------------------------------
 
 
 myWorkspaces :: [String]
@@ -108,11 +109,8 @@ myWorkspaces = ["1", "2", "3", "4", "5"]
 
 
 ------------------------------------------------------------------------
-
-
----------------------
----  KEYBINDINGS  ---
----------------------
+---  KEYBINDINGS
+------------------------------------------------------------------------
 
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -132,6 +130,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_d     ), spawn "element-desktop-nightly" ) -- launch element
     
     , ((modm,               xK_a     ), spawn "pavucontrol" ) -- launch audio settings manager
+
+    , ((modm,               xK_s     ), spawn "blueberry" ) -- launch bluetooth manager
 
     --  WINDOW  --
 
@@ -189,11 +189,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 ------------------------------------------------------------------------
-
-
-------------------------
----  MOUSE BINDINGS  ---
-------------------------
+---  MOUSE BINDINGS
+------------------------------------------------------------------------
 
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -209,11 +206,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 ------------------------------------------------------------------------
-
-
-----------------
----  LAYOUT  ---
-----------------
+---  LAYOUT
+------------------------------------------------------------------------
 
 
 myLayout = smartBorders 
@@ -236,10 +230,8 @@ myLayout = smartBorders
 
 
 ------------------------------------------------------------------------
-
----------------------
----  MANAGE HOOK  ---
----------------------
+---  MANAGE HOOK
+------------------------------------------------------------------------
 
 
 myManageHook = composeAll . concat $
@@ -267,9 +259,9 @@ myManageHook = composeAll . concat $
     myIgnores = []
 
 
-------------------
----  LOG HOOK  ---
-------------------
+------------------------------------------------------------------------
+---  LOG HOOK
+------------------------------------------------------------------------
 
 
 myLogHook = fadeInactiveLogHook fadeAmount
@@ -277,11 +269,8 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 
 ------------------------------------------------------------------------
-
-
-----------------------
----  STARTUP HOOK  ---
-----------------------
+---  STARTUP HOOK
+------------------------------------------------------------------------
 
 
 myStartupHook = do
@@ -294,11 +283,8 @@ myStartupHook = do
 
 
 ------------------------------------------------------------------------
-
-
---------------
----  MAIN  ---
---------------
+---  MAIN
+------------------------------------------------------------------------
 
 
 main = xmonad $ docks $ ewmh $ def {
@@ -322,4 +308,4 @@ main = xmonad $ docks $ ewmh $ def {
         handleEventHook    = fullscreenEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
-    }
+        }

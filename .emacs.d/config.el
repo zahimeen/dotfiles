@@ -62,6 +62,10 @@
 
 (global-hl-line-mode)
 
+(use-package hl-todo)
+(global-hl-todo-mode)
+(add-hook 'org-mode-hook #'hl-todo-mode)
+
 (use-package highlight-numbers
   :hook ((prog-mode conf-mode) . highlight-numbers-mode)
   :config (setq highlight-numbers-generic-regexp "\\_<[[:digit:]]+\\(?:\\.[0-9]*\\)?\\_>"))

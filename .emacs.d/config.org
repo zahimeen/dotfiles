@@ -108,6 +108,13 @@ It just adds contrast to the background of the line my cursor is on. The only re
 (global-hl-line-mode)
 #+end_src
 
+*** "TODO" Highlighiting
+#+begin_src elisp
+(use-package hl-todo)
+(global-hl-todo-mode)
+(add-hook 'org-mode-hook #'hl-todo-mode)
+#+end_src
+
 ** Highlighting Numbers
 It just looks nice. Also Doom Emacs inspired.
 

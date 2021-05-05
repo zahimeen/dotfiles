@@ -3,20 +3,49 @@
 #+DESCRIPTION: Colours and syntax highlighing
 
 ** Setting the Theme
-I think one dark is nice, but city lights with transparency is amazing!
+I think one dark is nice, but city lights with transparency is amazing! The theme is not loaded here because of solaire, the contrast thing.
 
 #+begin_src elisp
 (use-package doom-themes)
 (setq doom-themes-enable-bold t
       doom-themes-enable-italic t)
-(load-theme 'doom-city-lights t)
+(load-theme 'doom-one t)
 #+end_src
 
 ** Transparency
 #+begin_src elisp
-(defvar efs/frame-transparency '(85 . 85))
-(set-frame-parameter (selected-frame) 'alpha efs/frame-transparency)
-(add-to-list 'default-frame-alist `(alpha . ,efs/frame-transparency))
+;; (defvar efs/frame-transparency '(85 . 85))
+;; (set-frame-parameter (selected-frame) 'alpha efs/frame-transparency)
+;; (add-to-list 'default-frame-alist `(alpha . ,efs/frame-transparency))
+#+end_src
+
+** Solaire
+Nice contrasting in buffers. This is just the example config on github with a few tweaks. This is commented for now because emacsclient can't seem to handle it.
+
+#+begin_src elisp
+;; ;; A simple config:
+;; (use-package solaire-mode
+;;   :hook (after-init . solaire-global-mode))
+
+
+;; ;; A more complex, more lazy-loaded config
+;; (use-package solaire-mode
+;;   ;; Ensure solaire-mode is running in all solaire-mode buffers
+;;   :hook (change-major-mode . turn-on-solaire-mode)
+;;   ;; ...if you use auto-revert-mode, this prevents solaire-mode from turning
+;;   ;; itself off every time Emacs reverts the file
+;;   :hook (after-revert . turn-on-solaire-mode)
+;;   ;; To enable solaire-mode unconditionally for certain modes:
+;;   :hook (ediff-prepare-buffer . solaire-mode)
+;;   ;; Highlight the minibuffer when it is activated:
+;;   :hook (minibuffer-setup . solaire-mode-in-minibuffer))
+
+;; ;; (solaire-global-mode +1)
+
+;; ;; (add-hook 'after-make-frame-functions
+;; ;;           (lambda (_frame)
+;; ;;             (load-theme 'doom-one t)
+;; ;;             (solaire-mode-swap-bg)))
 #+end_src
 
 ** More Language Support
