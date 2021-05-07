@@ -1,6 +1,7 @@
 (require 'org)
 
 (add-hook 'org-mode-hook 'org-indent-mode)
+(setq-default org-display-custom-times t)
 (setq org-directory "~/Org/"
       org-agenda-files '("~/Org/agenda.org")
       org-default-notes-file (expand-file-name "notes.org" org-directory)
@@ -9,6 +10,7 @@
       org-journal-dir "~/Org/journal/"
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%d-%m-%Y.org"
+      org-time-stamp-custom-formats '("<%d-%m-%Y %a>" . "<%d-%m-%Y %a %H:%M>")
       org-hide-emphasis-markers t)
 
 (setq org-src-preserve-indentation nil
@@ -22,6 +24,9 @@
 
 (use-package org-tempo
   :ensure nil) ;; tell use-package not to try to install org-tempo since it's already there.
+
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
 
 (setq org-blank-before-new-entry (quote ((heading . nil)
                                          (plain-list-item . nil))))

@@ -22,8 +22,12 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "75b8719c741c6d7afa290e0bb394d809f0cc62045b93e1d66cd646907f8e6d43" default))
+ '(git-gutter:added-sign "▎")
+ '(git-gutter:deleted-sign "契")
+ '(git-gutter:modified-sign "▎")
+ '(git-gutter:window-width 2)
  '(package-selected-packages
-   '(solaire-mode hl-todo tree-sitter-langs tree-sitter smart-comment dashboard haskell-mode doom-themes doom-modeline org-bullets emojify all-the-icons highlight-numbers which-key general evil-collection evil use-package bind-key)))
+   '(autothemer solaire-mode hl-todo tree-sitter-langs tree-sitter smart-comment dashboard haskell-mode doom-themes doom-modeline org-bullets emojify all-the-icons highlight-numbers which-key general evil-collection evil use-package bind-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

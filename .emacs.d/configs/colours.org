@@ -3,7 +3,7 @@
 #+DESCRIPTION: Colours and syntax highlighing
 
 ** Setting the Theme
-I think one dark is nice, but city lights with transparency is amazing! The theme is not loaded here because of solaire, the contrast thing.
+So one dark is amazing, and works nicely with my workspace, but it was a bit too light. So, I edited the doom-one theme file in the doom-themes folder, and now it looks much better. But the problem is, I would have change the few lines that I did everytime the package updates or I reinstall this setup.
 
 #+begin_src elisp
 (use-package doom-themes)
