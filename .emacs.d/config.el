@@ -48,6 +48,10 @@
 
 (add-hook 'text-mode-hook #'visual-line-mode)
 
+(use-package hl-todo)
+(global-hl-todo-mode)
+(add-hook 'org-mode-hook #'hl-todo-mode)
+
 (use-package hl-line
   :init
   (defvar global-hl-line-modes
@@ -62,14 +66,6 @@
 
 (global-hl-line-mode)
 
-(use-package hl-todo)
-(global-hl-todo-mode)
-(add-hook 'org-mode-hook #'hl-todo-mode)
-
-(use-package highlight-numbers
-  :hook ((prog-mode conf-mode) . highlight-numbers-mode)
-  :config (setq highlight-numbers-generic-regexp "\\_<[[:digit:]]+\\(?:\\.[0-9]*\\)?\\_>"))
-
 (setq scroll-conservatively 101) ;; value greater than 100 gets rid of half page jumping
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; how many lines at a time
 ;; (setq mouse-wheel-progressive-speed t) ;; accelerate scrolling
@@ -81,3 +77,9 @@
 (use-package all-the-icons)
 (use-package emojify
   :hook (after-init . global-emojify-mode))
+
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+(add-hook 'org-mode-hook 'highlight-numbers-mode)

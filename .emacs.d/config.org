@@ -89,6 +89,15 @@ I don't want to see random letters continue to the next line, but rather whole w
 (add-hook 'text-mode-hook #'visual-line-mode)
 #+end_src
 
+** Higlighting
+
+*** "TODO" Highlighiting
+#+begin_src elisp
+(use-package hl-todo)
+(global-hl-todo-mode)
+(add-hook 'org-mode-hook #'hl-todo-mode)
+#+end_src
+
 *** Line Highlighting
 It just adds contrast to the background of the line my cursor is on. The only reason I have this enabled is because it looks good. By the way, I stole this from Doom Emacs and tweaked it a bit.
 
@@ -108,20 +117,18 @@ It just adds contrast to the background of the line my cursor is on. The only re
 (global-hl-line-mode)
 #+end_src
 
-*** "TODO" Highlighiting
-#+begin_src elisp
-(use-package hl-todo)
-(global-hl-todo-mode)
-(add-hook 'org-mode-hook #'hl-todo-mode)
+*** Matching Parentheses
+#+begin_src emacs-lisp
+(show-paren-mode 1)
+(setq show-paren-delay 0)
 #+end_src
 
-** Highlighting Numbers
-It just looks nice. Also Doom Emacs inspired.
+*** Numbers
+It looks nice, too nice.
 
-#+begin_src elisp
-(use-package highlight-numbers
-  :hook ((prog-mode conf-mode) . highlight-numbers-mode)
-  :config (setq highlight-numbers-generic-regexp "\\_<[[:digit:]]+\\(?:\\.[0-9]*\\)?\\_>"))
+#+begin_src emacs-lisp
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+(add-hook 'org-mode-hook 'highlight-numbers-mode)
 #+end_src
 
 ** Smooth Scrolling
@@ -140,7 +147,7 @@ It just seems convinient and it makes sense.
 #+begin_src elisp
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 #+end_src
-
+    
 ** Icons
 Well we all like to look at pretty stuff, so why not put icons and emoji's in your text editor (I know Emacs is not just a text editor, but that is what I mainly use it as). 
 

@@ -3,13 +3,13 @@
 #+DESCRIPTION: Colours and syntax highlighing
 
 ** Setting the Theme
-So one dark is amazing, and works nicely with my workspace, but it was a bit too light. So, I edited the doom-one theme file in the doom-themes folder, and now it looks much better. But the problem is, I would have change the few lines that I did everytime the package updates or I reinstall this setup.
+So the doom themes may be great and all, but none of them match perfectly with how I set the colors in my set up, based around (and literally copied and pasted) from ChrisAtMachine. So, I decided, I should just bring his Lunar theme to Emacs.
 
 #+begin_src elisp
 (use-package doom-themes)
 (setq doom-themes-enable-bold t
       doom-themes-enable-italic t)
-(load-theme 'doom-one t)
+(load-theme 'lunar t)
 #+end_src
 
 ** Transparency
@@ -17,35 +17,6 @@ So one dark is amazing, and works nicely with my workspace, but it was a bit too
 ;; (defvar efs/frame-transparency '(85 . 85))
 ;; (set-frame-parameter (selected-frame) 'alpha efs/frame-transparency)
 ;; (add-to-list 'default-frame-alist `(alpha . ,efs/frame-transparency))
-#+end_src
-
-** Solaire
-Nice contrasting in buffers. This is just the example config on github with a few tweaks. This is commented for now because emacsclient can't seem to handle it.
-
-#+begin_src elisp
-;; ;; A simple config:
-;; (use-package solaire-mode
-;;   :hook (after-init . solaire-global-mode))
-
-
-;; ;; A more complex, more lazy-loaded config
-;; (use-package solaire-mode
-;;   ;; Ensure solaire-mode is running in all solaire-mode buffers
-;;   :hook (change-major-mode . turn-on-solaire-mode)
-;;   ;; ...if you use auto-revert-mode, this prevents solaire-mode from turning
-;;   ;; itself off every time Emacs reverts the file
-;;   :hook (after-revert . turn-on-solaire-mode)
-;;   ;; To enable solaire-mode unconditionally for certain modes:
-;;   :hook (ediff-prepare-buffer . solaire-mode)
-;;   ;; Highlight the minibuffer when it is activated:
-;;   :hook (minibuffer-setup . solaire-mode-in-minibuffer))
-
-;; ;; (solaire-global-mode +1)
-
-;; ;; (add-hook 'after-make-frame-functions
-;; ;;           (lambda (_frame)
-;; ;;             (load-theme 'doom-one t)
-;; ;;             (solaire-mode-swap-bg)))
 #+end_src
 
 ** More Language Support
