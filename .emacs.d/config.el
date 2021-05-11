@@ -81,5 +81,6 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
+(use-package highlight-numbers)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 (add-hook 'org-mode-hook 'highlight-numbers-mode)

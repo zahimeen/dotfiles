@@ -127,6 +127,7 @@ It just adds contrast to the background of the line my cursor is on. The only re
 It looks nice, too nice.
 
 #+begin_src emacs-lisp
+(use-package highlight-numbers)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 (add-hook 'org-mode-hook 'highlight-numbers-mode)
 #+end_src
