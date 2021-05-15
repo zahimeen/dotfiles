@@ -14,7 +14,7 @@
 (load-org-file "~/.emacs.d/configs/ivy.org")
 (load-org-file "~/.emacs.d/configs/colours.org")
 (load-org-file "~/.emacs.d/configs/git.org")
-;; (load-org-file "~/.emacs.d/configs/lsp.org")
+(load-org-file "~/.emacs.d/configs/lsp.org")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -38,7 +38,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(vterm lsp-mode autothemer solaire-mode hl-todo tree-sitter-langs tree-sitter smart-comment dashboard haskell-mode doom-themes doom-modeline org-bullets emojify all-the-icons highlight-numbers which-key general evil-collection evil use-package bind-key))
+   '(evil-nerd-commenter company vterm lsp-mode autothemer solaire-mode hl-todo tree-sitter-langs tree-sitter smart-comment dashboard haskell-mode doom-themes doom-modeline org-bullets emojify all-the-icons highlight-numbers which-key general evil-collection evil use-package bind-key))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])

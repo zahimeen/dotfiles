@@ -1,0 +1,81 @@
+#+TITLE: LSP
+#+AUTHOR: Zahin Muhaimeen
+#+DESCRIPTION: Language Server Protocol
+
+- I have to give a massive thanks to System Crafters (you can find him on YouTube) by helping me create this config (not me specifically). His "emacs from scratch" series was super helpful and I wouldn't have converted to emacs if it wasn't for his guidance.
+
+** Installation and Configuration
+
+*** lsp-mode
+
+#+begin_src emacs-lisp
+
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-l")
+  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+         (python-mode . lsp-deferred)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp-deferred)
+
+(setq lsp-headerline-breadcrumb-enable nil)
+
+#+end_src
+
+*** lsp-ui
+
+#+begin_src emacs-lisp
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-doc-position 'top))
+
+(setq lsp-ui-imenu-auto-refresh t)
+(setq lsp-ui-imenu-window-width 25)
+
+#+end_src
+
+** Company Mode
+Probably the best and most good looking frontends for things like autocompletion.
+
+#+begin_src emacs-lisp
+
+(use-package company
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<S-tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+#+end_src
+
+** Flymake Mode
+This is the package that creates signs on the fringe to show errors, warnings and notes.
+
+#+begin_src emacs-lisp
+;; (setq flymake-error-bitmap "")
+;; (setq flymake-note-bitmap "")
+;; (setq flymake-warning-bitmap "")
+#+end_src
+
+** Languages
+
+*** Python (pyright)
+
+#+begin_src emacs-lisp
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))))
+
+#+end_src
