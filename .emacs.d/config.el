@@ -13,7 +13,7 @@
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "UbuntuMono Nerd Font"
-  :height 120
+  :height 90
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "FiraCode Nerd Font"
@@ -37,6 +37,7 @@
                 term-mode-hook
                 shell-mode-hook
                 eshell-mode-hook
+                lsp-ui-imenu-mode-hook
                 which-key-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
@@ -75,6 +76,7 @@
 
 (setq global-prettify-symbols-mode t)
 (use-package all-the-icons)
+(setq all-the-icons-scale-factor 1.1)
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 

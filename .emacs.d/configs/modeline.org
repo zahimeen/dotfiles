@@ -19,5 +19,17 @@ Configuring and installing the doom modeline.
 Who doesn't like icons everywhere? I sure do.
 
 #+begin_src elisp
+
 (setq doom-modeline-icon t)
+
+#+end_src
+
+*** Padding
+
+#+begin_src emacs-lisp
+
+(doom-modeline-def-modeline 'main
+  '(bar " " matches buffer-info remote-host buffer-position parrot selection-info)
+  '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))
+
 #+end_src
