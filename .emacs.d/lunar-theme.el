@@ -63,7 +63,10 @@
   (highlight_line       (doom-darken bg 0.17))
   (ivy_hl_cur_line      (doom-darken bg 0.30))
   (org_source_bg        (doom-darken bg 0.10))
-  (doc_strings          grey_alt))
+  (doc_strings          grey_alt)
+  (lsp_face_hl          "#464646")
+  (company_bg           "#4C566A")
+  (company_alt_bg       (doom-darken company_bg 0.15)))
 
  ((default                      (:foreground fg :background bg))
   (fringe                       (:background bg))
@@ -84,14 +87,29 @@
   (show-paren-match             (:foreground error_red :weight 'extra-bold :underline t))
   (show-paren-mismatch          (:foreground warning_orange :weight 'extra-bold))
   (highlight-numbers-number     (:foreground number))
+  (evil-ex-search               (:background grey))
 
   ;; modeline
-  (mode-line                       (:foreground fg :background modeline))
-  (mode-line-inactive              (:background modeline))
-  (doom-modeline-evil-normal-state (:foreground blue :weight 'bold))
-  (doom-modeline-evil-insert-state (:foreground green :weight 'bold))
-  (doom-modeline-evil-visual-state (:foreground red :weight 'bold))
-  (doom-modeline-evil-emacs-state  (:foreground grey :weight 'bold))
+  (mode-line                        (:foreground fg :background modeline))
+  (mode-line-inactive               (:background modeline))
+  (doom-modeline-evil-normal-state  (:foreground blue :weight 'bold))
+  (doom-modeline-evil-insert-state  (:foreground green :weight 'bold))
+  (doom-modeline-evil-visual-state  (:foreground red :weight 'bold))
+  (doom-modeline-evil-emacs-state   (:foreground grey :weight 'bold))
+  (doom-modeline-bar                (:background blue))
+  (doom-modeline-lsp-error          (:foreground error_red))
+  (doom-modeline-lsp-warning        (:foreground warning_orange))
+  (doom-modeline-lsp-success        (:foreground green))
+  (doom-modeline-lsp-running        (:foreground blue))
+  (doom-modeline-info               (:foreground "#ffcc66"))
+  (doom-modeline-warning            (:foreground "#f44747"))
+  (doom-modeline-error              (:foreground "#ff8800"))
+  (doom-modeline-urgent             (:foreground "#94151b"))
+
+  ;; flymake
+  (flymake-note                     (:foreground "#ffcc66" :underline t))
+  (flymake-error                    (:foreground "#f44747" :underline t))
+  (flymake-warning                  (:foreground "#ff8800" :underline t))
 
   ;; org
   (org-level-1              (:foreground green :weight 'bold))
@@ -114,6 +132,31 @@
   (ivy-minibuffer-match-face-2  (:foreground blue))
   (ivy-minibuffer-match-face-3  (:foreground blue))
   (ivy-minibuffer-match-face-4  (:foreground blue))
+
+  ;; lsp
+  (lsp-face-highlight-write     (:foreground fg :background lsp_face_hl :weight 'bold))
+  (lsp-face-highlight-read      (:foreground fg :background lsp_face_hl :weight 'bold))
+  (lsp-ui-doc-background        (:background highlight_line))
+
+  ;; company
+  (company-scrollbar-bg                 (:background company_alt_bg))
+  (company-scrollbar-fg                 (:background white))
+  (company-box-scrollbar                (:background white))
+  (company-preview                      (:foreground company_bg))
+  (company-preview-common               (:foreground white))
+  (company-preview-search               (:background company_bg))
+  (company-tooltip                      (:background company_bg))
+  (company-tooltip-common               (:foreground white))
+  (company-tooltip-common-selection     (:foreground white))
+  (company-tooltip-annotation           (:foreground white))
+  (company-tooltip-annotation-selection (:foreground white))
+  (company-tooltip-selection            (:background blue))
+  (company-tooltip-mouse                (:background blue :foreground nil))
+
+  ;; git gutter
+  (git-gutter:added             (:foreground "#587c0c"))
+  (git-gutter:deleted           (:foreground "#94151b"))
+  (git-gutter:modified          (:foreground "#0c7d9d"))
 
   ))
 
