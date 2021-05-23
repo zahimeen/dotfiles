@@ -86,7 +86,7 @@
   (hl-line                      (:background highlight_line))
   (show-paren-match             (:foreground error_red :weight 'extra-bold :underline t))
   (show-paren-mismatch          (:foreground warning_orange :weight 'extra-bold))
-  (highlight-numbers-number     (:foreground number))
+  (highlight-numbers-number     (:foreground number :weight 'bold))
   (evil-ex-search               (:background grey))
 
   ;; modeline
@@ -124,6 +124,8 @@
   (org-document-title           (:foreground blue :weight 'bold))
   (org-document-info            (:foreground blue :weight 'bold))
   (org-block                    (:foreground fg :background org_source_bg))
+  (org-date                     (:foreground yellow))
+  (org-checkbox-statistics-todo (:foreground purple :weight 'bold))
 
   ;; ivy
   (ivy-highlight-face           (:foreground blue))
