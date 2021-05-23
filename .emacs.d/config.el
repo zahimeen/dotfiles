@@ -13,7 +13,7 @@
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "UbuntuMono Nerd Font"
-  :height 90
+  :height 120
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "FiraCode Nerd Font"
@@ -86,3 +86,6 @@
 (use-package highlight-numbers)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 (add-hook 'org-mode-hook 'highlight-numbers-mode)
+
+(setq evil-insert-state-cursor '(bar . 1))
+(setq evil-insert-state-cursor 'box)

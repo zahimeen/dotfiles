@@ -151,11 +151,12 @@ It just seems convinient and it makes sense.
 #+end_src
 
 ** Evil Insert Mode Cursor
-Just makes the cursor a block instead of a beam.
+A much thinner beam, or a thick boy brick.
 
 #+begin_src emacs-lisp
 
-(setq evil-insert-state-cursor 'box)
+(setq evil-insert-state-cursor '(bar . 1))
+;; (setq evil-insert-state-cursor 'box)
 
 #+end_src
 
