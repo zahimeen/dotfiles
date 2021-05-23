@@ -12,5 +12,3 @@ alias note='nvim ~/vimwiki/index.wiki'
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
-
-neofetch
