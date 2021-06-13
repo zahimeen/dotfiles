@@ -1,0 +1,40 @@
+###  FORMAT  ###
+
+format = '''$time $git_branch$git_commit$git_state$git_status
+[](red)[](green)[](yellow) [ ](cyan) $directory
+'''
+
+###  MISC  ###
+
+add_newline = true
+
+###  MODULES  ##
+
+[time]
+time_format = "%T"
+format = "[ $time]($style)"
+style = "cyan"
+disabled = false
+
+##  GIT  ##
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "[ ×${count}](bold purple)"
+untracked = "[  ×${count}](bold red)"
+staged = "[⏽ ×${count}](bold green)"
+modified = "[凜×${count}](bold blue)"
+deleted = "[﫧×${count}](bold red)"
+format = "$modified $deleted $staged $untracked $ahead"

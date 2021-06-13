@@ -1,4 +1,0 @@
-format = "[ ⬤ ](bold blue)$directory$package$git_branch$git_status$rust"
-
-[line_break]
-disabled = true
