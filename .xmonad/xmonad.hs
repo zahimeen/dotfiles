@@ -6,13 +6,12 @@
 -- Base
 import XMonad
 import System.Exit
-import qualified Codec.Binary.UTF8.String as UTF8
+import qualified Codec.Binary.UTF8.String              as UTF8
 import qualified XMonad.StackSet as W
-
 
     -- Data
 import Data.Monoid
-import qualified Data.Map as M
+import qualified Data.Map        as M
 
     -- Hooks
 import XMonad.Hooks.EwmhDesktops
@@ -41,12 +40,14 @@ import XMonad.Util.Run
 myModMask :: KeyMask
 myModMask           = mod4Mask
 
+myAltMask :: KeyMask
+myAltMask           = mod1Mask
+
 myTerminal :: String
 myTerminal          = "kitty"
 
 myEditor :: String
--- myEditor            = myTerminal ++ " -e nvim"
-myEditor            = "emacsclient -c -a 'emacs'"
+myEditor            = "kitty -e nvim"
 
 myBrowser :: String
 myBrowser           = "brave"
@@ -109,6 +110,9 @@ myWorkspaces = ["1", "2", "3", "4", "5"]
 
 
 ------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
 ---  KEYBINDINGS
 ------------------------------------------------------------------------
 
@@ -128,10 +132,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_Return), spawn myFileBrowser ) -- launch file browser
 
     , ((modm,               xK_d     ), spawn "element-desktop-nightly" ) -- launch element
-    
-    , ((modm,               xK_a     ), spawn "pavucontrol" ) -- launch audio settings manager
 
-    , ((modm,               xK_s     ), spawn "blueberry" ) -- launch bluetooth manager
+    , ((modm,               xK_o     ), spawn "loffice" ) -- launch libreoffice
+
+    --  SETTINGS?  --
+
+    , ((myAltMask,          xK_a     ), spawn "pavucontrol" ) -- launch audio settings manager
+
+    , ((myAltMask,          xK_b     ), spawn "blueberry" ) -- launch bluetooth manager
+
+    , ((myAltMask,          xK_m     ), spawn "alacritty -e ncmpcpp" ) -- launch ncmpcpp (music manager for mpd)
 
     --  WINDOW  --
 
@@ -161,9 +171,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm,               xK_t     ), withFocused $ windows . W.sink) -- push window into tiling
 
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1)) -- increment number of windows in master area
+    -- , ((modm              , xK_comma ), sendMessage (IncMasterN 1)) -- increment number of windows in master area
 
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1))) -- deincrement number of windows in master area
+    -- , ((modm              , xK_period), sendMessage (IncMasterN (-1))) -- deincrement number of windows in master area
 
     --  XMONAD  --
 
@@ -189,6 +199,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 ------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
 ---  MOUSE BINDINGS
 ------------------------------------------------------------------------
 
@@ -206,6 +219,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 ------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
 ---  LAYOUT
 ------------------------------------------------------------------------
 
@@ -213,7 +229,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = smartBorders 
            $ avoidStruts
            $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
-           $ spacingRaw False (Border 14 10 10 10) True (Border 10 10 10 10) True
+           $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
            (tiled)
     where
         -- default tiling algorithm partitions the screen into two panes
@@ -230,6 +246,9 @@ myLayout = smartBorders
 
 
 ------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
 ---  MANAGE HOOK
 ------------------------------------------------------------------------
 
@@ -237,6 +256,7 @@ myLayout = smartBorders
 myManageHook = composeAll . concat $
     [ [isDialog --> doCenterFloat]
     , [className =? c --> doCenterFloat | c <- myCFloats]
+    , [ className =? "Alacritty"              --> doCenterFloat ]
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
@@ -257,6 +277,7 @@ myManageHook = composeAll . concat $
     myTFloats = ["Downloads", "Save As..."]
     myRFloats = []
     myIgnores = []
+    
 
 
 ------------------------------------------------------------------------
@@ -269,17 +290,23 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 
 ------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
 ---  STARTUP HOOK
 ------------------------------------------------------------------------
 
 
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall2.jpg &"
-    spawnOnce "polybar bar &"
-    spawnOnce "blueberry-tray"
-    spawnOnce "/usr/bin/emacs --daemon &"
+    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall3.jpg &"
+    spawnOnce "polybar main &"
+    spawnOnce "mpd &"
+    spawnOnce "blueberry-tray &"
     -- spawnOnce "element-desktop-nightly"
+
+
+------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------
@@ -308,4 +335,5 @@ main = xmonad $ docks $ ewmh $ def {
         handleEventHook    = fullscreenEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
-        }
+    }
+
