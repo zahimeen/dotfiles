@@ -25,7 +25,7 @@ function dirhistory_zle_dirhistory_down() {
 
 ##  HISTORY FILE PATH  ##
 
-HISTFILE=$HOME/.config/zsh/.zsh_history
+HISTFILE="$HOME/"
 
 ##  SIZE OF HISTORY  ##
 
