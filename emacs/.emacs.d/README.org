@@ -1,5 +1,0 @@
-#+TITLE: README
-#+AUTHOR: Zahin Muhaimeen
-
-* My Emacs Config
-This is my .emacs.d. The reason I switched from neovim to emacs is purely because of org mode. It is by far the killer feature of this program in my opinion!
