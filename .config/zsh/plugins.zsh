@@ -13,10 +13,7 @@ function zsh_add_plugin() {
     fi
 }
 
-fpath=($HOME/.config/zsh/plugins/zsh-completions/src $fpath)
-
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-source $HOME/.config/zsh/plugins/dirhistory.plugin.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)

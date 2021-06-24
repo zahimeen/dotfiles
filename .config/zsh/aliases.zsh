@@ -1,6 +1,9 @@
 alias r='clear'
-alias ls='exa -al --color=always --group-directories-first'
+alias l='exa -l --color=always --sort=type'
+alias ls='exa -l --color=always --sort=type'
+alias la='exa -al --color=always --sort=type'
 alias rls="clear ; ls"
+alias rla="clear ; la"
 alias grep='rg'
 alias cat='bat'
 alias rm="rm -i"
@@ -19,14 +22,3 @@ alias gb='git checkout'
 alias nimv="nvim"
 alias nivm="nvim"
 alias vnim="nivm"
-
-##  EMACS  ##
-
-alias emacs="devour emacs"
-alias em="devour emacsclient -c -a 'emacs'"
-alias emdebug="/usr/bin/emacs --debug-init"
-alias emrestart="/usr/bin/emacs --daemon"
-
-# DOOM #
-
-alias doom="$HOME/.emacs.d/bin/doom"
