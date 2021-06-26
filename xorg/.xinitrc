@@ -1,3 +1,3 @@
-exec xmonad
-
 [ -f ~/.xprofile ] && . ~/.xprofile
+
+exec xmonad
