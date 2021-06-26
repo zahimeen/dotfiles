@@ -1,8 +1,7 @@
 alias r='clear'
-alias l='exa -l --color=always --sort=type'
-alias ls='exa -al --color=always --sort=type'
+alias l='exa -a --color=always --sort=type'
+alias ls='exa -a --color=always --sort=type'
 alias rls="clear ; ls"
-alias rla="clear ; la"
 alias grep='rg'
 alias cat='bat'
 alias rm="rm -i"
