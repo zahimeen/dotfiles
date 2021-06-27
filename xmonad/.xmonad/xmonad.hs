@@ -44,7 +44,7 @@ myAltMask :: KeyMask
 myAltMask           = mod1Mask
 
 myTerminal :: String
-myTerminal          = "kitty"
+myTerminal          = "kitty -e zsh"
 
 myEditor :: String
 myEditor            = "kitty -e nvim"
@@ -97,7 +97,7 @@ myNormalBorderColor :: String
 myNormalBorderColor     = "#232732"
 
 myFocusedBorderColor :: String
-myFocusedBorderColor    = "#ABB2BF"
+myFocusedBorderColor    = "#f0f8ff"
 
 
 ------------------------------------------------------------------------
@@ -299,7 +299,7 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wall3.jpg &"
+    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wallpapers/wall3.jpg &"
     spawnOnce "polybar main &"
     spawnOnce "mpd &"
     spawnOnce "blueberry-tray &"
