@@ -1,8 +1,15 @@
-source $HOME/.config/zsh/general.zsh
-source $HOME/.config/zsh/aliases.zsh
-source $HOME/.config/zsh/exports.zsh
-source $HOME/.config/zsh/plugins.zsh
-source $HOME/.config/zsh/history.zsh
-source $HOME/.config/zsh/keybindings.zsh
-source $HOME/.config/zsh/theme.zsh
-source $HOME/.config/zsh/vim.zsh
+## LIB: Base Configuration (Copied from OMZ)
+
+source $ZDOTDIR/lib/history.zsh
+source $ZDOTDIR/lib/clipboard.zsh
+source $ZDOTDIR/lib/git.zsh
+source $ZDOTDIR/lib/completions.zsh
+source $ZDOTDIR/lib/keybindings.zsh
+
+## CONFIGURATION: My Configuration
+
+source $ZDOTDIR/conf/aliases.zsh
+source $ZDOTDIR/conf/exports.zsh
+source $ZDOTDIR/conf/theme.zsh
+source $ZDOTDIR/conf/plugins.zsh
+

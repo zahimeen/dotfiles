@@ -1,8 +1,11 @@
 ###  FORMAT  ###
 
-format = '''$git_branch$git_commit$git_state$git_status
-[](red)[](green)[](yellow) [ ](cyan) $directory
-'''
+# format = '''$git_branch$git_commit$git_state$git_status
+# [](red)[](green)[](yellow) [ ](cyan) $directory
+# '''
+
+format = '[](red)[](green)[](yellow) [ ](cyan) $directory'
+
 ###  MISC  ###
 
 add_newline = true
@@ -15,11 +18,14 @@ format = "[ $time]($style)"
 style = "cyan"
 disabled = false
 
+[directory]
+truncation_length = 1
+
 ##  GIT  ##
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-symbol = " "
+symbol = " "
 style = "bold yellow"
 
 [git_commit]

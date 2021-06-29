@@ -1,3 +1,4 @@
+## History wrapper
 function my_history {
   local clear list
   zparseopts -E c=clear l=list
