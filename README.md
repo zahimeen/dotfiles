@@ -9,3 +9,4 @@ This repository holds all of my relative configurations for certain peices of so
 - Starship (my prompt) {DistroTube intensifies}
 - Kitty (my terminal)
 - Polybar (the bar of bars)
+- Rofi (run launcher)
