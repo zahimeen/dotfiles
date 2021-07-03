@@ -1,3 +1,19 @@
+###  STARTUP  ###
+
+set fish_greeting
+
+###  EXPORTS  ###
+
+set -gx TERM "xterm-256color"
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+
+###  ALIASES  ###
+
+# spark
+# alias clear='/bin/clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
+
 # replacing `ls` with `exa`
 alias ls='exa -a --color=always --sort=type'
 alias rls="clear ; ls"
@@ -21,3 +37,5 @@ alias nivm="nvim"
 alias vnim="nivm"
 alias nvm="nvim"
 
+
+# vim: filetype=fish
