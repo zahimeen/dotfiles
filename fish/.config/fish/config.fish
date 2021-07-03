@@ -37,5 +37,8 @@ alias nivm="nvim"
 alias vnim="nivm"
 alias nvm="nvim"
 
+###  STARTUP  ###
+
+echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo
 
 # vim: filetype=fish
