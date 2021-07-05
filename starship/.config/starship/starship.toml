@@ -4,7 +4,7 @@
 # [](red)[](green)[](yellow) [ ](cyan) $directory
 # '''
 
-format = '[](red)[](green)[](yellow) [ ](cyan) $directory '
+format = '[](red)[](green)[](yellow) [ ](blue) $directory '
 # format_right = '$git_branch$git_status '
 
 ###  MISC  ###
@@ -20,7 +20,7 @@ style = "cyan"
 disabled = false
 
 [directory]
-style = "bold cyan"
+style = "bold blue"
 truncation_length = 1
 format = "[$path]($style)"
 
