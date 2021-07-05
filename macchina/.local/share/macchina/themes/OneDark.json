@@ -1,0 +1,21 @@
+{
+  "name": "OneDark",
+  "bar": {
+    "Custom": {
+      "glyph": "ߋ",
+      "symbol_open": "[",
+      "symbol_close": "]"
+    }
+  },
+  "color": {
+    "Rgb": [231, 198, 100]
+  },
+  "separator": "",
+  "separator_color": {
+    "Rgb": [158, 208, 114]
+  },
+  "spacing": 4,
+  "padding": 2,
+  "block_title": "┤ Carbon ├",
+  "abbreviation": "Alternative"
+}
