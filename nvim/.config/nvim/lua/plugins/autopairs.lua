@@ -1,12 +1,13 @@
 local M = {}
 
 M.config = function()
-    local status_ok, npairs, Rule = pcall(require, "nvim-autopairs", "nvim-autopairs.rule")
+    local status_ok, autopairs = pcall(require, "nvim-autopairs")
     if not status_ok then
         return
     end
+    local npairs = require("nvim-autopairs")
+    local Rule = require("nvim-autopairs.rule")
 
-    -- skip it, if you use another global object
     _G.MUtils = {}
 
     vim.g.completion_confirm_key = ""
@@ -39,6 +40,8 @@ M.config = function()
     })
 
     require("nvim-treesitter.configs").setup({ autopairs = { enable = true } })
+
+    local ts_conds = require("nvim-autopairs.ts-conds")
 end
 
 return M

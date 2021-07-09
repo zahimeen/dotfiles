@@ -14,5 +14,5 @@ let bufferline.maximum_padding = 4
 let bufferline.maximum_length = 30
 let bufferline.semantic_letters = v:true
 let bufferline.letters =
-  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+            \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
 let bufferline.no_name_title = v:null

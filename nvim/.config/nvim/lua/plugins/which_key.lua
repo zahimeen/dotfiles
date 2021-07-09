@@ -103,8 +103,9 @@ local mappings_normal = {
     },
     o = {
         name = "Open/Toggle",
-        e = { "<cmd>lua require'conf-nvimtree'.toggle_tree()<CR>", "Toggle NvimTree" },
-        z = { "<cmd>ZenCommand<CR>", "Toggle Zen" },
+        e = { "<cmd>lua require'plugins.nvimtree'.toggle_tree()<CR>", "Toggle NvimTree" },
+        z = { "<cmd>TZAtaraxis<CR>", "Toggle Zen Ataraxis" },
+        m = { "<cmd>TZMinimalist<CR>", "Toggle Zen Minimalist" },
         d = { "<cmd>Dashboard<CR>", "Open Dashboard" },
     },
     s = {
@@ -130,9 +131,9 @@ local mappings_visual = {
 }
 
 local mappings_normal_non_leader = {
-    ["<S-x>"] = { "<cmd>bdelete<CR>", "Delete Buffer" },
-    ["<TAB>"] = { "<cmd>bnext<CR>", "Next Buffer" },
-    ["<S-TAB>"] = { "<cmd>bprevious<CR>", "Previous Buffer" },
+    ["<S-x>"] = { "<cmd>BufferClose<CR>", "Delete Buffer" },
+    ["<TAB>"] = { "<cmd>BufferNext<CR>", "Next Buffer" },
+    ["<S-TAB>"] = { "<cmd>BufferPrevious<CR>", "Previous Buffer" },
 
     ["gcc"] = { "<Plug>kommentary_line_default", "Comment/Uncomment" },
     ["i"] = { "zzi", "" },

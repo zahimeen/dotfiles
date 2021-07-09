@@ -1,12 +1,8 @@
 require("settings")
-require("plugins")
-
-require("conf-galaxyline")
-require("conf-treesitter")
-require("conf-telescope")
-require("conf-which-key")
-require("conf-format")
-
+require("plugin_list")
+require("highlights")
 require("lsp")
 
-require("highlights")
+require("plugins.galaxyline")
+require("plugins.treesitter")
+require("plugins.which_key")
