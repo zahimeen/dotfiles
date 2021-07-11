@@ -1,3 +1,7 @@
+if require("utils").check_lsp_client_active("jsonls") then
+    return
+end
+
 require("lspconfig").jsonls.setup({
     cmd = {
         "node",

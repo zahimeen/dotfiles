@@ -30,11 +30,19 @@ M.config = function()
                 keep_default_fold_fillchars = true,
                 custome_bg = "",
                 bg_configuration = true,
-                affected_higroups = {NonText = {}, FoldColumn = {}, ColorColumn = {}, VertSplit = {}, StatusLine = {}, StatusLineNC = {}, SignColumn = {}}
+                affected_higroups = {
+                    NonText = {},
+                    FoldColumn = {},
+                    ColorColumn = {},
+                    VertSplit = {},
+                    StatusLine = {},
+                    StatusLineNC = {},
+                    SignColumn = {},
+                },
             },
             focus = {
                 margin_of_error = 5,
-                focus_method = "experimental"
+                focus_method = "experimental",
             },
         },
         integrations = {
@@ -54,9 +62,8 @@ M.config = function()
             on_off_commands = false,
             ui_elements_commands = false,
             cursor_by_mode = false,
-        }
+        },
     })
 end
 
 return M
-

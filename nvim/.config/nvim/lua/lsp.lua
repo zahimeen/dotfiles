@@ -104,7 +104,7 @@ end
 
 function lsp_config.tsserver_on_attach(client, bufnr)
     -- lsp_config.common_on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_formatting = true
 end
 
 require("utils").define_augroups({

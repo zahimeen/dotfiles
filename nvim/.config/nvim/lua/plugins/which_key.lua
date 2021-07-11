@@ -81,9 +81,9 @@ local mappings_normal = {
 
     b = {
         name = "Buffers",
-        d = { "<cmd>bdelete<CR>", "Delete Buffer" },
-        n = { "<cmd>bnext<CR>", "Next Buffer" },
-        p = { "<cmd>bprevious<CR>", "Previous Buffer" },
+        d = { "<cmd>BufferClose<CR>", "Delete Buffer" },
+        n = { "<cmd>BufferNext<CR>", "Next Buffer" },
+        p = { "<cmd>BufferPrevious<CR>", "Previous Buffer" },
     },
     w = {
         name = "Window",
@@ -99,6 +99,7 @@ local mappings_normal = {
         f = { "<cmd>Telescope find_files<CR>", "Find File" },
         r = { "<cmd>Telescope oldfiles<CR>", "Recent File" },
         w = { "<cmd>Telescope live_grep<CR>", "Find File With Word" },
+        g = { "<cmd>Telescope git_files<CR>", "Find Files In Git Repo" },
         n = { "<cmd>DashboardNewFile<CR>", "New File" },
     },
     o = {
@@ -125,9 +126,6 @@ local mappings_insert = {
 local mappings_visual = {
     [">"] = { ">gv", "" },
     ["<"] = { "<gv", "" },
-
-    ["<leader>/"] = { "<Plug>kommentary_visual_default", "Comment/Uncomment" },
-    ["gc"] = { "<Plug>kommentary_visual_default", "Comment/Uncomment" },
 }
 
 local mappings_normal_non_leader = {
@@ -135,7 +133,6 @@ local mappings_normal_non_leader = {
     ["<TAB>"] = { "<cmd>BufferNext<CR>", "Next Buffer" },
     ["<S-TAB>"] = { "<cmd>BufferPrevious<CR>", "Previous Buffer" },
 
-    ["gcc"] = { "<Plug>kommentary_line_default", "Comment/Uncomment" },
     ["i"] = { "zzi", "" },
 
     ["<C-l>"] = { "<cmd>vnew term://" .. SHELL .. " <CR>", "Open Vertical Terminal" },

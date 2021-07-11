@@ -15,6 +15,7 @@ cmd('let &titleold="' .. TERMINAL .. '"')
 cmd("set inccommand=split")
 cmd("set iskeyword+=-")
 cmd("set whichwrap+=<,>,[,],h,l")
+cmd("set guicursor=")
 
 --- SETTINGS ---
 
