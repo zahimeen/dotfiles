@@ -25,7 +25,7 @@ M.config = function()
 
     g.dashboard_custom_footer = {
         "   ",
-        "  Emacs Is Slower Than A Snale!",
+        "  VSCode Is Slower Than A Snale!",
     }
 end
 

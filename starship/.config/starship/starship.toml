@@ -9,7 +9,7 @@ format = '[](red)[](green)[](yellow) [ ](blue) $directory '
 
 ###  MISC  ###
 
-add_newline = true
+add_newline = false
 
 ###  MODULES  ##
 

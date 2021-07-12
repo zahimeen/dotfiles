@@ -1,1 +1,4 @@
 unsetopt BEEP
+
+# startup
+macchina
