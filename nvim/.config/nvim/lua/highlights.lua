@@ -174,11 +174,15 @@ cmd("hi BufferInactiveTarget gui=bold,italic")
 cmd("hi BufferVisibleTarget gui=bold,italic")
 
 -- dashboard
-
 fg("DashboardHeader", grey_fg)
 fg("DashboardCenter", grey_fg)
 fg("DashboardShortcut", grey_fg)
 fg("DashboardFooter", grey_fg)
+
+-- gitsigns
+fg_bg("GitSignsAdd", green, black)
+fg_bg("GitSignsDelete", red, black)
+fg_bg("GitSignsChange", blue, black)
 
 bg("Normal", black)
 bg("NormalFloat", black)

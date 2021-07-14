@@ -39,7 +39,12 @@ return packer.startup(function()
     })
 
     -- Status Line
-    use("glepnir/galaxyline.nvim")
+    use({
+        "glepnir/galaxyline.nvim",
+        config = function()
+            require("plugins.galaxyline").config()
+        end,
+    })
 
     -- Bufferline
     use({
@@ -65,7 +70,13 @@ return packer.startup(function()
     })
 
     -- Treesitter
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function()
+            require("plugins.treesitter").config()
+        end,
+    })
 
     -- Dashboard
     use({
@@ -81,7 +92,12 @@ return packer.startup(function()
     use({ "kyazdani42/nvim-web-devicons" })
 
     -- Keybindings
-    use({ "folke/which-key.nvim" })
+    use({
+        "folke/which-key.nvim",
+        config = function()
+            require("plugins.which_key").config()
+        end,
+    })
 
     -- Indent Guidelines
     use({
@@ -135,17 +151,18 @@ return packer.startup(function()
         "mhartington/formatter.nvim",
         event = "BufWinEnter",
         config = function()
-            vim.api.nvim_exec(
-                [[
-            augroup FormatAutogroup
-                autocmd!
-                autocmd BufWritePost * FormatWrite
-            augroup END
-            ]],
-                true
-            )
             require("plugins.formatter").config()
         end,
+    })
+
+    -- Git Signs
+    use({
+        "lewis6991/gitsigns.nvim",
+
+        config = function()
+            require("plugins.gitsigns").config()
+        end,
+        event = "BufRead",
     })
 end, {
 

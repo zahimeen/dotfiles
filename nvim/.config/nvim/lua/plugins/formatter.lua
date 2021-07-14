@@ -51,6 +51,16 @@ M.config = function()
             },
         },
     })
+
+    require("utils").define_augroups({
+        autoformat = {
+            {
+                "BufWritePost",
+                "*",
+                ":silent FormatWrite",
+            },
+        },
+    })
 end
 
 return M
