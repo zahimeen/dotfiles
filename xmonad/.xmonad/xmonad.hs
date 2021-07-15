@@ -23,9 +23,9 @@ import XMonad.Hooks.ManageHelpers
     -- Layout
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
-import XMonad.Layout.ShowWName
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
+import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 
     -- Utilities
 import XMonad.Util.SpawnOnce
@@ -56,21 +56,7 @@ myFileBrowser :: String
 myFileBrowser       = "thunar"
 
 myMenu :: String
-myMenu              = "rofi -show run"
-
-
-------------------------------------------------------------------------
----  OTHER
-------------------------------------------------------------------------
-    
-
-myShowWNameTheme :: SWNConfig
-myShowWNameTheme = def
-    { swn_font              = "xft:Ubuntu:bold:size=60"
-    , swn_fade              = 1.0
-    , swn_bgcolor           = "#232731"
-    , swn_color             = "#81a1c1"
-    }
+myMenu              = "rofi -show run -theme $HOME/.config/rofi/themes/launcher.rasi"
 
 
 ------------------------------------------------------------------------
@@ -143,6 +129,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((myAltMask,          xK_m     ), spawn "alacritty -e ncmpcpp" ) -- launch ncmpcpp (music manager for mpd)
 
+    , ((modm,          xK_space     ), sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts ) -- launch ncmpcpp (music manager for mpd)
+
     --  WINDOW  --
 
     , ((modm .|. shiftMask, xK_c     ), kill ) -- close focused window
@@ -161,7 +149,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- , ((modm,               xK_Return), windows W.swapMaster) -- swap focused window and master window
 
-    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  ) -- swap focused window and next window 
+    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  ) -- swap focused window and next window
 
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    ) -- swap focused window and previous window
 
@@ -226,23 +214,10 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 
 
-myLayout = smartBorders 
-           $ avoidStruts
-           $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
-           $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
-           (tiled)
+myLayout = avoidStruts $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) (smartBorders (mySpacing (Tall 1 0.03 0.5)))
+        ||| avoidStruts (Tall 1 0.03 0.5)
     where
-        -- default tiling algorithm partitions the screen into two panes
-        tiled   = Tall nmaster delta ratio
-
-        -- The default number of windows in the master pane
-        nmaster = 1
-
-        -- Default proportion of screen occupied by master pane
-        ratio   = 1/2
-
-        -- Percent of screen to increment by when resizing panes
-        delta   = 3/100
+        mySpacing   = spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
 
 
 ------------------------------------------------------------------------
@@ -260,6 +235,7 @@ myManageHook = composeAll . concat $
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
+    , [isFullscreen -->  doFullFloat]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61612" | x <- my1Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61899" | x <- my2Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61947" | x <- my3Shifts]
@@ -277,7 +253,7 @@ myManageHook = composeAll . concat $
     myTFloats = ["Downloads", "Save As..."]
     myRFloats = []
     myIgnores = []
-    
+
 
 
 ------------------------------------------------------------------------
@@ -299,11 +275,11 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "xwallpaper --zoom $HOME/.xmonad/wallpapers/wall3.jpg &"
+    spawnOnce "nitrogen --restore &"
     spawnOnce "polybar main &"
     spawnOnce "mpd &"
-    spawnOnce "blueberry-tray &"
-    -- spawnOnce "element-desktop-nightly"
+    spawnOnce "blueman-applet &"
+    spawnOnce "nm-applet &"
 
 
 ------------------------------------------------------------------------
@@ -330,7 +306,8 @@ main = xmonad $ docks $ ewmh $ def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = showWName' myShowWNameTheme $ myLayout ||| noBorders Full,
+        -- layoutHook         = myLayout ||| noBorders Full,
+        layoutHook         = myLayout,
         manageHook         = myManageHook,
         handleEventHook    = fullscreenEventHook,
         logHook            = myLogHook,
