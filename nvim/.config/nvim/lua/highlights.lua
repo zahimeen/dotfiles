@@ -184,7 +184,11 @@ fg_bg("GitSignsAdd", green, black)
 fg_bg("GitSignsDelete", red, black)
 fg_bg("GitSignsChange", blue, black)
 
+-- toggleterm
+bg("ToggleTermNormal", darker_black)
+bg("ToggleTermBorder", line)
+
 bg("Normal", black)
 bg("NormalFloat", black)
-
 fg("CursorLineNr", white)
+bg("StatusLineNC", "#22262e")

@@ -164,6 +164,15 @@ return packer.startup(function()
         end,
         event = "BufRead",
     })
+
+    -- ToggleTerm
+    use({
+        "akinsho/nvim-toggleterm.lua",
+        cmd = { "ToggleTerm" },
+        config = function()
+            require("plugins.toggleterm").config()
+        end,
+    })
 end, {
 
     display = {

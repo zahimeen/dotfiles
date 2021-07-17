@@ -3,7 +3,6 @@
 DATA_PATH = vim.fn.stdpath("data")
 CACHE_PATH = vim.fn.stdpath("cache")
 TERMINAL = vim.fn.expand("$TERMINAL")
-SHELL = "fish"
 
 local cmd = vim.cmd
 local opt = vim.opt
@@ -25,12 +24,14 @@ opt.cmdheight = 2 -- more space in the neovim command line for displaying messag
 opt.completeopt = { "menuone", "noselect" }
 opt.conceallevel = 0 -- so that `` is visible in markdown files
 opt.fileencoding = "utf-8" -- the encoding written to a file
+opt.foldmethod = "marker" -- how folds are defined in text files
 opt.guifont = "Iosevka Nerd Font:h20" -- the font used in graphical neovim applications
 opt.hidden = true -- required to keep multiple buffers and open multiple buffers
 opt.hlsearch = false -- highlight all matches on previous search pattern
 opt.ignorecase = true -- ignore case in search patterns
 opt.mouse = "a" -- allow the mouse to be used in neovim
 opt.pumheight = 10 -- pop up menu height
+opt.shell = "zsh" -- the shell used in terminal applications in neovim
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.showtabline = 2 -- always show tabs
 opt.smartcase = true -- smart case

@@ -21,11 +21,11 @@ M.config = function()
         },
         modes = {
             ataraxis = {
-                left_padding = 24,
-                right_padding = 24,
-                top_padding = 0,
-                bottom_padding = 0,
-                ideal_writing_area_width = 0,
+                left_padding = 20,
+                right_padding = 20,
+                top_padding = 1,
+                bottom_padding = 1,
+                ideal_writing_area_width = { 0 },
                 just_do_it_for_me = false,
                 keep_default_fold_fillchars = true,
                 custome_bg = "",

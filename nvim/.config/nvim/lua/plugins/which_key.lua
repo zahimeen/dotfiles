@@ -109,6 +109,7 @@ M.config = function()
             z = { "<cmd>TZAtaraxis<CR>", "Toggle Zen Ataraxis" },
             m = { "<cmd>TZMinimalist<CR>", "Toggle Zen Minimalist" },
             d = { "<cmd>Dashboard<CR>", "Open Dashboard" },
+            t = { "<cmd>ToggleTerm<CR>", "Open Terminal" },
         },
         s = {
             name = "Session",
@@ -135,9 +136,6 @@ M.config = function()
         ["<S-TAB>"] = { "<cmd>BufferPrevious<CR>", "Previous Buffer" },
 
         ["i"] = { "zzi", "" },
-
-        ["<C-l>"] = { "<cmd>vnew term://" .. SHELL .. " <CR>", "Open Vertical Terminal" },
-        ["<C-s>"] = { "<cmd>split term://" .. SHELL .. " | resize 10 <CR>", "Open Split Terminal" },
     }
 
     ---  MAKE WHICH KEY READ THE KEYBINDINGS  ---
