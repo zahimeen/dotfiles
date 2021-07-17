@@ -5,8 +5,9 @@ This repository holds all of my relative configurations for certain peices of so
 ## Main Software
 
 - XMonad (my tiling window manager) {DistroTube intensifies}
-- Fish   (my main shell) {DistroTube intensifies}
+- Zsh   (my shell)
 - Starship (my prompt) {DistroTube intensifies}
 - Kitty (my terminal)
 - Polybar (the bar of bars)
 - Rofi (run launcher)
+- Neovim (my text editor)
