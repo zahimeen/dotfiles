@@ -77,13 +77,13 @@ myClickJustFocuses = False
 
 
 myBorderWidth :: Dimension
-myBorderWidth           = 2
+myBorderWidth           = 1
 
 myNormalBorderColor :: String
 myNormalBorderColor     = "#232732"
 
 myFocusedBorderColor :: String
-myFocusedBorderColor    = "#f0f8ff"
+myFocusedBorderColor    = "#cccccc"
 
 
 ------------------------------------------------------------------------
@@ -128,8 +128,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((myAltMask,          xK_b     ), spawn "blueberry" ) -- launch bluetooth manager
 
     , ((myAltMask,          xK_m     ), spawn "alacritty -e ncmpcpp" ) -- launch ncmpcpp (music manager for mpd)
-
-    , ((modm,          xK_space     ), sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts ) -- launch ncmpcpp (music manager for mpd)
 
     --  WINDOW  --
 
@@ -214,8 +212,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 
 
-myLayout = avoidStruts $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) (smartBorders (mySpacing (Tall 1 0.03 0.5)))
+myLayout = mkToggle (NBFULL ?? NOBORDERS ?? EOT) $ avoidStruts (smartBorders (mySpacing (Tall 1 0.03 0.5)))
         ||| avoidStruts (Tall 1 0.03 0.5)
+        ||| noBorders (Full)
     where
         mySpacing   = spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
 
@@ -313,4 +312,3 @@ main = xmonad $ docks $ ewmh $ def {
         logHook            = myLogHook,
         startupHook        = myStartupHook
     }
-
