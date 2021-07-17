@@ -1,40 +1,45 @@
 ###  FORMAT  ###
 
-# format = '''$git_branch$git_commit$git_state$git_status
-# [](red)[](green)[](yellow) [ ](cyan) $directory
-# '''
+format = '[](bg:#464347 fg:#1e222a)$username$directory$git_branch$git_status$character'
+add_newline = true
 
-format = '[](red)[](green)[](yellow) [ ](blue) $directory '
-# format_right = '$git_branch$git_status '
+###  MODULES  ###
 
-###  MISC  ###
+[character]
+success_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
+error_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
+vicmd_symbol = "[[](bg:#1e222a fg:#464347)[](bg:#464347 fg:#1e222a)](bold bg:#6f6a70 fg:#1e222a)"
+format = "$symbol"
 
-add_newline = false
-
-###  MODULES  ##
-
-[time]
-time_format = "%T"
-format = "[ $time]($style)"
-style = "cyan"
-disabled = false
+[username]
+style_user = "bold bg:purple fg:#1e222a"
+style_root = "bold red"
+show_always = true
+format = "[](bg:purple fg:#464347)[ $user ]($style)[](bg:#464347 fg:purple)"
 
 [directory]
-style = "bold blue"
+style = "bold bg:blue fg:#1e222a"
+read_only = " "
+read_only_style = "bold bg:blue fg:#282c34"
 truncation_length = 1
-format = "[$path]($style)"
-
-##  GIT  ##
-
-[git_branch]
-format = "[$symbol$branch]($style)"
-symbol = ""
-style = "bold yellow"
+format = "[](bg:blue fg:#464347)[ $path ]($style)[$read_only]($read_only_style)[](bg:#464347 fg:blue)"
 
 [git_status]
-diverged = " [李${ahead_count} ${behind_count}](bold magenta)"
-untracked = " [ ${count}](bold yellow)"
-staged = " [⏽${count}](bold green)"
-modified = "[凜${count}](bold blue)"
-deleted = " [﫧${count}](bold red)"
-format = " $modified$deleted$staged$untracked$diverged"
+style = "bold bg:red fg:#1e222a"
+stashed = " ${count}"
+ahead = "ﲗ ${count}"
+behind = "ﲔ ${count}"
+diverged = "李 ${ahead_count} ${behind_count}"
+conflicted = "${count}"
+deleted = " ${count}"
+renamed = "﫦${count}"
+modified = " 凜${count}"
+staged = "  ${count}"
+untracked = "  ${count}"
+disabled = true
+format = "[](bg:red fg:#464347)[ $stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind ]($style)[](bg:#464347 fg:red)"
+
+[git_branch]
+style = "bold bg:green fg:#1e222a"
+symbol = ""
+format = "[](bg:green fg:#464347)[ $branch ]($style)[](bg:#464347 fg:green)"
