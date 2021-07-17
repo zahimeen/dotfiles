@@ -1,8 +1,6 @@
 ## LIB: Base Configuration (Copied from OMZ)
 
 source $ZDOTDIR/lib/history.zsh
-source $ZDOTDIR/lib/clipboard.zsh
-source $ZDOTDIR/lib/git.zsh
 source $ZDOTDIR/lib/completions.zsh
 source $ZDOTDIR/lib/keybindings.zsh
 

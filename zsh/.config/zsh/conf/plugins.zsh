@@ -15,6 +15,7 @@ function zsh_add_plugin() {
 
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "skywind3000/z.lua"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 

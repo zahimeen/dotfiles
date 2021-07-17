@@ -9,8 +9,7 @@ alias rm='rm -i'
 
 # git
 alias gs='git status'
-alias gc='git commit'
-alias gcm='git commit -m'
+alias gc='git commit -S'
 alias gp='git push'
 alias ga='git add'
 alias gb='git checkout'
