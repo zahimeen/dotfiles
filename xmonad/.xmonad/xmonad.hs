@@ -8,9 +8,11 @@ import XMonad
 import System.Exit
 import qualified Codec.Binary.UTF8.String              as UTF8
 import qualified XMonad.StackSet as W
+import Control.Monad ( join, when )
 
     -- Data
 import Data.Monoid
+import Data.Maybe (maybeToList)
 import qualified Data.Map        as M
 
     -- Hooks
@@ -25,7 +27,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
-import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
+import XMonad.Layout.Gaps
 
     -- Utilities
 import XMonad.Util.SpawnOnce
@@ -216,7 +218,23 @@ myLayout = mkToggle (NBFULL ?? NOBORDERS ?? EOT) $ avoidStruts (smartBorders (my
         ||| avoidStruts (Tall 1 0.03 0.5)
         ||| noBorders (Full)
     where
-        mySpacing   = spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True
+        mySpacing   = spacingRaw False (Border 25 25 25 25) True (Border 5 5 5 5) True
+
+addNETSupported :: Atom -> X ()
+addNETSupported x   = withDisplay $ \dpy -> do
+    r               <- asks theRoot
+    a_NET_SUPPORTED <- getAtom "_NET_SUPPORTED"
+    a               <- getAtom "ATOM"
+    liftIO $ do
+       sup <- (join . maybeToList) <$> getWindowProperty32 dpy a_NET_SUPPORTED r
+       when (fromIntegral x `notElem` sup) $
+         changeProperty32 dpy r a_NET_SUPPORTED a propModeAppend [fromIntegral x]
+
+addEWMHFullscreen :: X ()
+addEWMHFullscreen   = do
+    wms <- getAtom "_NET_WM_STATE"
+    wfs <- getAtom "_NET_WM_STATE_FULLSCREEN"
+    mapM_ addNETSupported [wms, wfs]
 
 
 ------------------------------------------------------------------------
@@ -290,25 +308,24 @@ myStartupHook = do
 
 
 main = xmonad $ docks $ ewmh $ def {
-      -- simple stuff
-        terminal           = myTerminal,
-        focusFollowsMouse  = myFocusFollowsMouse,
-        clickJustFocuses   = myClickJustFocuses,
-        borderWidth        = myBorderWidth,
-        modMask            = myModMask,
-        workspaces         = myWorkspaces,
-        normalBorderColor  = myNormalBorderColor,
-        focusedBorderColor = myFocusedBorderColor,
+    -- simple stuff
+    terminal           = myTerminal,
+    focusFollowsMouse  = myFocusFollowsMouse,
+    clickJustFocuses   = myClickJustFocuses,
+    borderWidth        = myBorderWidth,
+    modMask            = myModMask,
+    workspaces         = myWorkspaces,
+    normalBorderColor  = myNormalBorderColor,
+    focusedBorderColor = myFocusedBorderColor,
 
-      -- key bindings
-        keys               = myKeys,
-        mouseBindings      = myMouseBindings,
+    -- key bindings
+    keys               = myKeys,
+    mouseBindings      = myMouseBindings,
 
-      -- hooks, layouts
-        -- layoutHook         = myLayout ||| noBorders Full,
-        layoutHook         = myLayout,
-        manageHook         = myManageHook,
-        handleEventHook    = fullscreenEventHook,
-        logHook            = myLogHook,
-        startupHook        = myStartupHook
-    }
+    -- hooks, layouts
+    layoutHook         = myLayout,
+    manageHook         = myManageHook,
+    handleEventHook    = fullscreenEventHook,
+    logHook            = myLogHook,
+    startupHook        = myStartupHook >> addEWMHFullscreen    
+}
