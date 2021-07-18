@@ -8,7 +8,7 @@ add_newline = true
 [character]
 success_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
 error_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
-vicmd_symbol = "[[](bg:#1e222a fg:#464347)[](bg:#464347 fg:#1e222a)](bold bg:#6f6a70 fg:#1e222a)"
+vicmd_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
 format = "$symbol"
 
 [username]

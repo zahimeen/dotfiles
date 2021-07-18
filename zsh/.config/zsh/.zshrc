@@ -3,6 +3,7 @@
 source $ZDOTDIR/lib/history.zsh
 source $ZDOTDIR/lib/completions.zsh
 source $ZDOTDIR/lib/keybindings.zsh
+source $ZDOTDIR/lib/vim.zsh
 
 ## CONFIGURATION: My Configuration
 
