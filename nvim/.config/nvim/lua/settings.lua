@@ -21,6 +21,7 @@ cmd("set whichwrap+=<,>,[,],h,l")
 opt.backup = false -- creates a backup file
 opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+opt.colorcolumn = "80" -- highlights the 80 character line
 opt.completeopt = { "menuone", "noselect" }
 opt.conceallevel = 0 -- so that `` is visible in markdown files
 opt.fileencoding = "utf-8" -- the encoding written to a file

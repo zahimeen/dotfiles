@@ -172,6 +172,7 @@ fg_bg("BufferVisibleIndex", grey, black2)
 cmd("hi BufferCurrentTarget gui=bold,italic")
 cmd("hi BufferInactiveTarget gui=bold,italic")
 cmd("hi BufferVisibleTarget gui=bold,italic")
+cmd("hi Comment gui=italic")
 
 -- dashboard
 fg("DashboardHeader", grey_fg)
