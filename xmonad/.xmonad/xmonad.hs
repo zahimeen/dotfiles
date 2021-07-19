@@ -5,15 +5,15 @@
 
 -- Base
 import XMonad
-import System.Exit
-import qualified Codec.Binary.UTF8.String              as UTF8
+import System.Exit (exitSuccess)
+import qualified Codec.Binary.UTF8.String as UTF8
 import qualified XMonad.StackSet as W
 import Control.Monad ( join, when )
 
     -- Data
 import Data.Monoid
 import Data.Maybe (maybeToList)
-import qualified Data.Map        as M
+import qualified Data.Map as M
 
     -- Hooks
 import XMonad.Hooks.EwmhDesktops
@@ -26,12 +26,16 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
 import XMonad.Layout.MultiToggle
-import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Gaps
+import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL, MIRROR, NOBORDERS))
+import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
+import XMonad.Layout.ResizableTile
 
     -- Utilities
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
+import XMonad.Util.EZConfig (additionalKeysP)
+
 
 
 ------------------------------------------------------------------------
@@ -42,23 +46,14 @@ import XMonad.Util.Run
 myModMask :: KeyMask
 myModMask           = mod4Mask
 
-myAltMask :: KeyMask
-myAltMask           = mod1Mask
-
 myTerminal :: String
 myTerminal          = "kitty -e zsh"
-
-myEditor :: String
-myEditor            = "kitty -e nvim"
 
 myBrowser :: String
 myBrowser           = "brave"
 
-myFileBrowser :: String
-myFileBrowser       = "thunar"
-
 myMenu :: String
-myMenu              = "rofi -show run -theme $HOME/.config/rofi/themes/launcher.rasi"
+myMenu              = "rofi -theme launcher.rasi"
 
 
 ------------------------------------------------------------------------
@@ -70,7 +65,7 @@ myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 
 myClickJustFocuses :: Bool
-myClickJustFocuses = False
+myClickJustFocuses = True
 
 
 ------------------------------------------------------------------------
@@ -89,7 +84,7 @@ myFocusedBorderColor    = "#cccccc"
 
 
 ------------------------------------------------------------------------
----  WOKSPACES
+---  WORKSPACES
 ------------------------------------------------------------------------
 
 
@@ -98,95 +93,35 @@ myWorkspaces = ["1", "2", "3", "4", "5"]
 
 
 ------------------------------------------------------------------------
-
-
-------------------------------------------------------------------------
 ---  KEYBINDINGS
 ------------------------------------------------------------------------
 
 
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+myKeys :: [(String, X ())]
+myKeys =
+    -- XMonad
+    [ ("M-S-q", io exitSuccess )
+    , ("M-q",   spawn "xmonad --recompile; xmonad --restart")
 
-    --  APPLICATIONS  --
+    -- Layout
+    , ("M-<Tab>", sendMessage NextLayout)
 
-    [ ((modm,               xK_Return), spawn myTerminal ) -- launch terminal
+    -- Resizing
+    , ("M-M1-h", sendMessage Shrink)
+    , ("M-M1-l", sendMessage Expand)
+    , ("M-M1-j", sendMessage MirrorShrink)
+    , ("M-M1-k", sendMessage MirrorExpand)
 
-    , ((modm,               xK_e     ), spawn myEditor ) -- launch editor
+    -- Applications
+    , ("M-<Return>", spawn (myTerminal))
+    , ("M-b M-b", spawn (myBrowser))
+    , ("M-b M-c", spawn ("chromium"))
+    , ("M-s", spawn ("spotify"))
 
-    , ((modm,               xK_p     ), spawn myMenu ) -- launch menu
-
-    , ((modm,               xK_b     ), spawn myBrowser ) -- launch browser
-
-    , ((modm .|. shiftMask, xK_Return), spawn myFileBrowser ) -- launch file browser
-
-    , ((modm,               xK_d     ), spawn "element-desktop-nightly" ) -- launch element
-
-    , ((modm,               xK_o     ), spawn "loffice" ) -- launch libreoffice
-
-    --  SETTINGS?  --
-
-    , ((myAltMask,          xK_a     ), spawn "pavucontrol" ) -- launch audio settings manager
-
-    , ((myAltMask,          xK_b     ), spawn "blueberry" ) -- launch bluetooth manager
-
-    , ((myAltMask,          xK_m     ), spawn "alacritty -e ncmpcpp" ) -- launch ncmpcpp (music manager for mpd)
-
-    --  WINDOW  --
-
-    , ((modm .|. shiftMask, xK_c     ), kill ) -- close focused window
-
-    , ((modm,               xK_Tab   ), sendMessage NextLayout ) -- next layout
-
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf ) -- resets layout to defaut layout
-
-    , ((modm,               xK_n     ), refresh ) -- resize window to default window size
-
-    , ((modm,               xK_j     ), windows W.focusDown ) -- next window
-
-    , ((modm,               xK_k     ), windows W.focusUp  ) -- previous window
-
-    , ((modm,               xK_m     ), windows W.focusMaster  ) -- master window
-
-    -- , ((modm,               xK_Return), windows W.swapMaster) -- swap focused window and master window
-
-    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  ) -- swap focused window and next window
-
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    ) -- swap focused window and previous window
-
-    , ((modm,               xK_h     ), sendMessage Shrink) -- shrink master area
-
-    , ((modm,               xK_l     ), sendMessage Expand) -- expand master area
-
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink) -- push window into tiling
-
-    -- , ((modm              , xK_comma ), sendMessage (IncMasterN 1)) -- increment number of windows in master area
-
-    -- , ((modm              , xK_period), sendMessage (IncMasterN (-1))) -- deincrement number of windows in master area
-
-    --  XMONAD  --
-
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess)) -- quit xmonad
-
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart") -- restart xmonad
-
+    -- Menu
+    , ("M-p M-p", spawn (myMenu ++ " -show run"))
+    , ("M-p M-w", spawn (myMenu ++ " -show window"))
     ]
-    ++
-
-    [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]] -- switch to workspace I as in integer
-    ++
-
-    --
-    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
-    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
-    --
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_r] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
-
-
-------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------
@@ -204,9 +139,6 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                        >> windows W.shiftMaster)) -- set window to float mode and resize by dragging
     ]
-
-
-------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------
@@ -238,9 +170,6 @@ addEWMHFullscreen   = do
 
 
 ------------------------------------------------------------------------
-
-
-------------------------------------------------------------------------
 ---  MANAGE HOOK
 ------------------------------------------------------------------------
 
@@ -252,7 +181,6 @@ myManageHook = composeAll . concat $
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
-    , [isFullscreen -->  doFullFloat]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61612" | x <- my1Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61899" | x <- my2Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61947" | x <- my3Shifts]
@@ -283,9 +211,6 @@ myLogHook = fadeInactiveLogHook fadeAmount
 
 
 ------------------------------------------------------------------------
-
-
-------------------------------------------------------------------------
 ---  STARTUP HOOK
 ------------------------------------------------------------------------
 
@@ -297,9 +222,6 @@ myStartupHook = do
     spawnOnce "mpd &"
     spawnOnce "blueman-applet &"
     spawnOnce "nm-applet &"
-
-
-------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------
@@ -319,7 +241,6 @@ main = xmonad $ docks $ ewmh $ def {
     focusedBorderColor = myFocusedBorderColor,
 
     -- key bindings
-    keys               = myKeys,
     mouseBindings      = myMouseBindings,
 
     -- hooks, layouts
@@ -328,4 +249,4 @@ main = xmonad $ docks $ ewmh $ def {
     handleEventHook    = fullscreenEventHook,
     logHook            = myLogHook,
     startupHook        = myStartupHook >> addEWMHFullscreen    
-}
+} `additionalKeysP` myKeys
