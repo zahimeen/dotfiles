@@ -118,9 +118,13 @@ myKeys =
     , ("M-b M-c", spawn ("chromium"))
     , ("M-s", spawn ("spotify"))
 
+    -- Setting Applications
+    , ("C-M-a", spawn ("pavucontrol"))
+    , ("C-M-b", spawn ("blueman-manager"))
+
     -- Menu
-    , ("M-p M-p", spawn (myMenu ++ " -show run"))
-    , ("M-p M-w", spawn (myMenu ++ " -show window"))
+    , ("M-S-<Return>", spawn (myMenu ++ " -show run"))
+    , ("M-p w", spawn (myMenu ++ " -show window"))
     ]
 
 
