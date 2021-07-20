@@ -11,3 +11,5 @@ This repository holds all of my relative configurations for certain peices of so
 - Polybar (the bar of bars)
 - Rofi (run launcher)
 - Neovim (my text editor)
+
+Notice: All commits that are labeled unverified are were actually done by me. I had been messing around with my GPG keys and thought that if i deleted it, everything would still be verified as me. The reason is i had changed systems and didnt actaually record the key and thought i could just replace it.
