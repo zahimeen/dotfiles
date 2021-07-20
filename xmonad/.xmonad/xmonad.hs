@@ -223,9 +223,9 @@ myStartupHook = do
     spawnOnce "picom &"
     spawnOnce "nitrogen --restore &"
     spawnOnce "polybar main &"
-    spawnOnce "mpd &"
     spawnOnce "blueman-applet &"
     spawnOnce "nm-applet &"
+    spawnOnce "spotify &"
 
 
 ------------------------------------------------------------------------
