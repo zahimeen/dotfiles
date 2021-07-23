@@ -29,8 +29,8 @@ symbol = ""
 format = "[](bg:yellow fg:#464347)[ $branch ]($style)[](bg:#464347 fg:yellow)"
 
 [git_status]
-style = "bg:yellow fg:#1e222a"
-format = "(\b[](bg:$style fg:black)[$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind]($style)[](fg:yellow bg:#464347))"
+style = "bg:red fg:#1e222a"
+format = "([](bg:red fg:#464347)[](bg:$style fg:black)[ $stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind]($style)[](fg:red bg:#464347))"
 stashed = " ${count} "
 ahead = " ${count} "
 behind = " ${count} "

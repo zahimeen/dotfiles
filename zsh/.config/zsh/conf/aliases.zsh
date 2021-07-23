@@ -15,10 +15,16 @@ alias ga='git add'
 alias gb='git checkout'
 
 # neovim typing errors
-alias nimv="nvim"
-alias nivm="nvim"
-alias vnim="nivm"
-alias nvm="nvim"
+alias nvim="lvim"
+alias nimv="lvim"
+alias nivm="lvim"
+alias vnim="lvim"
+alias nvm="lvim"
+# alias nvim="nvim"
+# alias nimv="nvim"
+# alias nivm="nvim"
+# alias vnim="nvim"
+# alias nvm="nvim"
 
 # extraction
 ex ()
