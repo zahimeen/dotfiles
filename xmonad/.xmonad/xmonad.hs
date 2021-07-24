@@ -5,14 +5,14 @@
 
 -- Base
 import XMonad
-import System.Exit (exitSuccess)
+import System.Exit ( exitSuccess )
 import qualified Codec.Binary.UTF8.String as UTF8
 import qualified XMonad.StackSet as W
 import Control.Monad ( join, when )
 
     -- Data
 import Data.Monoid
-import Data.Maybe (maybeToList)
+import Data.Maybe ( maybeToList )
 import qualified Data.Map as M
 
     -- Hooks
@@ -28,14 +28,13 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.Gaps
 import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL, MIRROR, NOBORDERS))
-import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 import XMonad.Layout.ResizableTile
+import qualified XMonad.Layout.MultiToggle as MT ( Toggle(..) )
 
     -- Utilities
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 import XMonad.Util.EZConfig (additionalKeysP)
-
 
 
 ------------------------------------------------------------------------
@@ -89,7 +88,7 @@ myFocusedBorderColor    = "#cccccc"
 
 
 myWorkspaces :: [String]
-myWorkspaces = ["1", "2", "3", "4", "5"]
+myWorkspaces = ["1", "2", "3", "4", "5", "6"]
 
 
 ------------------------------------------------------------------------
@@ -222,9 +221,9 @@ myLogHook = fadeInactiveLogHook fadeAmount
 myStartupHook = do
     spawnOnce "picom &"
     spawnOnce "nitrogen --restore &"
-    spawnOnce "polybar main &"
     spawnOnce "blueman-applet &"
     spawnOnce "nm-applet &"
+    spawn     "$HOME/.config/polybar/launcher.sh &"
     spawnOnce "spotify &"
 
 
@@ -252,5 +251,5 @@ main = xmonad $ docks $ ewmh $ def {
     manageHook         = myManageHook,
     handleEventHook    = fullscreenEventHook,
     logHook            = myLogHook,
-    startupHook        = myStartupHook >> addEWMHFullscreen    
+    startupHook        = myStartupHook >> addEWMHFullscreen
 } `additionalKeysP` myKeys
