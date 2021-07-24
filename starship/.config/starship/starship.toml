@@ -1,6 +1,6 @@
 ###  FORMAT  ###
 
-format = '[](bg:#464347 fg:#1e222a)$username$directory$git_branch$git_status$character'
+format = '$username$directory$git_branch$git_status$character'
 add_newline = true
 
 ###  MODULES  ###
@@ -12,9 +12,9 @@ vicmd_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
 format = "$symbol"
 
 [username]
-style_user = "bold bg:red fg:#1e222a"
+style_user = "bold bg:cyan fg:#1e222a"
 show_always = true
-format = "[](bg:red fg:#464347)[ $user ]($style)[](bg:#464347 fg:red)"
+format = "[ $user ]($style)[](bg:#464347 fg:cyan)"
 
 [directory]
 style = "bold bg:green fg:#1e222a"
