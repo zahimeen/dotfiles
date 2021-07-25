@@ -9,6 +9,7 @@ import System.Exit ( exitSuccess )
 import qualified Codec.Binary.UTF8.String as UTF8
 import qualified XMonad.StackSet as W
 import Control.Monad ( join, when )
+import Graphics.X11.Xlib.Cursor
 
     -- Data
 import Data.Monoid
@@ -35,6 +36,7 @@ import qualified XMonad.Layout.MultiToggle as MT ( Toggle(..) )
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 import XMonad.Util.EZConfig (additionalKeysP)
+import XMonad.Util.Cursor
 
 
 ------------------------------------------------------------------------
@@ -225,6 +227,7 @@ myStartupHook = do
     spawnOnce "nm-applet &"
     spawn     "$HOME/.config/polybar/launcher.sh &"
     spawnOnce "spotify &"
+    setDefaultCursor xC_arrow
 
 
 ------------------------------------------------------------------------
