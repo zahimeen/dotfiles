@@ -6,9 +6,9 @@ add_newline = true
 ###  MODULES  ###
 
 [character]
-success_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
-error_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
-vicmd_symbol = "[[](bg:#1e222a fg:#464347)](fg:#1e222a)"
+success_symbol = "[](fg:#464347) "
+error_symbol = "[](fg:#464347) "
+vicmd_symbol = "[](fg:#464347) "
 format = "$symbol"
 
 [username]
