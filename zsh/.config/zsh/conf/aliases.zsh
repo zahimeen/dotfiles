@@ -20,11 +20,6 @@ alias nimv="lvim"
 alias nivm="lvim"
 alias vnim="lvim"
 alias nvm="lvim"
-# alias nvim="nvim"
-# alias nimv="nvim"
-# alias nivm="nvim"
-# alias vnim="nvim"
-# alias nvm="nvim"
 
 # extraction
 ex ()
