@@ -1,5 +1,5 @@
 lvim.format_on_save = true
-lvim.lint_on_save = true
+lvim.lint_on_save = false
 
 lvim.colorscheme = "onedark"
 vim.g.onedark_style = "darker"
@@ -14,6 +14,8 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.timeoutlen = 200
 vim.opt.hlsearch = false
+vim.opt.scrolloff = 0
+vim.opt.sidescrolloff = 0
 
 lvim.builtin.treesitter.autotag = true
 lvim.builtin.treesitter.ensure_installed = {
