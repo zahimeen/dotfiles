@@ -15,7 +15,7 @@ local function get_attached_provider_name(msg)
 			table.insert(buf_client_names, client.name)
 		end
 	end
-	utils.list_extend_unique(buf_client_names, null_ls_providers)
+	vim.list_extend(buf_client_names, null_ls_providers)
 	return "  " .. tostring(buf_client_names[1])
 end
 

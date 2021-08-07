@@ -1,7 +1,6 @@
 lvim.leader = "space"
 
 lvim.keys.normal_mode = {}
-lvim.keys.insert_mode = {}
 
 lvim.keys.normal_mode["Y"] = "y$"
 lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferNext<CR>"
@@ -82,8 +81,3 @@ lvim.builtin.which_key.mappings = {
 		},
 	},
 }
-
-vim.cmd("imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-expand-or-jump)'      : '<Tab>'")
-vim.cmd("smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-expand-or-jump)'      : '<Tab>'")
-vim.cmd("imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-expand-or-jump)'      : '<S-Tab>'")
-vim.cmd("smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-expand-or-jump)'      : '<S-Tab>'")

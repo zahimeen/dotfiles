@@ -31,6 +31,10 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.galaxyline.active = false
+lvim.builtin.terminal.active = true
+lvim.builtin.terminal.open_mapping = "<C-t>"
+lvim.builtin.terminal.direction = "vertical"
+lvim.builtin.terminal.size = 30
 
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.document_highlight = false

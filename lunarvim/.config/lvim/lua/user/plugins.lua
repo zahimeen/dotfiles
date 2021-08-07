@@ -30,4 +30,8 @@ lvim.plugins = {
 			require("user.zen").config()
 		end,
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		event = "InsertEnter",
+	},
 }
