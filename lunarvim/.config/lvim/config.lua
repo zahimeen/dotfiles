@@ -17,7 +17,11 @@ vim.opt.hlsearch = false
 vim.opt.scrolloff = 0
 vim.opt.sidescrolloff = 0
 
-lvim.builtin.treesitter.autotag = true
+lvim.builtin.treesitter.autotag = {
+	enable = true,
+	filetypes = { "html", "xml" },
+}
+lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.ensure_installed = {
 	"python",
 	"javascript",
