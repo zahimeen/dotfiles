@@ -56,6 +56,7 @@ builtin.treesitter.ensure_installed = "all"
 builtin.treesitter.ignore_install = { "php" }
 builtin.treesitter.playground.enable = true
 builtin.treesitter.highlight.enabled = true
+builtin.treesitter.indent.disable = { "python" }
 
 lvim.plugins = {
 	{

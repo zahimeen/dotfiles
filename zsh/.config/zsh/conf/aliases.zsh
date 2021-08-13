@@ -21,6 +21,18 @@ alias nivm="lvim"
 alias vnim="lvim"
 alias nvm="lvim"
 
+# stop writing 'python' in full
+alias py="python"
+
+# some cd aliases that make life 10 times easier
+alias dc="cd" # i don't need this
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+
 # extraction
 ex ()
 {
