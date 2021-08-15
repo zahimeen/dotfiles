@@ -1,0 +1,43 @@
+###  FORMAT  ###
+
+format = '$username$directory$git_branch$git_status$character'
+add_newline = true
+
+###  MODULES  ###
+
+[character]
+success_symbol = "[](fg:#464347) "
+error_symbol = "[](fg:#464347) "
+vicmd_symbol = "[](fg:#464347) "
+format = "$symbol"
+
+[username]
+style_user = "bold bg:cyan fg:#1e222a"
+show_always = true
+format = "[ $user ]($style)[](bg:#464347 fg:cyan)"
+
+[directory]
+style = "bold bg:green fg:#1e222a"
+read_only = " "
+read_only_style = "bold bg:green fg:#282c34"
+truncation_length = 1
+format = "[](bg:green fg:#464347)[ $path ]($style)[$read_only]($read_only_style)[](bg:#464347 fg:green)"
+
+[git_branch]
+style = "bold bg:yellow fg:#1e222a"
+symbol = ""
+format = "[](bg:yellow fg:#464347)[ $branch ]($style)[](bg:#464347 fg:yellow)"
+
+[git_status]
+style = "bg:red fg:#1e222a"
+format = "([](bg:red fg:#464347)[](bg:$style fg:black)[ $stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind]($style)[](fg:red bg:#464347))"
+stashed = " ${count} "
+ahead = " ${count} "
+behind = " ${count} "
+diverged = "李${ahead_count} ${behind_count} "
+conflicted = "${count} "
+deleted = "${count} "
+renamed = "﫦${count} "
+modified = "凜${count} "
+staged = " ${count} "
+untracked = "  ${count} "
