@@ -14,6 +14,7 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "onedark"
+lvim.lsp.diagnostics.virtual_text = false
 
 -- vim settings
 opt.tabstop = 4
@@ -37,11 +38,11 @@ builtin.dashboard = {
 		"╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
 	},
 	custom_section = {
-		a = { description = { "  Find File                 SPC f f" }, command = "Telescope find_files" },
-		b = { description = { "  Recents                   SPC f r" }, command = "Telescope oldfiles" },
-		c = { description = { "  Find Word                 SPC f w" }, command = "Telescope live_grep" },
-		d = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
-		f = { description = { "  Load Last Session         SPC s l" }, command = "SessionLoad" },
+		c = { description = { "  Recents                   SPC f r" }, command = "Telescope oldfiles" },
+		d = { description = { "  Find File                 SPC f f" }, command = "Telescope find_files" },
+		e = { description = { "  Find Word                 SPC f w" }, command = "Telescope live_grep" },
+		f = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
+		g = { description = { "  Load Last Session         SPC s l" }, command = "SessionLoad" },
 	},
 	custom_footer = {
 		"  VSCode Is Slower Than A Snale!",
@@ -132,6 +133,7 @@ builtin.which_key.mappings.f = {
 	g = { "<cmd>Telescope git_files<CR>", "Find Git Files" },
 	r = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
 	w = { "<cmd>Telescope live_grep<CR>", "Find Word In File" },
+	p = { "<cmd>Telescope projects<CR>", "Find Recent Project" },
 }
 
 builtin.which_key.mappings.b = {
@@ -142,10 +144,12 @@ builtin.which_key.mappings.b = {
 	j = { "<cmd>BufferPick<CR>", "Buffer Pick" },
 	l = { "<cmd>BufferLast<CR>", "Buffer Last" },
 }
+
 builtin.which_key.mappings.s = {
 	name = "Sessions",
 	s = { "<cmd>SessionSave<CR>", "Session Save" },
 	l = { "<cmd>SessionLoad<CR>", "Session Load" },
 }
+
 table.removekey(builtin.which_key.mappings, "h")
 table.removekey(builtin.which_key.mappings, "q")

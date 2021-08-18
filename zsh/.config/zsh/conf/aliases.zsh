@@ -25,6 +25,8 @@ alias nvm="lvim"
 alias py="python"
 
 # some cd aliases that make life 10 times easier
+alias c="cd" # fast
+alias d="cd" # fast
 alias dc="cd" # i don't need this
 alias ..='cd ..'
 alias ...='cd ../..'

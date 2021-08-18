@@ -1,4 +1,4 @@
 unsetopt BEEP
 
 # startup
-macchina
+# macchina
