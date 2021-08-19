@@ -14,4 +14,3 @@ set signcolumn="yes"
 
 set scrolloff=8
 set sidescrolloff=8
-

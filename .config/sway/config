@@ -4,7 +4,7 @@
 
 set $mod Mod4
 set $term kitty
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu ulauncher
 set $browser brave
 set $alt_browser chromium
 set $audio_man pavucontrol
@@ -54,6 +54,8 @@ client.unfocused        #81A1C1 #2e3440 #d8dee9 #4c566a #4c566a
 client.urgent           #e5c07b #e5c07b #2e3440 #8fbcbb #e5c07b
 default_border pixel 1
 
+for_window [title="Ulauncher - Application Launcher"] border none
+
 ## MARGIN ##
 
 gaps inner 10
@@ -70,7 +72,7 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
 ## Applications:
 
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $menu
+    bindsym $mod+Space exec $menu
     bindsym $mod+b exec $browser
     bindsym $mod+Shift+b exec $alt_browser
 
@@ -140,7 +142,7 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
 
     bindsym $mod+f fullscreen
     bindsym $mod+t floating toggle
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
     bindsym $mod+a focus parent
 
 ## Scratchpad:

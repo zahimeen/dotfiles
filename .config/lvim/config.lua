@@ -4,9 +4,9 @@ local keys = lvim.keys
 local builtin = lvim.builtin
 
 function table.removekey(table, key)
-	local element = table[key]
-	table[key] = nil
-	return element
+    local element = table[key]
+    table[key] = nil
+    return element
 end
 
 -- general
@@ -28,25 +28,25 @@ opt.hlsearch = false
 
 -- plugins
 builtin.dashboard = {
-	active = true,
-	custom_header = {
-		"██╗     ██╗   ██╗███╗   ██╗ █████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
-		"██║     ██║   ██║████╗  ██║██╔══██╗██╔══██╗██║   ██║██║████╗ ████║",
-		"██║     ██║   ██║██╔██╗ ██║███████║██████╔╝██║   ██║██║██╔████╔██║",
-		"██║     ██║   ██║██║╚██╗██║██╔══██║██╔══██╗╚██╗ ██╔╝██║██║╚██╔╝██║",
-		"███████╗╚██████╔╝██║ ╚████║██║  ██║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║",
-		"╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
-	},
-	custom_section = {
-		c = { description = { "  Recents                   SPC f r" }, command = "Telescope oldfiles" },
-		d = { description = { "  Find File                 SPC f f" }, command = "Telescope find_files" },
-		e = { description = { "  Find Word                 SPC f w" }, command = "Telescope live_grep" },
-		f = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
-		g = { description = { "  Load Last Session         SPC s l" }, command = "SessionLoad" },
-	},
-	custom_footer = {
-		"  VSCode Is Slower Than A Snale!",
-	},
+    active = true,
+    custom_header = {
+        "██╗     ██╗   ██╗███╗   ██╗ █████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
+        "██║     ██║   ██║████╗  ██║██╔══██╗██╔══██╗██║   ██║██║████╗ ████║",
+        "██║     ██║   ██║██╔██╗ ██║███████║██████╔╝██║   ██║██║██╔████╔██║",
+        "██║     ██║   ██║██║╚██╗██║██╔══██║██╔══██╗╚██╗ ██╔╝██║██║╚██╔╝██║",
+        "███████╗╚██████╔╝██║ ╚████║██║  ██║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║",
+        "╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
+    },
+    custom_section = {
+        c = { description = { "  Recents                   SPC f r" }, command = "Telescope oldfiles" },
+        d = { description = { "  Find File                 SPC f f" }, command = "Telescope find_files" },
+        e = { description = { "  Find Word                 SPC f w" }, command = "Telescope live_grep" },
+        f = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
+        g = { description = { "  Load Last Session         SPC s l" }, command = "SessionLoad" },
+    },
+    custom_footer = {
+        "  VSCode Is Slower Than A Snale!",
+    },
 }
 builtin.terminal.active = true
 builtin.telescope.active = true
@@ -60,49 +60,54 @@ builtin.treesitter.highlight.enabled = true
 builtin.treesitter.indent.disable = { "python" }
 
 lvim.plugins = {
-	{
-		"LunarVim/Colorschemes",
-	},
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "InsertEnter",
-		config = function()
-			require("lsp_signature").on_attach()
-		end,
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("user.blankline").setup()
-		end,
-	},
-	{
-		"folke/zen-mode.nvim",
-		config = function()
-			require("user.zen").setup()
-		end,
-	},
-	{
-		"nvim-treesitter/playground",
-		event = "BufRead",
-	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("user.colorizer").setup()
-		end,
-	},
-	{
-		"KabbAmine/vCoolor.vim",
-		event = "BufEnter",
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
+    {
+        "LunarVim/Colorschemes",
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = "markdown",
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "InsertEnter",
+        config = function()
+            require("lsp_signature").on_attach()
+        end,
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("user.blankline").setup()
+        end,
+    },
+    {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("user.zen").setup()
+        end,
+    },
+    {
+        "nvim-treesitter/playground",
+        event = "BufRead",
+    },
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("user.colorizer").setup()
+        end,
+    },
+    {
+        "KabbAmine/vCoolor.vim",
+        event = "BufEnter",
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
 }
 
 -- keymappings
@@ -118,37 +123,37 @@ table.removekey(keys.insert_mode, "kj")
 
 builtin.which_key.mappings.z = { "<cmd>ZenMode<CR>", "Toggle Zen Mode" }
 builtin.which_key.mappings.w = {
-	name = "Windows",
-	h = { "<C-w>h", "Window Left" },
-	j = { "<C-w>j", "Window Down" },
-	k = { "<C-w>k", "Window Up" },
-	l = { "<C-w>l", "Window Right" },
-	s = { "<C-w>s", "Window Split" },
-	v = { "<C-w>v", "Window Vertical Split" },
+    name = "Windows",
+    h = { "<C-w>h", "Window Left" },
+    j = { "<C-w>j", "Window Down" },
+    k = { "<C-w>k", "Window Up" },
+    l = { "<C-w>l", "Window Right" },
+    s = { "<C-w>s", "Window Split" },
+    v = { "<C-w>v", "Window Vertical Split" },
 }
 
 builtin.which_key.mappings.f = {
-	name = "Files",
-	f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-	g = { "<cmd>Telescope git_files<CR>", "Find Git Files" },
-	r = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
-	w = { "<cmd>Telescope live_grep<CR>", "Find Word In File" },
-	p = { "<cmd>Telescope projects<CR>", "Find Recent Project" },
+    name = "Files",
+    f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+    g = { "<cmd>Telescope git_files<CR>", "Find Git Files" },
+    r = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
+    w = { "<cmd>Telescope live_grep<CR>", "Find Word In File" },
+    p = { "<cmd>Telescope projects<CR>", "Find Recent Project" },
 }
 
 builtin.which_key.mappings.b = {
-	name = "Buffers",
-	n = { "<cmd>BufferNext<CR>", "Buffer Next" },
-	p = { "<cmd>BufferPrevious<CR>", "Buffer Previous" },
-	d = { "<cmd>BufferDelete<CR>", "Buffer Delete" },
-	j = { "<cmd>BufferPick<CR>", "Buffer Pick" },
-	l = { "<cmd>BufferLast<CR>", "Buffer Last" },
+    name = "Buffers",
+    n = { "<cmd>BufferNext<CR>", "Buffer Next" },
+    p = { "<cmd>BufferPrevious<CR>", "Buffer Previous" },
+    d = { "<cmd>BufferDelete<CR>", "Buffer Delete" },
+    j = { "<cmd>BufferPick<CR>", "Buffer Pick" },
+    l = { "<cmd>BufferLast<CR>", "Buffer Last" },
 }
 
 builtin.which_key.mappings.s = {
-	name = "Sessions",
-	s = { "<cmd>SessionSave<CR>", "Session Save" },
-	l = { "<cmd>SessionLoad<CR>", "Session Load" },
+    name = "Sessions",
+    s = { "<cmd>SessionSave<CR>", "Session Save" },
+    l = { "<cmd>SessionLoad<CR>", "Session Load" },
 }
 
 table.removekey(builtin.which_key.mappings, "h")
