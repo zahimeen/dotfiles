@@ -13,8 +13,9 @@ end
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "onedark"
 lvim.lsp.diagnostics.virtual_text = false
+lvim.colorscheme = "onedark"
+vim.g.onedark_style = "darker"
 
 -- vim settings
 opt.tabstop = 4
@@ -25,6 +26,7 @@ opt.number = true
 opt.relativenumber = true
 opt.colorcolumn = "80"
 opt.hlsearch = false
+opt.guicursor = "a:a"
 
 -- plugins
 builtin.dashboard = {
@@ -48,6 +50,7 @@ builtin.dashboard = {
         "  VSCode Is Slower Than A Snale!",
     },
 }
+
 builtin.terminal.active = true
 builtin.telescope.active = true
 builtin.nvimtree.side = "left"
@@ -61,7 +64,7 @@ builtin.treesitter.indent.disable = { "python" }
 
 lvim.plugins = {
     {
-        "LunarVim/Colorschemes",
+        "zahin-muhaimeen/onedark.nvim",
     },
     {
         "iamcco/markdown-preview.nvim",
@@ -134,7 +137,10 @@ builtin.which_key.mappings.w = {
 
 builtin.which_key.mappings.f = {
     name = "Files",
-    f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+    f = {
+        "<cmd>lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' } })<CR>",
+        "Find Files",
+    },
     g = { "<cmd>Telescope git_files<CR>", "Find Git Files" },
     r = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
     w = { "<cmd>Telescope live_grep<CR>", "Find Word In File" },
@@ -155,6 +161,3 @@ builtin.which_key.mappings.s = {
     s = { "<cmd>SessionSave<CR>", "Session Save" },
     l = { "<cmd>SessionLoad<CR>", "Session Load" },
 }
-
-table.removekey(builtin.which_key.mappings, "h")
-table.removekey(builtin.which_key.mappings, "q")

@@ -8,9 +8,9 @@ M.setup = function()
 
 	zen_mode.setup({
 		window = {
-			backdrop = 0.95,
+			backdrop = 1,
 			height = 0.95,
-			width = 0.85,
+			width = 0.90,
 			options = {
 				signcolumn = "no",
 				number = false,

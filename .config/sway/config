@@ -83,7 +83,7 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
 
     bindsym $mod+Shift+c kill
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+q exec swaymsg reload
+    bindsym $mod+q reload
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -140,9 +140,9 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
+    # bindsym $mod+space focus mode_toggle
     bindsym $mod+f fullscreen
     bindsym $mod+t floating toggle
-    # bindsym $mod+space focus mode_toggle
     bindsym $mod+a focus parent
 
 ## Scratchpad:
@@ -161,10 +161,10 @@ mode "resize" {
     # up will shrink the containers height
     # down will grow the containers height
 
-    bindsym $left resize shrink width 10px
+    bindsym $left resize grow width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $right resize shrink width 10px
 
     # Return to default mode
     bindsym Return mode "default"
