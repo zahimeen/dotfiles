@@ -1,12 +1,12 @@
-// vim: ft=json
-
 {
     "height": 30,
     "width": 1340,
     "modules-left": [
         "sway/workspaces"
     ],
-    "modules-center": ["custom/spotify"],
+    "modules-center": [
+        "custom/spotify"
+    ],
     "modules-right": [
         "cpu",
         "memory",
@@ -14,6 +14,7 @@
         "pulseaudio",
         "backlight",
         "network",
+        "battery",
         "clock",
         "tray"
     ],
@@ -92,6 +93,21 @@
         "format-disconnected": "睊  Disconnected",
         "format-alt": "直  {ifname}: {ipaddr}/{cidr}"
     },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    },
     "clock": {
         "interval": 1,
         "format": "  {:%I:%M %p}",
@@ -99,5 +115,5 @@
     },
     "tray": {
         "spacing": 10
-    },
+    }
 }

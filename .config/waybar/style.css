@@ -41,6 +41,17 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+label:focus {
+    background-color: #000000;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
 #battery,
 #cpu,
 #memory,
@@ -118,32 +129,25 @@ window#waybar.hidden {
     color: #e5c07b;
 }
 
-#clock {
-    color: #98c379;
+#network {
+    color: #81a1c1;
     background-color: #333;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #333;
+    color: #e06c75;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #ffffff;
-    background-color: #26a65b;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+    color: #e06c75;
+    background-color: #333;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: #333;
+    color: #e06c75;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -151,11 +155,7 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
-}
-
-#network {
-    color: #81a1c1;
+#clock {
+    color: #98c379;
     background-color: #333;
 }
