@@ -16,54 +16,39 @@ set $up k
 set $right l
 
 ################################################################################
-###  STARTUP AND CREATE WORKSPACES
+###  STARTUP
 ################################################################################
 
 exec blueman-applet
 exec nm-applet
+exec flashfocus
 
 workspace 1
 exec $browser
-
 workspace 2
 exec $term
-
-workspace 3
-exec $alt_browser
-
 workspace 4
 exec $email_client
-
-workspace 5
-exec $term
-
 workspace 6
 exec spotify
-
 workspace 1
 
 ################################################################################
 ###  STYLING
 ################################################################################
 
-## BORDER ##
-
-client.focused          #81A1C1 #434c5e #eceff4 #81A1C1 #81A1C1
-client.focused_inactive #81A1C1 #2e3440 #d8dee9 #4c566a #4c566a
-client.unfocused        #81A1C1 #2e3440 #d8dee9 #4c566a #4c566a
+default_border none
+client.focused          #81a1c1 #434c5e #eceff4 #81a1c1 #81a1c1
+client.focused_inactive #81a1c1 #2e3440 #d8dee9 #4c566a #4c566a
 client.urgent           #e5c07b #e5c07b #2e3440 #8fbcbb #e5c07b
-default_border pixel 1
+client.unfocused        #81A1C1 #2e3440 #d8dee9 #4c566a #4c566a
 
 for_window [title="Ulauncher - Application Launcher"] border none
-
-## MARGIN ##
 
 gaps inner 10
 gaps outer 17
 
-## WALLPAPER ##
-
-output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
+exec $HOME/.azotebg
 
 ################################################################################
 ###  KEYBINDINGS
@@ -85,11 +70,6 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym $mod+q reload
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
 
 ## Window Navigation:
@@ -124,16 +104,7 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
     bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
 
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-
 ## Layout stuff:
-
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    # bindsym $mod+b splith
-    # bindsym $mod+v splitv
 
     # Switch layout style of current container
     bindsym $mod+s layout stacking
@@ -147,26 +118,15 @@ output * bg $HOME/wallpapers/Art/Fantasy/wallhaven-rddgwm.jpg fill
 
 ## Scratchpad:
 
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
 
-## Resizing containers:
-
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-
     bindsym $left resize grow width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize shrink width 10px
 
-    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -180,42 +140,5 @@ bar {
         swaybar_command waybar
     }
 }
-
-################################################################################
-###  OUTPUT CONFIGURATION
-################################################################################
-
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 include /etc/sway/config.d/*
