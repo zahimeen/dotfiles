@@ -31,4 +31,19 @@ lvim.plugins = {
             require("user.dial").setup()
         end,
     },
+    {
+        "windwp/nvim-ts-autotag",
+        event = "InsertEnter",
+        config = function()
+            require("user.autotag").setup()
+        end,
+    },
+    {
+        "metakirby5/codi.vim",
+        cmd = "Codi",
+    },
+    {
+        "KabbAmine/vCoolor.vim",
+        event = "BufRead",
+    },
 }
