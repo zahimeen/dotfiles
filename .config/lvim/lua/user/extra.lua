@@ -11,4 +11,24 @@ lvim.plugins = {
             require("user.blankline").setup()
         end,
     },
+    {
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = "markdown",
+        config = function()
+            vim.g.mkdp_auto_start = 1
+        end,
+    },
+    {
+        "turbio/bracey.vim",
+        cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+        run = "npm install --prefix server",
+    },
+    {
+        "monaqa/dial.nvim",
+        event = "BufRead",
+        config = function()
+            require("user.dial").setup()
+        end,
+    },
 }
