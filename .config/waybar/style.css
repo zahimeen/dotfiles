@@ -3,11 +3,11 @@
 Color Pallete (Slightly Edited OneDark)
 
 foreground:     '#abb2bf'
-background:     '#1e2127'
-alt-background: '#333'
-alt-foreground: '#1e2127'
+background:     '#1f2227'
+alt-background: '#282c34'
+alt-foreground: '#1f2227'
 
-black:   '#1e2127'
+black:   '#282c34'
 red:     '#e06c75'
 green:   '#98c379'
 yellow:  '#e5c07b'
@@ -29,7 +29,7 @@ white:   '#828791'
 }
 
 window#waybar {
-    background-color: #1e2127;
+    background-color: #1f2227;
     border: transparent;
     color: #bbc2cf;
     transition-property: background-color;
@@ -69,7 +69,7 @@ label:focus {
     padding: 0 10px;
     margin: 4px 4px 4px 4px;
     border-radius: 10px;
-    color: #1e2127;
+    color: #1f2227;
 }
 
 #workspaces button {
@@ -81,7 +81,7 @@ label:focus {
 
 #workspaces button:hover {
     background-color: #f8f8f2;
-    color: #1e2127;
+    color: #1f2227;
 }
 
 #workspaces button.focused {
@@ -100,22 +100,22 @@ label:focus {
 }
 
 #cpu {
-    background-color: #333;
+    background-color: #282c34;
     color: #e06c75;
 }
 
 #memory {
-    background-color: #333;
+    background-color: #282c34;
     color: #e5c07b;
 }
 
 #disk {
-    background-color: #333;
+    background-color: #282c34;
     color: #81a1c1;
 }
 
 #pulseaudio {
-    background-color: #333;
+    background-color: #282c34;
     color: #e06c75;
 }
 
@@ -125,28 +125,28 @@ label:focus {
 }
 
 #backlight {
-    background-color: #333;
+    background-color: #282c34;
     color: #e5c07b;
 }
 
 #network {
     color: #81a1c1;
-    background-color: #333;
+    background-color: #282c34;
 }
 
 #battery {
-    background-color: #333;
+    background-color: #282c34;
     color: #e06c75;
 }
 
 #battery.charging,
 #battery.plugged {
     color: #e06c75;
-    background-color: #333;
+    background-color: #282c34;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #333;
+    background-color: #282c34;
     color: #e06c75;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -157,5 +157,5 @@ label:focus {
 
 #clock {
     color: #98c379;
-    background-color: #333;
+    background-color: #282c34;
 }

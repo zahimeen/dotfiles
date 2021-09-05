@@ -1,7 +1,7 @@
-format = '[[[](fg:blue)[](bg:blue fg:#333333)[](bg:#333333 fg:blue)](bg:blue) [$directory](bg:#333333)[](fg:#333333)](bg:#333333) '
+format = '[[[](fg:blue)[](bg:blue fg:#282c34)[](bg:#282c34 fg:blue)](bg:blue) [$directory](bg:#282c34)[](fg:#282c34)](bg:#282c34) '
 add_newline = true
 
 [directory]
-style = "bg:#333333 fg:blue"
+style = "bg:#282c34 fg:blue"
 truncation_length = 1
 format = "[$path]($style)"
