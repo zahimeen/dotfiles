@@ -4,7 +4,7 @@
 
 set $mod Mod4
 set $term kitty
-set $menu ulauncher
+set $menu dmenu_run
 set $browser brave
 set $alt_browser chromium
 set $audio_man pavucontrol
@@ -37,7 +37,7 @@ workspace 1
 ###  STYLING
 ################################################################################
 
-default_border none
+default_border pixel 1
 client.focused          #81a1c1 #434c5e #eceff4 #81a1c1 #81a1c1
 client.focused_inactive #81a1c1 #2e3440 #d8dee9 #4c566a #4c566a
 client.urgent           #e5c07b #e5c07b #2e3440 #8fbcbb #e5c07b
