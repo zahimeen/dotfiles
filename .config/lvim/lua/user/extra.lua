@@ -1,5 +1,8 @@
 lvim.plugins = {
     {
+        "zahimeen/better-onedarker.nvim"
+    },
+    {
         "norcalli/nvim-colorizer.lua",
             config = function()
                 require("user.colorizer").setup()

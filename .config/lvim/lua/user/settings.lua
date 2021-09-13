@@ -6,4 +6,5 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = "80"
 vim.opt.hlsearch = false
+vim.opt.cmdheight = 1
 -- vim.opt.guicursor = "a:a"
