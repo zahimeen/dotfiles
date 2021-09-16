@@ -1,23 +1,18 @@
 {
-    "height": 30,
-    "width": 1340,
-    "modules-left": [
-        "sway/workspaces"
-    ],
-    "modules-center": [
-        "custom/spotify"
-    ],
+    "modules-left": ["custom/launch", "sway/workspaces"],
+    "modules-center": ["custom/spotify"],
     "modules-right": [
-        "cpu",
-        "memory",
-        "disk",
         "pulseaudio",
         "backlight",
         "network",
         "battery",
         "clock",
-        "tray"
+        "custom/off"
     ],
+    "custom/launch": {
+        "format": " ",
+        "on-click": "rofi -show run"
+    },
     "sway/workspaces": {
         "all-outputs": true,
         "format": " {icon} ",
@@ -50,20 +45,9 @@
         "on-scroll-up": "spotifyctl -q next",
         "on-scroll-down": "spotifyctl -q previous"
     },
-    "cpu": {
-        "format": "  {usage}%",
-        "tooltip": true
-    },
-    "memory": {
-        "format": "﬙  {}%"
-    },
-    "disk": {
-        "format": "  {free}"
-    },
     "pulseaudio": {
         "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}%", "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "婢  {icon} muted",
         "format-muted": "婢  muted",
         "format-icons": {
@@ -72,11 +56,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "headphone": [
-                " ",
-                " ",
-                " "
-            ]
+            "headphone": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },
@@ -100,20 +80,15 @@
             "critical": 15
         },
         "format": "{icon}  {capacity}%",
-        "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
-        ]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "clock": {
         "interval": 1,
         "format": "  {:%I:%M %p}",
         "format-alt": "  {:%b %d, %G}"
     },
-    "tray": {
-        "spacing": 10
+    "custom/off": {
+        "format": " ",
+        "on-click": "swaymsg exit"
     }
 }

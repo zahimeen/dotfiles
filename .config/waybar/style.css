@@ -30,11 +30,19 @@ white:   '#828791'
 
 window#waybar {
     background-color: #1f2227;
-    border: transparent;
+    background: transparent;
     color: #bbc2cf;
     transition-property: background-color;
     transition-duration: 0.5s;
     border-radius: 0;
+}
+
+window > box {
+    margin-top: 26px;
+    margin-left: 26px;
+    margin-right: 26px;
+    background: #1f2227;
+    color: #bbc2cf;
 }
 
 window#waybar.hidden {
@@ -68,14 +76,21 @@ label:focus {
 #mpd {
     padding: 0 10px;
     margin: 4px 4px 4px 4px;
-    border-radius: 10px;
     color: #1f2227;
+}
+
+#custom-launch {
+    margin-right: 3px;
+    margin-left: 16px;
+    font-size: 17px;
+    color: #e06c75;
 }
 
 #workspaces button {
     padding: 5px 5px;
     background-color: transparent;
     border-radius: 10px;
+    margin-left: 1px;
     color: #f8f8f2;
 }
 
@@ -99,23 +114,7 @@ label:focus {
     color: #98c379;
 }
 
-#cpu {
-    background-color: #282c34;
-    color: #e06c75;
-}
-
-#memory {
-    background-color: #282c34;
-    color: #e5c07b;
-}
-
-#disk {
-    background-color: #282c34;
-    color: #81a1c1;
-}
-
 #pulseaudio {
-    background-color: #282c34;
     color: #e06c75;
 }
 
@@ -125,28 +124,23 @@ label:focus {
 }
 
 #backlight {
-    background-color: #282c34;
     color: #e5c07b;
 }
 
 #network {
     color: #81a1c1;
-    background-color: #282c34;
 }
 
 #battery {
-    background-color: #282c34;
     color: #e06c75;
 }
 
 #battery.charging,
 #battery.plugged {
     color: #e06c75;
-    background-color: #282c34;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #282c34;
     color: #e06c75;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -157,5 +151,11 @@ label:focus {
 
 #clock {
     color: #98c379;
-    background-color: #282c34;
+}
+
+#custom-off {
+    margin-right: 16px;
+    margin-left: 20px;
+    font-size: 17px;
+    color: #e06c75;
 }
