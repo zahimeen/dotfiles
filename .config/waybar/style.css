@@ -83,7 +83,7 @@ label:focus {
     margin-right: 20px;
     margin-left: 16px;
     font-size: 17px;
-    color: #81A1C1;
+    color: #81a1c1;
 }
 
 #workspaces button {
@@ -119,7 +119,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #81A1C1;
+    background-color: #81a1c1;
     color: #282c34;
 }
 

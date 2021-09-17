@@ -6,23 +6,18 @@ Dotfiles are any files or directories starting with a "." in their name. They ar
 
 The Programs I Use Are:
 
-  - **Sway**\
-    I use tiling window managers because they are extensible and minimal, allowing for the perfect rice. I don't want all my RAM to go to animations!
-    
-  - **Waybar**\
-    A sort of taskbar. It can be highly configured and works perfectly with Wayland and setups using Sway WM.
-    
-  - **Kitty**\
-    A highly customizable and extremely fast terminal by offloading rendering to the GPU.
-    
-  - **ZSH**\
-    My favourite shell which I can combine with other software to make even better, such as syntax highlighting and auto command completion.
-    
-  - **Starship**\
-    The prompt for my ZSH config. It is blazing fast and easy to use with other shells as well.
-    
-  - **LunarVim**\
-    A layer on top of Neovim to create a sort of IDE. It is perfect as it is extensible, fast and most importantly, looks good. I use this because it is too hard to keep with Neovim trends, and I am not good at configuring, so I only have to worry about the features I want.
+- **Sway**\
+  I use tiling window managers because they are extensible and minimal, allowing for the perfect rice. I don't want all my RAM to go to animations!
+- **Waybar**\
+  A sort of taskbar. It can be highly configured and works perfectly with Wayland and setups using Sway WM.
+- **Kitty**\
+  A highly customizable and extremely fast terminal by offloading rendering to the GPU.
+- **ZSH**\
+  My favourite shell which I can combine with other software to make even better, such as syntax highlighting and auto command completion.
+- **Starship**\
+  The prompt for my ZSH config. It is blazing fast and easy to use with other shells as well.
+- **LunarVim**\
+  A layer on top of Neovim to create a sort of IDE. It is perfect as it is extensible, fast and most importantly, looks good. I use this because it is too hard to keep with Neovim trends, and I am not good at configuring, so I only have to worry about the features I want.
 
 ## License
 
