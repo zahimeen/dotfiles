@@ -4,7 +4,7 @@
 
 set $mod Mod4
 set $term kitty
-set $menu dmenu_run
+set $menu rofi -show run
 set $browser brave
 set $alt_browser chromium
 set $audio_man pavucontrol
@@ -38,12 +38,10 @@ workspace 1
 ################################################################################
 
 default_border pixel 1
-client.focused          #81a1c1 #434c5e #eceff4 #81a1c1 #81a1c1
-client.focused_inactive #81a1c1 #2e3440 #d8dee9 #4c566a #4c566a
-client.urgent           #e5c07b #e5c07b #2e3440 #8fbcbb #e5c07b
-client.unfocused        #81A1C1 #2e3440 #d8dee9 #4c566a #4c566a
-
-for_window [title="Ulauncher - Application Launcher"] border none
+client.focused          #81a1c1 #81a1c1 #81a1c1 #81a1c1 #81a1c1
+client.focused_inactive #282c34 #282c34 #282c34 #282c34 #282c34
+client.urgent           #e06c75 #e06c75 #e06c75 #e06c75 #e06c75
+client.unfocused        #282c34 #282c34 #282c34 #282c34 #282c34
 
 gaps inner 10
 gaps outer 17
@@ -67,7 +65,7 @@ exec $HOME/.azotebg
 ## Sway:
 
     bindsym $mod+Shift+c kill
-    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaymsg exit
     bindsym $mod+q reload
 
     floating_modifier $mod normal
