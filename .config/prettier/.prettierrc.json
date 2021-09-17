@@ -3,7 +3,6 @@
     "bracketSpacing": true,
     "endOfLine": "lf",
     "htmlWhitespaceSensitivity": "css",
-    "jsxBracketSameLine": false,
     "printWidth": 80,
     "proseWrap": "always",
     "requirePragma": false,
@@ -15,10 +14,11 @@
     "vueIndentScriptAndStyle": true,
     "overrides": [
         {
-            "files": "*.json",
-            "options": {
-                "printWidth": 80
-            }
+            "files": "*.json"
+        },
+        {
+            "files": "*.rasi",
+            "parser": "css"
         }
     ]
 }
