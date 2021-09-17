@@ -14,6 +14,7 @@
         "on-click": "rofi -show run"
     },
     "sway/workspaces": {
+        "disable-scroll": true,
         "all-outputs": true,
         "format": " {icon} ",
         "persistent_workspaces": {
@@ -24,7 +25,6 @@
             "5": [],
             "6": []
         },
-        "disable-scroll": false,
         "format-icons": {
             "1": " ",
             "2": " ",

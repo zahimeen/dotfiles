@@ -38,9 +38,9 @@ window#waybar {
 }
 
 window > box {
-    margin-top: 26px;
-    margin-left: 26px;
-    margin-right: 26px;
+    margin-top: 27px;
+    margin-left: 27px;
+    margin-right: 27px;
     background: #1f2227;
     color: #bbc2cf;
 }
@@ -80,10 +80,10 @@ label:focus {
 }
 
 #custom-launch {
-    margin-right: 3px;
+    margin-right: 20px;
     margin-left: 16px;
     font-size: 17px;
-    color: #e06c75;
+    color: #81A1C1;
 }
 
 #workspaces button {
