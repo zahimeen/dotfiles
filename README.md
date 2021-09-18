@@ -18,6 +18,8 @@ The Programs I Use Are:
   The prompt for my ZSH config. It is blazing fast and easy to use with other shells as well.
 - **LunarVim**\
   A layer on top of Neovim to create a sort of IDE. It is perfect as it is extensible, fast and most importantly, looks good. I use this because it is too hard to keep with Neovim trends, and I am not good at configuring, so I only have to worry about the features I want.
+- **Rofi**
+  A run launcher, basically something that allows you to open applications. It is kind of like _dmenu_ but has a lot less hassle in configuration.
 
 ## License
 
