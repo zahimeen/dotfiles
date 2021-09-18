@@ -38,9 +38,9 @@ window#waybar {
 }
 
 window > box {
-    margin-top: 27px;
-    margin-left: 27px;
-    margin-right: 27px;
+    margin-top: 26.5px;
+    margin-left: 26.5px;
+    margin-right: 26.5px;
     background: #1f2227;
     color: #c8ccd4;
 }

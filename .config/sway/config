@@ -4,6 +4,7 @@
 
 set $mod Mod4
 set $term kitty
+set $file_man kitty -e ranger
 set $menu rofi -show run
 set $browser brave
 set $alt_browser chromium
@@ -18,10 +19,6 @@ set $right l
 ################################################################################
 ###  STARTUP
 ################################################################################
-
-exec blueman-applet
-exec nm-applet
-exec flashfocus
 
 workspace 1
 exec $browser
@@ -55,6 +52,7 @@ exec $HOME/.azotebg
 ## Applications:
 
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $file_man
     bindsym $mod+Space exec $menu
     bindsym $mod+b exec $browser
     bindsym $mod+Shift+b exec $alt_browser
