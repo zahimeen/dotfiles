@@ -41,9 +41,9 @@
         "exec": "/usr/bin/python3 $XDG_CONFIG_HOME/waybar/scripts/mediaplayer.py --player spotify",
         "format": "   {}",
         "return-type": "json",
-        "on-click": "spotifyctl -q playpause",
-        "on-scroll-up": "spotifyctl -q next",
-        "on-scroll-down": "spotifyctl -q previous"
+        "on-click": "spotifycli --playpause",
+        "on-scroll-up": "spotifycli --next",
+        "on-scroll-down": "spotifycli --previous"
     },
     "pulseaudio": {
         "scroll-step": 5,
