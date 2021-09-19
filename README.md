@@ -2,6 +2,12 @@
 
 Dotfiles are any files or directories starting with a "." in their name. They are commonly configuration files for software on your computer, such as the ".vimrc" for Vim and ".config", a common directory for software to have their configurations stored. To learn more about dotfiles, I would recommend looking [here](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789).
 
+## ![An Image of My Desktop](images/20210919_18h54m22s_grim.png)
+
+## ![An Image of My Desktop](images/20210919_19h05m05s_grim.png)
+
+## ![An Image of My Desktop](images/20210919_19h06m53s_grim.png)
+
 ## My Dotfiles
 
 The Programs I Use Are:
@@ -18,7 +24,7 @@ The Programs I Use Are:
   The prompt for my ZSH config. It is blazing fast and easy to use with other shells as well.
 - **LunarVim**\
   A layer on top of Neovim to create a sort of IDE. It is perfect as it is extensible, fast and most importantly, looks good. I use this because it is too hard to keep with Neovim trends, and I am not good at configuring, so I only have to worry about the features I want.
-- **Rofi**
+- **Rofi**\
   A run launcher, basically something that allows you to open applications. It is kind of like _dmenu_ but has a lot less hassle in configuration.
 
 ## License

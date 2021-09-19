@@ -122,6 +122,10 @@ exec $HOME/.azotebg
     bindsym $mod+s+l exec spotifycli --next
     bindsym $mod+s+h exec spotifycli --previous
 
+# Random Stuff:
+
+    bindsym $mod+p exec grim
+
 mode "resize" {
     bindsym $left resize grow width 10px
     bindsym $down resize grow height 10px
