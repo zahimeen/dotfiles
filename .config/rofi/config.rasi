@@ -1,14 +1,10 @@
 configuration {
-    modi: "drun";
     lines: 5;
     font: "Iosevka 13";
-    show-icons: false;
-    icon-theme: "Oranchelo";
     terminal: "kitty";
-    drun-display-format: "{icon} {name}";
-    display-drun: "  ";
     location: 0;
     separator-style: "solid";
+    show-icons: false;
     disable-history: false;
     hide-scrollbar: true;
 }
@@ -21,10 +17,9 @@ element-text, element-icon {
 }
 
 * {
-    dark-black: #1f2227;
-    bg-col: #282c34;
-    border-col: #545862;
-    selected-col: #545862;
+    bg-col: #1f2227;
+    border-col: #282c34;
+    selected-col: #282c34;
     blue: #98c379;
     fg-col: #81a1c1;
     fg-col2: #e06c75;

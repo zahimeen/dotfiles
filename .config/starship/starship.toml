@@ -1,14 +1,14 @@
-format = '[[[](fg:blue)[](bg:blue fg:#282c34)[](bg:#282c34 fg:blue)](bg:blue) $directory$git_branch$git_status[](fg:#282c34)](bg:#282c34) '
+format = '[[[](fg:blue)[](bg:blue fg:black)[](bg:black fg:blue)](bg:blue) $directory$git_branch$git_status[](fg:black)](bg:black) '
 add_newline = true
 
 [directory]
-style = "bg:#282c34 fg:blue"
+style = "bg:black fg:blue"
 truncation_length = 1
 format = "[$path]($style)"
 
 [git_branch]
 format = " [$branch]($style)"
-style = "bg:#282c34 fg:yellow"
+style = "bg:black fg:yellow"
 
 [git_status]
 stashed = "  ${count}"
@@ -20,5 +20,5 @@ deleted = " ${count}"
 renamed = " 﫦${count}"
 modified = " 凜${count}"
 staged = "  ${count}"
-untracked = "   ${count}"
-format = "[$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind](bg:#282c34 fg:red)"
+untracked = "  ${count}"
+format = "[$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind](bg:black fg:red)"

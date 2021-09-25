@@ -25,7 +25,7 @@ The Programs I Use Are:
 - **LunarVim**\
   A layer on top of Neovim to create a sort of IDE. It is perfect as it is extensible, fast and most importantly, looks good. I use this because it is too hard to keep with Neovim trends, and I am not good at configuring, so I only have to worry about the features I want.
 - **Rofi**\
-  A run launcher, basically something that allows you to open applications. It is kind of like _dmenu_ but has a lot less hassle in configuration.
+  A run launcher, basically something that allows you to open applications. It is kind of like _dmenu_ but has a lot less hassle in configuration. Config stolen from 'siduck76' and slightly redisigned.
 - **Ranger**\
   A terminal file manager. It is pretty simple and allows image previews.
 - **Macchina**\
