@@ -8,6 +8,7 @@ function zsh_add_plugin() {
         # For plugins
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.sh"
     else
         git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
     fi
@@ -15,7 +16,7 @@ function zsh_add_plugin() {
 
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "skywind3000/z.lua"
+zsh_add_plugin "iridakos/goto"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
