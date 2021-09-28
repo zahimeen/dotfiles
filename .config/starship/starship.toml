@@ -1,5 +1,12 @@
-format = '[[[](fg:blue)[](bg:blue fg:black)[](bg:black fg:blue)](bg:blue) $directory$git_branch$git_status[](fg:black)](bg:black) '
+format = '[$username $directory$git_branch$git_status[](fg:black)](bg:black) '
 add_newline = true
+
+[username]
+style_user = "bg:blue fg:black bold"
+style_root = "bg:red fg:black bold"
+format = "[ $user ]($style)"
+disabled = false
+show_always = true
 
 [directory]
 style = "bg:black fg:blue"

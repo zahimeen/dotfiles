@@ -1,5 +1,5 @@
 {
-    "name": "mytheme",
+    "name": "Foobar",
     "bar": {
         "Custom": {
             "glyph": "ߋ",
@@ -17,5 +17,5 @@
     "spacing": 4,
     "padding": 2,
     "block_title": "┤ Carbon ├",
-    "abbreviation": "Alternative"
+    "abbreviation": "Long"
 }

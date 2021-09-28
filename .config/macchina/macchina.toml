@@ -94,7 +94,7 @@ box_inner_margin_y = 0
 # To set 'foobar' as a theme, place foobar.json 
 # in $XDG_DATA_HOME/macchina/themes
 # and set theme = "foobar" (case-sensitive)
-theme = "mytheme"
+theme = "Foobar"
 
 # Hides the specified readouts.
 # Conflicts with: show_only
@@ -140,4 +140,4 @@ theme = "mytheme"
 #   - Battery
 # Example:
 #   show_only = ["Battery", "Memory", ...]
-show_only = ["DesktopEnvironment", "WindowManager", "Distribution", "Packages", "Terminal"]
+show_only = ["Machine", "Distribution", "DesktopEnvironment", "WindowManager", "Packages", "Terminal", "Shell"]
