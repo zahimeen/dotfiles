@@ -6,7 +6,6 @@ lvim.lsp.diagnostics.virtual_text = false
 require("user.settings")
 require("user.aesthetics")
 require("user.keymappings")
-require("user.bufferline")
 require("user.dashboard")
 require("user.treesitter")
 require("user.nvimtree")
