@@ -1,6 +1,6 @@
 lvim.lang.lua.formatters = {
 	{
-        exe = "stylua",
+		exe = "stylua",
 		args = { "" },
 	},
 }

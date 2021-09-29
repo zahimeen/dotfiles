@@ -15,7 +15,7 @@ require("core.autocmds").define_augroups({
 		{
 			"FileType",
 			"dashboard",
-			"set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2"
+			"set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2",
 		},
-	}
+	},
 })
