@@ -2,11 +2,11 @@
 
 Dotfiles are any files or directories starting with a "." in their name. They are commonly configuration files for software on your computer, such as the ".vimrc" for Vim and ".config", a common directory for software to have their configurations stored. To learn more about dotfiles, I would recommend looking [here](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789).
 
-## ![An Image of My Desktop](images/20210919_18h54m22s_grim.png)
+## ![An Image of My Desktop](images/20211001_10h22m32s_grim.png)
 
-## ![An Image of My Desktop](images/20210919_19h05m05s_grim.png)
+## ![An Image of My Desktop](images/20211001_10h32m32s_grim.png)
 
-## ![An Image of My Desktop](images/20210919_19h06m53s_grim.png)
+## ![An Image of My Desktop](images/20211001_10h35m26s_grim.png)
 
 ## My Dotfiles
 
