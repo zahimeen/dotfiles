@@ -80,10 +80,15 @@ label:focus {
 }
 
 #custom-launch {
-    margin-right: 20px;
-    margin-left: 16px;
+    margin-right: 10px;
+    margin-left: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 17px;
-    color: #81a1c1;
+    background-color: #81a1c1;
+    color: #1f2227;
 }
 
 #workspaces button {
@@ -109,9 +114,14 @@ label:focus {
 }
 
 #custom-spotify {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 17px;
     font-weight: 500;
-    color: #98c379;
+    background-color: #98c379;
+    color: #1f2227;
 }
 
 #pulseaudio {
@@ -154,8 +164,13 @@ label:focus {
 }
 
 #custom-off {
-    margin-right: 16px;
-    margin-left: 20px;
+    margin-right: 4px;
+    margin-left: 11px;
+    padding-left: 10px;
+    padding-right: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 17px;
-    color: #e06c75;
+    background-color: #e06c75;
+    color: #1f2227;
 }

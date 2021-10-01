@@ -39,7 +39,7 @@
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 $XDG_CONFIG_HOME/waybar/scripts/mediaplayer.py --player spotify",
-        "format": "   {}",
+        "format": "{}",
         "return-type": "json",
         "on-click": "spotifycli --playpause",
         "on-scroll-up": "spotifycli --next",
