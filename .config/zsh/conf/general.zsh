@@ -1,5 +1,4 @@
 unsetopt BEEP
 
 # startup
-macchina
-# rxfetch
+rxfetch
