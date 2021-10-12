@@ -1,0 +1,48 @@
+live_config_reload: true
+
+env:
+    TERM: xterm-256colors
+
+window:
+    title: alacritty    
+    dynamic_title: true
+
+    padding:
+        x: 30
+        y: 30
+
+    class:
+        instance: alacritty
+        general: alacritty
+
+font:
+    size: 14.0
+
+    normal:
+        family: monospace
+        style: Regular
+
+    bold:
+        family: monospace
+        style: Bold
+
+    italic:
+        family: monospace
+        style: Italic
+
+    bold_italic:
+        family: monospace
+        style: Bold Italic
+
+cursor:
+    blinking: On
+    vi_mode_style: Block
+    blink_interval: 100
+    unfocused_hollow: true
+    thickness: 0.01
+
+    style:
+        shape: Block
+
+import:
+    - ~/.config/alacritty/colors.yml
