@@ -19,19 +19,19 @@ font:
     size: 14.0
 
     normal:
-        family: monospace
+        family: DejaVu Sans Mono Nerd Font
         style: Regular
 
     bold:
-        family: monospace
+        family: DejaVu Sans Mono Nerd Font
         style: Bold
 
     italic:
-        family: monospace
+        family: DejaVu Sans Mono Nerd Font
         style: Italic
 
     bold_italic:
-        family: monospace
+        family: DejaVu Sans Mono Nerd Font
         style: Bold Italic
 
 cursor:
