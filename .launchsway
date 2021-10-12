@@ -1,5 +1,0 @@
-[ -f ~/.profile ] && . ~/.profile
-
-exec sway
-
-# vim: ft=sh
