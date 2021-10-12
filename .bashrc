@@ -1,8 +1,4 @@
-[[ $- != *i* ]] && return
-
-export TERM="xterm-256color"
-export EDITOR="vim"
-export VISUAL="vim"
+export GPG_TTY=$(tty)
 
 alias ls='ls -a --color=always --sort=version'
 alias rls="clear ; ls"
@@ -11,15 +7,17 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias gs='git status'
-alias gc='git commit -S'
-alias gp='git push'
-alias ga='git add'
-alias gb='git checkout'
-
-alias nimv="nvim"
-alias nivm="nvim"
-alias vnim="nivm"
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -S'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias stat='git status'
+alias tag='git tag'
+alias newtag='git tag -a'
 
 ex ()
 {
@@ -47,4 +45,5 @@ ex ()
 }
 
 bind 'set bell-style none'  # disables error bell
+
 PS1='\e[0;32m\u\e[m: \e[0;34m\W \e[m'
