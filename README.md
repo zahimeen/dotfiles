@@ -8,4 +8,4 @@ For those wondering what in the world happened to my previous rice on sway, that
 
 ## License
 
-[The MIT License is a short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.](./LICENSE)
+[MIT License](./LICENSE.md)

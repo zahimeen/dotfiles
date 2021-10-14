@@ -27,12 +27,12 @@ colors:
         white:   '#ebdbb2'
 
     cursor:
-        text: CellBackground
-        cursor: CellForeground
+        text: '#1d2021'
+        cursor: '#ebdbb2'
 
     vi_mode_cursor:
-        text: CellBackground
-        cursor: CellForeground
+        text: '#1d2021'
+        cursor: '#ebdbb2'
 
     search:
         matches:
