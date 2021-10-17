@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -f ~/.profile ] && . ~/.profile
+[ ! -s ~/.config/mpd/pid ] && mpd
+
+river
