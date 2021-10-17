@@ -16,7 +16,7 @@ window:
         general: alacritty
 
 font:
-    size: 16.0
+    size: 14.5
 
     normal:
         family: Hack Nerd Font

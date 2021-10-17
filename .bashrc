@@ -1,3 +1,7 @@
+#!/bin/bash
+
+export EDITOR="lvim"
+export VISUAL="lvim"
 export GPG_TTY=$(tty)
 
 alias ls='ls -a --color=always --sort=version'
