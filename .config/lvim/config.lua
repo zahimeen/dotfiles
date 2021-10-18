@@ -29,6 +29,7 @@ lvim.leader = "space"
 -- language
 lvim.lang.lua.formatters = { { exe = "stylua" } }
 lvim.lang.javascript.formatters = { { exe = "prettierd" } }
+lvim.lang.json.formatters = { { exe = "prettierd" } }
 
 -- pre-installed plugins
 lvim.builtin.dashboard.active = true
