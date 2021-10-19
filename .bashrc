@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export EDITOR="lvim"
-export VISUAL="lvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export GPG_TTY=$(tty)
 
 alias ls='ls -a --color=always --sort=version'
@@ -48,7 +48,7 @@ ex ()
     fi
 }
 
-bind 'set bell-style none'  # disables error bell
+bind 'set bell-style none'
 
 if [ "$TERM" == "linux" ] || [ command -v starship &> /dev/null ]; then
     PS1='\e[0;32m\u\e[m: \e[0;34m\W \e[m'

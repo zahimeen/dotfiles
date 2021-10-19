@@ -35,9 +35,9 @@ font:
         style: Bold Italic
 
 cursor:
-    blinking: On
+    blinking: Never
     vi_mode_style: Block
-    blink_interval: 100
+    blink_interval: 18446000000000000000
     unfocused_hollow: true
     thickness: 0.01
 
