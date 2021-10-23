@@ -4,7 +4,7 @@ Dotfiles are simply the files (or folders) whose names start with a dot '.' like
 
 ## Disclaimer
 
-For those wondering what in the world happened to my previous rice on sway, that can still be found on the 'sway' branch of this repository.
+My sway rice is prior to [this](https://github.com/zahimeen/dotfiles/tree/6d40d6f135949cf0b9cb416d7eaac218598c37c9) commit.
 
 ## License
 
