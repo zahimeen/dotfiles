@@ -2,13 +2,8 @@
 lvim.format_on_save = true
 
 -- colorscheme
-lvim.colorscheme = "gruvbox"
-vim.g.gruvbox_contrast_dark = "hard"
-vim.g.gruvbox_italic = 1
-vim.g.gruvbox_bold = 1
-vim.g.gruvbox_underline = 1
-vim.g.gruvbox_undercurled = 1
-vim.g.gruvbox_sign_column = "bg0"
+lvim.colorscheme = "tokyonight"
+vim.g.tokyonight_style = "night"
 
 -- options
 vim.opt.wrap = false
@@ -30,6 +25,7 @@ lvim.leader = "space"
 lvim.lang.lua.formatters = { { exe = "stylua" } }
 lvim.lang.javascript.formatters = { { exe = "prettierd" } }
 lvim.lang.json.formatters = { { exe = "prettierd" } }
+lvim.lang.yaml.formatters = { { exe = "prettierd" } }
 
 -- pre-installed plugins
 lvim.builtin.dashboard.active = true
@@ -47,8 +43,7 @@ lvim.builtin.lualine.sections.lualine_z = {}
 -- personal plugins
 lvim.plugins = {
     {
-        "zahimeen/gruvbox.nvim",
-        requires = { "rktjmp/lush.nvim" },
+        "folke/tokyonight.nvim",
     },
     {
         "iamcco/markdown-preview.nvim",

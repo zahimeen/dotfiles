@@ -7,4 +7,4 @@ export ZDOTDIR=~/.config/zsh
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export PF_INFO="ascii title os host kernel pkgs de wm palette"
 export PF_COL2=9
-export XDG_CURRENT_DESKTOP=Anime
+export XDG_CURRENT_DESKTOP=AraAra

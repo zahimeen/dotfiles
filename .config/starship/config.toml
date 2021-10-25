@@ -1,5 +1,5 @@
 format = "$directory$git_branch$git_status $character"
-right_format = "[Ara Ara](bold cyan)"
+right_format = "[Ara Ara](bold blue)"
 
 [character]
 success_symbol = "[❯](bold green)"

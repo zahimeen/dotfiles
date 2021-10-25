@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-alias ls='exa -a --color=always --sort=type'
+alias ls='exa -a --color=always --sort=type --git-ignore'
 alias rls="clear; ls"
 
 alias cp="cp -i"
