@@ -8,7 +8,7 @@ Dotfiles are any files or directories starting with a "." in their name. They ar
 
 ## ![An Image of My Desktop](images/20211001_10h35m26s_grim.png)
 
-## My Dotfiles
+## Programs
 
 The Programs I Use Are:
 
@@ -30,6 +30,10 @@ The Programs I Use Are:
   A terminal file manager. It is pretty simple and allows image previews.
 - **Macchina**\
   So have you heard of neofetch? Basically that but better and faster.
+  
+## Disclaimer
+
+Anyone looking for my other rices, please look at the branches in this repo. Each rice is designated to its own branch.
 
 ## License
 
