@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ -f ~/.profile ] && . ~/.profile
+
 bind 'set bell-style none'
 
 export EDITOR="vim"
@@ -26,7 +28,7 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 if [ "$TERM" == "linux" ] || [ command -v starship &> /dev/null ]; then
-    PS1='\e[0;32m\u\e[m: \e[0;34m\W \e[m'
+    PS1='\e[0;32m\u\e[m: \e[0;36m\W \e[m'
 else
     eval "$(starship init bash)"
 fi

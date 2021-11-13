@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+[ -f ~/.profile ] && . ~/.profile
+
+autoload -U colors && colors
+
 export EDITOR="vim"
 export VISUAL="vim"
 export GPG_TTY=$(tty)
@@ -24,7 +28,7 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 if [ "$TERM" = "linux" ] || [ command -v starship &> /dev/null ]; then
-    PROMPT='%n %1d $ '
+    PS1=$'\e[0;32m%n\e[m: \e[0;36m%1~ \e[m'
 else
     eval "$(starship init bash)"
 fi

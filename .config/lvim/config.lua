@@ -21,12 +21,6 @@ vim.opt.colorcolumn = "80"
 -- keybindings
 lvim.leader = "space"
 
--- language
-lvim.lang.lua.formatters = { { exe = "stylua" } }
-lvim.lang.javascript.formatters = { { exe = "prettierd" } }
-lvim.lang.json.formatters = { { exe = "prettierd" } }
-lvim.lang.yaml.formatters = { { exe = "prettierd" } }
-
 -- pre-installed plugins
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
@@ -43,7 +37,7 @@ lvim.builtin.lualine.sections.lualine_z = {}
 -- personal plugins
 lvim.plugins = {
     {
-        "folke/tokyonight.nvim",
+        "zahimeen/tokyonight.nvim",
     },
     {
         "iamcco/markdown-preview.nvim",

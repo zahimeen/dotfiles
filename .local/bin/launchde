@@ -3,4 +3,4 @@
 [ -f ~/.profile ] && . ~/.profile
 [ ! -s ~/.config/mpd/pid ] && mpd
 
-river
+exec river
