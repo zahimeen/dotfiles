@@ -1,7 +1,0 @@
-#!/bin/sh
-
-riverctl border-color-focused 0x9aa2f1
-riverctl border-color-unfocused 0x414868
-
-rivertile -outer-padding 25
-rivertile -view-padding 6

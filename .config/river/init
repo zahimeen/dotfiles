@@ -1,6 +1,0 @@
-#!/bin/sh
-
-riverctl spawn $XDG_CONFIG_HOME/river/bindings
-riverctl spawn $XDG_CONFIG_HOME/river/aesthetics
-riverctl spawn $XDG_CONFIG_HOME/river/layout
-swaybg -i $HOME/wallpapers/zerotwo.jpeg

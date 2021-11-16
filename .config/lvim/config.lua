@@ -17,6 +17,7 @@ vim.opt.relativenumber = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.colorcolumn = "80"
+vim.opt.foldmethod = "marker"
 
 -- keybindings
 lvim.leader = "space"

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-riverctl default-layout rivertile
-riverctl float-filter-add app-id float
-exec rivertile
