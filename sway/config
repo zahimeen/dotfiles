@@ -1,0 +1,199 @@
+#### Variables #### {{{
+#------------------------------------------------------------------------------#
+
+# action key
+set $mod Mod4
+
+# terminal emulator
+set $term alacritty
+
+# web browser
+set $browser brave
+
+# application menu
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+#------------------------------------------------------------------------------#
+#### }}}
+
+
+#### Aesthetics #### {{{
+#------------------------------------------------------------------------------#
+
+# wallpaper
+exec ~/.azotebg
+
+# border {{{
+
+default_border pixel 1
+client.focused          #81a1c1 #81a1c1 #81a1c1 #81a1c1 #81a1c1
+client.focused_inactive #373b41 #373b41 #373b41 #373b41 #373b41
+client.urgent           #cc6666 #cc6666 #cc6666 #cc6666 #cc6666
+client.unfocused        #373b41 #373b41 #373b41 #373b41 #373b41
+
+# }}}
+
+# gaps
+gaps inner 10
+gaps outer 20
+
+#------------------------------------------------------------------------------#
+#### }}}
+
+
+#### Key Bindings #### {{{
+#------------------------------------------------------------------------------#
+
+## Basics: {{{
+
+    # launch terminal
+    bindsym $mod+Return exec $term
+
+    # launch application menu
+    bindsym $mod+Shift+Return exec $menu
+
+    # launch browser
+    bindsym $mod+b exec $browser
+
+    # kill focused window
+    bindsym $mod+c kill
+
+    # reload sway configuration file
+    bindsym $mod+q reload
+
+    # exit sway
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # drag floating windows by holding down $mod and left mouse button.
+    # resize them with right mouse button + $mod.
+    # despite the name, also works for non-floating windows.
+    # change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+## }}}
+
+## Moving Around: {{{
+
+    # move your focus around
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+
+    # move the focused window with the same, but add Shift
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
+
+## }}}
+
+## Workspaces: {{{
+
+    # NOTE: workspaces can have any name you want, not just numbers.
+
+    # switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+## }}}
+
+## Layout stuff: {{{
+
+    # "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits respectively.
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
+
+    # switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # toggle the current focus between tiling and floating mode
+    bindsym $mod+t floating toggle
+
+    # swap focus between the tiling area and the floating area
+    bindsym $mod+Space focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+
+## }}}
+
+## Scratchpad: {{{
+
+    # move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # show the next scratchpad window or hide the focused scratchpad window.
+    # if there are multiple scratchpad windows, this command
+    # cycles through them.
+    bindsym $mod+minus scratchpad show
+
+## }}}
+
+## Resizing containers: {{{
+
+    mode "resize" {
+
+        # decrease the container's width
+        bindsym h resize shrink width 10px
+        # increase the container's width
+        bindsym j resize grow height 10px
+        # decrease the container's height
+        bindsym k resize shrink height 10px
+        # increase the container's height
+        bindsym l resize grow width 10px
+
+        # switch to default mode
+        bindsym Return mode "default"
+        # switch to default mode
+        bindsym Escape mode "default"
+    }
+
+    # switch to resize mode
+    bindsym $mod+r mode "resize"
+
+## }}}
+
+#------------------------------------------------------------------------------#
+#### }}}
+
+
+#### Utilities #### {{{
+
+# run xwayland on startup
+xwayland force
+
+# clipboard setup (clipman)
+exec wl-paste -t text --watch clipman store --no-persist
+
+#### }}}
+
+
+include /etc/sway/config.d/*
