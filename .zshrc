@@ -27,8 +27,4 @@ alias stat='git status'
 alias tag='git tag'
 alias newtag='git tag -a'
 
-if [ "$TERM" = "linux" ] || [ command -v starship &> /dev/null ]; then
-    PS1=$'\e[0;32m%n\e[m: \e[0;36m%1~ \e[m'
-else
-    eval "$(starship init bash)"
-fi
+PS1=$'\e[0;32m%n\e[m: \e[0;36m%1~ \e[m'

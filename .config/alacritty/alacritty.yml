@@ -16,30 +16,34 @@ window:
         general: alacritty
 
 font:
-    size: 14.5
+    size: 18.5
 
     normal:
-        family: Hack Nerd Font
+        family: Iosevka
         style: Regular
 
     bold:
-        family: Hack Nerd Font
+        family: Iosevka
         style: Bold
 
     italic:
-        family: Hack Nerd Font
+        family: Iosevka
         style: Italic
 
     bold_italic:
-        family: Hack Nerd Font
+        family: Iosevka
         style: Bold Italic
 
 cursor:
     blinking: Never
     vi_mode_style: Block
-    blink_interval: 18446000000000000000
     unfocused_hollow: true
     thickness: 0.01
 
     style:
-        shape: Block
+        shape: Beam
+
+colors:
+    cursor:
+        text: "#1d1f21"
+        cursor: "#c5c8c6"

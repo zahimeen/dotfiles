@@ -1,0 +1,18 @@
+return {
+	BufferOffset = { colors.base02, colors.base02, nil, nil },
+	BufferCurrent = { colors.base05, colors.base00, nil, nil },
+	BufferCurrentIndex = { colors.base05, colors.base00, nil, nil },
+	BufferCurrentMod = { colors.base05, colors.base00, nil, nil },
+	BufferCurrentSign = { colors.base00, colors.base00, nil, nil },
+	BufferCurrentTarget = { colors.base05, colors.base00, nil, nil },
+	BufferVisible = { colors.base05, colors.base00, nil, nil },
+	BufferVisibleIndex = { colors.base05, colors.base00, nil, nil },
+	BufferVisibleMod = { colors.base05, colors.base00, nil, nil },
+	BufferVisibleSign = { colors.base00, colors.base00, nil, nil },
+	BufferVisibleTarget = { colors.base05, colors.base00, nil, nil },
+	BufferInactive = { colors.base04, colors.base01, nil, nil },
+	BufferInactiveIndex = { colors.base04, colors.base01, nil, nil },
+	BufferInactiveMod = { colors.base04, colors.base01, nil, nil },
+	BufferInactiveSign = { colors.base01, colors.base01, nil, nil },
+	BufferInactiveTarget = { colors.base04, colors.base01, nil, nil },
+}
