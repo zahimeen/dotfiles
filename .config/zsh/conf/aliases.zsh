@@ -1,12 +1,15 @@
 #!/bin/zsh
 
+# Better `ls` with `exa`
 alias ls="exa -a --color=always --sort=type --git-ignore"
 alias rls="clear; ls"
 
+# Confirmation on File/Directory Moving Procedures
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
+# Git
 alias addall="git add ."
 alias branch="git branch"
 alias checkout="git checkout"
@@ -19,5 +22,6 @@ alias stat="git status"
 alias tag="git tag"
 alias newtag="git tag -a"
 
+# Miscellaneous
 alias py="python"
 alias vimex="vim -e"

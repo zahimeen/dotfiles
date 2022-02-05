@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-[ -f ~/.profile ] && . ~/.profile
+#
+# ~/.zshrc
+#
 
 autoload -U colors && colors
 
@@ -27,4 +29,10 @@ alias stat='git status'
 alias tag='git tag'
 alias newtag='git tag -a'
 
-PS1=$'\e[0;32m%n\e[m: \e[0;36m%1~ \e[m'
+if [ "$TERM" = "linux" ] || [ command -v starship &> /dev/null ]; then
+    PS1=$'\e[0;32m%n\e[m \e[0;36m%1~ \e[m'
+else
+    eval "$(starship init zsh)"
+fi
+
+echo "Emergency '.zshrc' is being used. Please export your 'ZDOTDIR' to the correct '.zshrc' folder."

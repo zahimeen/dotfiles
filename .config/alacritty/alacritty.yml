@@ -16,7 +16,7 @@ window:
         general: alacritty
 
 font:
-    size: 18.5
+    size: 11.5
 
     normal:
         family: Iosevka
@@ -36,12 +36,12 @@ font:
 
 cursor:
     blinking: Never
-    vi_mode_style: Block
     unfocused_hollow: true
     thickness: 0.01
 
     style:
         shape: Beam
+        # shape: Block
 
 colors:
     cursor:

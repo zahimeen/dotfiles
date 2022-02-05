@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-export OMZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$ZDOTDIR/custom"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
-source $OMZSH/oh-my-zsh.sh
-for file in $ZDOTDIR/conf/*; do source $file; done
+source $ZDOTDIR/conf/options.zsh
+source $ZDOTDIR/conf/plugins.zsh
+source $ZDOTDIR/conf/aliases.zsh
+source $ZDOTDIR/conf/exports.zsh
+source $ZDOTDIR/conf/theme.zsh
+source $ZDOTDIR/conf/keybindings.zsh
