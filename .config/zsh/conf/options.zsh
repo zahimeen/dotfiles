@@ -25,13 +25,13 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path $ZDOTDIR/cache
+zstyle ':completion:*' cache-path $HOME/.cache/zsh
 zstyle ':completion:*' menu select
 
 zmodload -i zsh/complist
 zmodload zsh/complist
 
 WORDCHARS=${WORDCHARS//\/[&.;]}
-HISTFILE=$ZDOTDIR/cache/.zhistory
+HISTFILE=$HOME/.cache/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
