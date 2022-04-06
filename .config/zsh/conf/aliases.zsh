@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Better `ls` with `exa`
-alias ls="exa -a --color=always --sort=type --git-ignore"
+alias ls="exa -a --color=always --sort=type"
 alias rls="clear; ls"
 
 # Confirmation on File/Directory Moving Procedures

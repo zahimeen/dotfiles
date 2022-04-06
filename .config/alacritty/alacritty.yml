@@ -1,49 +1,50 @@
 live_config_reload: true
 
 env:
-    TERM: xterm-256color
+  TERM: xterm-256color
 
 window:
-    title: alacritty
-    dynamic_title: true
+  title: alacritty
+  dynamic_title: true
+  dynamic_padding: true
 
-    padding:
-        x: 20
-        y: 20
+  padding:
+    x: 5
+    y: 5
 
-    class:
-        instance: alacritty
-        general: alacritty
+  class:
+    instance: alacritty
+    general: alacritty
 
 font:
-    size: 11.5
+  size: 8.5
 
-    normal:
-        family: Iosevka
-        style: Regular
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Medium
 
-    bold:
-        family: Iosevka
-        style: Bold
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
 
-    italic:
-        family: Iosevka
-        style: Italic
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
 
-    bold_italic:
-        family: Iosevka
-        style: Bold Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
 
 cursor:
-    blinking: Never
-    unfocused_hollow: true
-    thickness: 0.01
+  blinking: Never
+  unfocused_hollow: true
+  thickness: 0.01
 
-    style:
-        shape: Beam
-        # shape: Block
+  style:
+    shape: Beam
+    # shape: Block
 
 colors:
-    cursor:
-        text: "#1d1f21"
-        cursor: "#c5c8c6"
+  cursor:
+    text: "#1d1f21"
+    cursor: "#c5c8c6"
