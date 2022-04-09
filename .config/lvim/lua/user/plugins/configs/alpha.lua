@@ -84,7 +84,6 @@ local function button(sc, txt, keybind, keybind_opts)
     }
 end
 
-
 local function resolve_buttons(entries)
     local val = {}
 

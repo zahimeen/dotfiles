@@ -1,6 +1,6 @@
 local exists, blankline = pcall(require, "indent_blankline")
 if not exists then
-   return
+    return
 end
 
 local config = {

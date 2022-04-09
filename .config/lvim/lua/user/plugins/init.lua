@@ -6,22 +6,22 @@ lvim.plugins = {
     {
         "norcalli/nvim-colorizer.lua",
         event = "BufRead",
-        config = function ()
+        config = function()
             require("user.plugins.configs.colorizer")
-        end
+        end,
     },
     {
         "feline-nvim/feline.nvim",
         after = "nvim-web-devicons",
         config = function()
             require("user.plugins.configs.feline")
-        end
+        end,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
         config = function()
             require("user.plugins.configs.indent-blankline")
-        end
+        end,
     },
 }

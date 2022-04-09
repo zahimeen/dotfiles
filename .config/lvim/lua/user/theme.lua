@@ -2,18 +2,18 @@ local cmd = vim.cmd
 local theme = lvim.colorscheme
 local base16 = require("base16")
 local base16_colors = require("themes.tomorrow-night-base16")
-local colors =  require("hl_themes." .. theme)
+local colors = require("hl_themes." .. theme)
 
 local function hl_fg(group, col)
-   cmd("hi " .. group .. " guifg=" .. col)
+	cmd("hi " .. group .. " guifg=" .. col)
 end
 
 local function hl_bg(group, col)
-   cmd("hi " .. group .. " guibg=" .. col)
+	cmd("hi " .. group .. " guibg=" .. col)
 end
 
 local function hl_fg_bg(group, fgcol, bgcol)
-   cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
+	cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
 
 local one_bg = colors.one_bg

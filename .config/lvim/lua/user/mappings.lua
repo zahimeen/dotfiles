@@ -28,7 +28,10 @@ lvim.keys.term_mode = {
 }
 
 lvim.builtin.which_key.mappings = {
-    ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<cr>", "Comment Cursor Line" },
+    ["/"] = {
+        "<cmd>lua require('Comment.api').toggle_current_linewise()<cr>",
+        "Comment Cursor Line",
+    },
     [";"] = { "<cmd>Alpha<CR>", "Redraw Dashboard" },
     [" "] = { "<cmd>Telescope find_files<cr>", "Find Files" },
     b = {
@@ -37,12 +40,15 @@ lvim.builtin.which_key.mappings = {
         n = { "<cmd>BufferLineCycleNext<cr>", "Go To Next Buffer" },
         p = { "<cmd>BufferLineCyclePrev<cr>", "Go To Previous Buffer" },
         j = { "<cmd>BufferLinePick<cr>", "Pick And Go To Buffer" },
-        c = { "<cmd>BufferLinePickClose<cr>", "Pick And Close Buffer" }
+        c = { "<cmd>BufferLinePickClose<cr>", "Pick And Close Buffer" },
     },
     f = {
         name = "Find",
         f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-        h = { "<cmd>Telescope find_hiles follow=true no_ignore=true hidden=true<cr>", "Find Hidden Files" },
+        h = {
+            "<cmd>Telescope find_hiles follow=true no_ignore=true hidden=true<cr>",
+            "Find Hidden Files",
+        },
         b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
         r = { "<cmd>Telescope oldfiles<cr>", "Find Recent Files" },
         w = { "<cmd>Telescope live_grep<cr>", "Find Text" },
@@ -63,19 +69,25 @@ lvim.builtin.which_key.mappings = {
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic", },
-        k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
+        j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+        k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         p = {
             name = "Peek",
             d = { "<cmd>lua require('lvim.lsp.peek').Peek('definition')<cr>", "Definition" },
-            t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-            i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
+            t = {
+                "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>",
+                "Type Definition",
+            },
+            i = {
+                "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>",
+                "Implementation",
+            },
         },
         q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
+        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
         e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     },
     o = {
@@ -89,5 +101,5 @@ lvim.builtin.which_key.mappings = {
         q = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle Menu" },
         n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next Mark" },
         p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Previous Mark" },
-    }
+    },
 }
