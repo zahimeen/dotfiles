@@ -1,6 +1,7 @@
 local cmd = vim.cmd
 local theme = lvim.colorscheme
 local base16 = require("base16")
+local base16_colors = require("themes.tomorrow-night-base16")
 local colors =  require("hl_themes." .. theme)
 
 local function hl_fg(group, col)
@@ -61,8 +62,9 @@ hl_fg("NvimInternalError", red)
 hl_fg("VertSplit", one_bg2)
 
 hl_fg("AlphaHeader", grey_fg)
-hl_fg("AlphaButtons", light_grey)
+hl_fg("AlphaButton", light_grey)
 hl_fg("AlphaFooter", nord_blue)
+hl_fg("AlphaShortcut", "#" .. base16_colors.base0E)
 
 hl_fg_bg("DiffAdd", blue, "NONE")
 hl_fg_bg("DiffChange", grey_fg, "NONE")

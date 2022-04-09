@@ -1,7 +1,5 @@
-local vim = vim
-
-local works, feline = pcall(require, "feline")
-if not works then
+local exists, feline = pcall(require, "feline")
+if not exists then
    return
 end
 

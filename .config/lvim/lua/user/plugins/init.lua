@@ -4,6 +4,13 @@ lvim.plugins = {
     { "NvChad/nvim-base16.lua" },
     { "ThePrimeagen/harpoon" },
     {
+        "norcalli/nvim-colorizer.lua",
+        event = "BufRead",
+        config = function ()
+            require("user.plugins.configs.colorizer")
+        end
+    },
+    {
         "feline-nvim/feline.nvim",
         after = "nvim-web-devicons",
         config = function()

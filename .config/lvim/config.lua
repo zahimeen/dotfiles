@@ -11,6 +11,7 @@ This file should not perform any major actions.
 require("user.general")
 require("user.options")
 require("user.plugins")
+require("user.autocmds")
 require("user.mappings")
 require("user.theme")
 
@@ -112,6 +113,3 @@ require("user.theme")
 -- }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
