@@ -102,4 +102,19 @@ lvim.builtin.which_key.mappings = {
         n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next Mark" },
         p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Previous Mark" },
     },
+    r = {
+        name = "Run",
+        p = {
+            "<cmd>lua require('user.plugins.configs.toggleterm').run_py_file()<cr>",
+            "Run Current Python File",
+        },
+    },
+    d = {
+        name = "Debug",
+        b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Set Breakpoint" },
+        c = { "<cmd>lua require('dap').continue()<cr>", "Continue Debugging" },
+        o = { "<cmd>lua require('dap').step_over()<cr>", "Step Over" },
+        i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into" },
+        r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
+    },
 }

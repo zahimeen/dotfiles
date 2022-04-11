@@ -1,4 +1,4 @@
-format = "$username $directory$git_branch$git_status $character"
+format = "$username $directory$git_branch$git_status $python$character"
 # right_format = "$username"
 
 [username]
@@ -32,3 +32,9 @@ modified = " 凜${count}"
 staged = "  ${count}"
 untracked = "  ${count}"
 format = "[$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind](red)"
+
+[python]
+format = '[${symbol}(\($virtualenv\) )${pyenv_prefix}(${version} )]($style)'
+style = "bold yellow"
+symbol = " "
+version_format = "${raw}"

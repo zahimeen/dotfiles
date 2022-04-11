@@ -2,7 +2,7 @@ local lvim = lvim
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-    { command = "black", filetypes = { "python" } },
+    { command = "yapf", filetypes = { "python" } },
     { command = "stylua", filetypes = { "lua" } },
 })
 

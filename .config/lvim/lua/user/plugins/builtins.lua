@@ -15,3 +15,7 @@ require("user.plugins.configs.treesitter")
 require("user.plugins.configs.which-key")
 
 builtins.lualine.active = false
+
+-- dapz
+
+builtins.dap.active = true
