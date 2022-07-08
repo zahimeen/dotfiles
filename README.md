@@ -8,4 +8,4 @@ Anyone looking for my other rices, please look at the branches in this repo. Eac
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT License](./LICENSE.txt)
