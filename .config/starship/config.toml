@@ -1,5 +1,6 @@
-format = "$username $directory$git_branch$git_status $python$character"
-# right_format = "$username"
+format = "$username $directory "
+right_format = "$git_branch$git_status"
+add_newline = false
 
 [username]
 style_user = "bold blue"
@@ -8,8 +9,8 @@ format = "[$user]($style)"
 show_always = true
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
 
 [directory]
 truncation_length = 1
@@ -32,9 +33,3 @@ modified = " 凜${count}"
 staged = "  ${count}"
 untracked = "  ${count}"
 format = "[$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind](red)"
-
-[python]
-format = '[${symbol}(\($virtualenv\) )${pyenv_prefix}(${version} )]($style)'
-style = "bold yellow"
-symbol = " "
-version_format = "${raw}"

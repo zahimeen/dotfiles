@@ -1,7 +1,0 @@
-#!/bin/sh
-
-[ -f ~/.profile ] && . ~/.profile
-[ ! -s ~/.config/mpd/pid ] && mpd
-
-/usr/bin/emacs --daemon &
-exec sway
