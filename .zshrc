@@ -1,9 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
-# we don't want a bell
-bind 'set bell-style none'
+# imagine actually using this
+unsetopt BEEP
 
-# setting environment variables
+# allow the use of colors
+autoload -U compinit colors zcalc
+compinit -d
+colors
+
+# set environment variables
 export EDITOR="nvim"
 export VISUAL="nvim"
 export GPG_TTY=$(tty)
@@ -16,6 +21,6 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 # set prompt
-PS1='\e[0;34m\u\e[m \e[0;36m\W \e[m'
+PS1="%n@%m %/ $ "
 
 # vim: ft=sh
