@@ -16,6 +16,10 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 # set prompt
-PS1='\e[0;34m\u\e[m \e[0;36m\W \e[m'
+if [ "$TERM" == "alacritty" ]; then
+    eval "$(starship init bash)"
+else
+    PS1='\e[0;34m\u\e[m \e[0;36m\W \e[m'
+fi
 
 # vim: ft=sh

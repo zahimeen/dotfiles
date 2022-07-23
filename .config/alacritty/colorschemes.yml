@@ -181,16 +181,6 @@ colorschemes:
       cyan:    "#70c0b1"
       white:   "#eaeaea"
 
-    dim:
-      black:   "#131415"
-      red:     "#864343"
-      green:   "#777c44"
-      yellow:  "#9e824c"
-      blue:    "#556a7d"
-      magenta: "#75617b"
-      cyan:    "#5b7d78"
-      white:   "#828482"
-
   # }}}
 
 # }}}
