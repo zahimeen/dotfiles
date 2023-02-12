@@ -8,9 +8,9 @@ alias push "git push"
 alias stat "git status"
 
 # confirmation before file modification
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp "cp -i"
+alias mv "mv -i"
+alias rm "rm -i"
 
 # exa is just better than ls
 alias ls "exa -a --color=always --sort=type"
@@ -18,3 +18,12 @@ alias rls "clear; ls"
 
 # python is too much to type
 alias py python
+
+# unimatrix too slow
+alias unimatrix "unimatrix --speed 96"
+
+# common nvim misspelling
+alias nivm "nvim"
+
+# helix is way too much to type
+alias hx "helix"
