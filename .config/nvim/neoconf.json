@@ -1,0 +1,24 @@
+// https://luals.github.io/wiki/settings/
+{
+	"lspconfig": {
+		"lua_ls": {
+			"Lua": {
+				"format": {
+					"enable": true
+				},
+				"telemetry": {
+					"enable": false
+				},
+				"hint": {
+					"enable": true,
+					"arrayIndex": "Auto", // "Enable" | "Auto" | "Disable"
+					"await": true,
+					"paramName": "All", // "All" | "Literal" | "Disable"
+					"paramType": true,
+					"semicolon": "SameLine", // "All" | "SameLine" | "Disable"
+					"setType": false
+				}
+			}
+		}
+	}
+}

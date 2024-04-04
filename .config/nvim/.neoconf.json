@@ -1,0 +1,33 @@
+{
+	"neodev": {
+		"library": {
+			"enabled": true
+		}
+	},
+	"neoconf": {
+		"plugins": {
+			"lua_ls": {
+				"enabled": true
+			}
+		}
+	},
+	"lspconfig": {
+		"lua_ls": {
+			"Lua": {
+				"runtime": {
+					"version": "LuaJIT",
+					"special": {
+						"spec": "require"
+					}
+				},
+				"workspace": {
+					"checkThirdParty": false,
+					"library": {
+						"$VIMRUNTIME/lua": true,
+						"$HOME/.config/nvim/lua": true
+					}
+				}
+			}
+		}
+	}
+}
