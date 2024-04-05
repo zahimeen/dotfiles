@@ -1,11 +1,25 @@
-#!/bin/bash
+# this file needs to be sourced by
+# "~/.bash_profile" or "~/.profile"
+
+# dont run anything if not interactive
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # we don't want a bell
 bind 'set bell-style none'
 
-# setting environment variables
-export EDITOR="nvim"
-export VISUAL="nvim"
+# editor stuff
+if hash nvim 2> /dev/null; then
+	export EDITOR="nvim"
+	export VISUAL="nvim"
+else
+	export EDITOR="vim"
+	export VISUAL="vim"
+fi
+
+# for gpg pass key thing
 export GPG_TTY=$(tty)
 
 # aliases
@@ -20,9 +34,10 @@ else
 	alias ls="ls -a --color=always --sort=version"
 fi
 
-# checks if starship exists
+# prompt
 if hash starship 2>/dev/null; then
-    eval "$(starship init bash)"
+	export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
+	eval "$(starship init bash)"
 else
-    PS1='\e[0;34m\u\e[m \e[0;36m\W \e[m'
+	PS1='\e[0;34m\u\e[m \e[0;36m\W \e[m'
 fi

@@ -20,7 +20,7 @@ alias vnim "nvim"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx GPG_TTY $(tty)
+set -gx GPG_TTY (tty)
 
 fish_config theme choose "Rosé Pine"
 

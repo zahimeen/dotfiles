@@ -1,4 +1,13 @@
-#!/bin/zsh
+# dont run anything if not interactive
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# include .profile if it exists
+if [ -f "$HOME/.profile" ]; then
+	source "$HOME/.profile"
+fi
 
 # imagine actually using this
 unsetopt BEEP
@@ -8,9 +17,16 @@ autoload -U compinit colors zcalc
 compinit -d
 colors
 
-# set environment variables
-export EDITOR="nvim"
-export VISUAL="nvim"
+# editor stuff
+if hash nvim 2> /dev/null; then
+	export EDITOR="nvim"
+	export VISUAL="nvim"
+else
+	export EDITOR="vim"
+	export VISUAL="vim"
+fi
+
+# for gpg pass key thing
 export GPG_TTY=$(tty)
 
 # aliases
@@ -27,9 +43,11 @@ fi
 
 # prompt
 if hash starship 2>/dev/null; then
-    eval "$(starship init zsh)"
+	export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
+	eval "$(starship init zsh)"
 else
 	PS1="%F{blue}%n${RESET} %F{cyan}%~ %f"
 fi
 
+# zsh highlighting is stupid
 # vim: ft=sh

@@ -6,7 +6,7 @@ local M = {
 function M.config()
 	require("project_nvim").setup({
 		detection_methods = { "pattern", "lua" },
-		patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
+		patterns = { ".editorconfig", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
 	})
 
 	local exists, telescope = pcall(require, "telescope")

@@ -8,6 +8,7 @@ local M = {
 }
 
 function M.config()
+	require("null-ls").setup({})
 	local mason = require("mason-null-ls")
 
 	mason.setup({
