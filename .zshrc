@@ -1,13 +1,8 @@
 # dont run anything if not interactive
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- != *i* ]] && return
 
 # include .profile if it exists
-if [ -f "$HOME/.profile" ]; then
-	source "$HOME/.profile"
-fi
+[[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # imagine actually using this
 unsetopt BEEP
@@ -39,6 +34,11 @@ if hash eza 2>/dev/null; then
 	alias ls="eza -a --color=always --sort=type"
 else
 	alias ls="ls -a --color=always --sort=version"
+fi
+
+# zoxide
+if hash zoxide 2>/dev/null; then
+	eval "$(zoxide init zsh)"
 fi
 
 # prompt

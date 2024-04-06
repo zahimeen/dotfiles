@@ -7,6 +7,7 @@ if test -e ~/.profile
 end
 
 set fish_greeting
+set fish_escape_delay_ms 10
 
 alias cp "cp -i"
 alias mv "mv -i"
