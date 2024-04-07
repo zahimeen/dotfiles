@@ -2,7 +2,7 @@ local M = {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
 	event = "VeryLazy",
-	dependencies = "nvim-lua/plenary.nvim"
+	dependencies = "nvim-lua/plenary.nvim",
 }
 
 M.config = function()
@@ -10,7 +10,7 @@ M.config = function()
 
 	harpoon:setup({})
 
-	vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+	vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 	vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 	-- quick swap

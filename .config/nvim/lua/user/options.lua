@@ -47,3 +47,10 @@ o.clipboard = "unnamedplus" -- see "user.clipboard"
 o.undofile = true
 o.title = false
 o.completeopt = { "menuone", "noselect" }
+
+-- yknow the random black screen you get before entering a python file?
+-- yea well thats because neovim is looking for the python provider.
+-- setting this means it doesnt have to look for it anymore
+-- (similar to the cliipboard load time issue)
+-- P.S: also make sure you have pynvim
+vim.g.python3_host_prog = "/usr/sbin/python3"
