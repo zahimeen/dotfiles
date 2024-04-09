@@ -1,7 +1,7 @@
 local M = {
 	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 }
 
 M.config = function()

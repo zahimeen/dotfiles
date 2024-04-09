@@ -69,7 +69,7 @@ M.config = function()
 
 	require("mason").setup()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "tsserver", "bashls" },
+		ensure_installed = { "lua_ls", "tsserver", "pyright" },
 		automatic_installation = false,
 	})
 

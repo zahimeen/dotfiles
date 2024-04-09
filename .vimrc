@@ -17,8 +17,12 @@ set showmatch
 set smartcase
 
 set hidden
-set ttyfast
 set laststatus=2
 
+set runtimepath=$XDG_DATA_HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$XDG_DATA_HOME/.vim/after
+set runtimepath=$XDG_DATA_HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$XDG_DATA_HOME/.vim/after
+set viminfofile=$XDG_DATA_HOME/.vim/info
+
 set showcmd
+set ttyfast
 set background=dark

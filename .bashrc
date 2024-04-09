@@ -7,6 +7,9 @@
 # we don't want a bell
 bind 'set bell-style none'
 
+# out of the way
+export HISTFILE=$XDG_STATE_HOME/bash/history
+
 # editor stuff
 if hash nvim 2> /dev/null; then
 	export EDITOR="nvim"
