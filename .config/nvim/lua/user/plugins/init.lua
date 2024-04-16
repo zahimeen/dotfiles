@@ -36,6 +36,7 @@ spec("user.plugins.indent")
 spec("user.plugins.gitsigns")
 spec("user.plugins.zen")
 spec("user.plugins.tmux")
+spec("user.plugins.slimux")
 -- spec("user.plugins.modes")
 
 require("lazy").setup({

@@ -8,7 +8,7 @@ M.config = function()
 	tmux.setup({
 		copy_sync = { enable = false },
 		navigation = { enable_default_keybindings = false },
-		resize = { enable_default_keybindings = false }
+		resize = { enable_default_keybindings = false },
 	})
 
 	local map = vim.keymap.set

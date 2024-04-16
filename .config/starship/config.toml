@@ -1,9 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$directory$character"
+format = "$python$directory$character"
 
 add_newline = true
 
 [directory]
 truncation_length = 1
 read_only = ""
+
+[python]
+format = '[(\($virtualenv\))]($style) '
+style = "blue italic"
+pyenv_version_name = true

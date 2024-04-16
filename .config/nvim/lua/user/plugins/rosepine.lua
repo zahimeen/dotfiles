@@ -34,6 +34,9 @@ M.config = function()
 
 			-- panes
 			WinSeparator = { fg = "#2e202f" },
+
+			-- syntax
+			Number = { fg = "iris" }
 		},
 	})
 
