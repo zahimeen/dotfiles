@@ -11,10 +11,13 @@ local M = {
 }
 
 M.config = function()
-	require("telescope").setup({
+	local telescope = require("telescope")
+
+	telescope.setup({
 		defaults = {
 			prompt_prefix = "  ",
 			selection_caret = "  ",
+			multi_icon = " + ",
 			entry_prefix = "  ",
 			initial_mode = "insert",
 			mappings = { i = { ["<Esc>"] = "close" } },
@@ -47,7 +50,7 @@ M.config = function()
 		},
 	})
 
-	require("telescope").load_extension("fzf")
+	telescope.load_extension("fzf")
 
 	local builtin = require("telescope.builtin")
 	vim.keymap.set("n", "<leader><space>", builtin.find_files)
