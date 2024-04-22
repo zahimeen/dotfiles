@@ -48,9 +48,10 @@ require("lazy").setup({
 	},
 	ui = {
 		icons = {
+			ft = "",
 			lazy = "(H) ",
-			loaded = "+",
-			not_loaded = "-",
+			loaded = "",
+			not_loaded = "",
 		},
 	},
 })

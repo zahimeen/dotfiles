@@ -22,7 +22,7 @@ M.config = function()
 			TelescopeSelectionCaret = { fg = "love", bg = "highlight_med" },
 			TelescopeMultiSelection = { fg = "text", bg = "highlight_high" },
 
-			TelescopeTitle = { fg = "base", bg = "love" },
+			TelescopeTitle = { fg = "overlay", bg = "overlay" },
 			TelescopePromptTitle = { fg = "base", bg = "pine" },
 			TelescopePreviewTitle = { fg = "base", bg = "iris" },
 
@@ -36,7 +36,7 @@ M.config = function()
 			WinSeparator = { fg = "#2e202f" },
 
 			-- syntax
-			Number = { fg = "iris" }
+			-- Number = { fg = "iris" }
 		},
 	})
 

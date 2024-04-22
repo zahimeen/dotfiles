@@ -19,6 +19,9 @@ map("n", "<leader>ws", "<C-w>s")
 -- map({ "n", "v", "i", "t" }, "<A-j>", "<C-w>j")
 -- map({ "n", "v", "i", "t" }, "<A-k>", "<C-w>k")
 
+-- quicker fixer windower
+map("n", "<A-q>", "<cmd>cw<cr>")
+
 -- terminal escape
 map("t", "<C-;>", "<C-\\><C-n>") -- FIXME: its not working idk why
 
@@ -42,7 +45,6 @@ map("n", "<leader>so", function()
 
 	if not (vim.opt_local.filetype._value == "lua") or not (filepath:sub(1, #directory) == directory) then
 		vim.cmd.source()
-		print("Sourced current file!")
 		return
 	end
 
@@ -52,9 +54,6 @@ map("n", "<leader>so", function()
 	local returns = require(modname)
 	if type(returns) == "table" and type(returns.config) == "function" then
 		returns.config()
-		print("Sourced current file and ran config function!")
 		return
 	end
-
-	print("Sourced current file, but no config function!")
 end)

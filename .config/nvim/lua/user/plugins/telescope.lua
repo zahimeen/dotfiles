@@ -25,6 +25,7 @@ M.config = function()
 			layout_strategy = "horizontal",
 			layout_config = {
 				horizontal = {
+					prompt_position = "top",
 					preview_width = 0.6,
 					results_width = 0.4,
 				},

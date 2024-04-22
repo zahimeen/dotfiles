@@ -1,5 +1,13 @@
-// https://luals.github.io/wiki/settings/
 {
+	"neoconf": {
+		"plugins": {
+			"lua_ls": {
+				"enabled": true
+			}
+		}
+	},
+
+	// https://luals.github.io/wiki/settings/
 	"lspconfig": {
 		"lua_ls": {
 			"Lua": {

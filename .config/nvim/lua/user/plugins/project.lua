@@ -15,7 +15,7 @@ function M.config()
 	if exists then
 		telescope.load_extension("projects")
 		vim.keymap.set("n", "<leader>fp", telescope.extensions.projects.projects)
-		vim.keymap.set("n", "<c-p>", "<cmd>ProjectRoot<cr>")
+		vim.keymap.set("n", "<leader>pr", "<cmd>ProjectRoot<cr>")
 	end
 end
 

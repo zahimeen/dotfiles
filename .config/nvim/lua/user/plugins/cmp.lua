@@ -44,7 +44,6 @@ M.config = function()
 			{ name = "path" },
 			{ name = "calc" },
 			{ name = "buffer" },
-			{ name = 'lab.quick_data', keyword_length = 4 }
 		},
 
 		snippet = {
