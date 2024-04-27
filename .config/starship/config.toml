@@ -9,6 +9,5 @@ truncation_length = 1
 read_only = ""
 
 [python]
-format = '[(\($virtualenv\))]($style) '
+format = '[(\($virtualenv\) )]($style)'
 style = "blue italic"
-pyenv_version_name = true

@@ -28,6 +28,12 @@ fish_config theme choose "Rosé Pine"
 # better cd thing idk
 zoxide init fish | source
 
+# vi mode
+fish_vi_key_bindings
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace underscore
+
 # prompt
 set -gx STARSHIP_CONFIG $HOME/.config/starship/config.toml
 starship init fish | source
