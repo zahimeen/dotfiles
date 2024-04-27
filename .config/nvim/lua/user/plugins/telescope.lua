@@ -60,6 +60,7 @@ M.config = function()
 	vim.keymap.set("n", "<leader>fb", builtin.buffers)
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 	vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
+	vim.keymap.set("n", "<leader>ft", builtin.builtin)
 end
 
 return M

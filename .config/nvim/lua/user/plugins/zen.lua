@@ -19,9 +19,19 @@ M.config = function()
 					laststatus = 3,
 				}
 			},
+
 			plugins = {
-				tmux = { enabled = true }
-			}
+				tmux = { enabled = true },
+				gitsigns = { enabled = true }
+			},
+
+			on_open = function ()
+				vim.cmd("IBLDisable")
+			end,
+
+			on_close = function ()
+				vim.cmd("IBLEnable")
+			end
 		})
 	end)
 end

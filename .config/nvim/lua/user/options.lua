@@ -7,6 +7,7 @@ o.showmode = false
 o.showcmd = false
 o.fillchars = { eob = " " }
 o.shortmess:append "cI"
+o.formatoptions:remove "cro"
 
 o.number = true
 o.relativenumber = true
@@ -22,7 +23,7 @@ o.hlsearch = true
 o.ignorecase = true
 o.smartcase = true
 
-o.guicursor = "a:block" -- no more line cursor
+-- o.guicursor = "a:block" -- no more line cursor
 o.ruler = false
 o.cursorline = true
 o.cursorlineopt = "number"

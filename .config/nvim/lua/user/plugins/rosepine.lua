@@ -29,11 +29,37 @@ M.config = function()
 			TelescopePromptNormal = { fg = "text", bg = "surface" },
 			TelescopePromptBorder = { fg = "surface", bg = "surface" },
 
-			-- zen mode 
+			-- zen mode
 			ZenBg = { link = "Normal" },
 
 			-- panes
 			WinSeparator = { fg = "#2e202f" },
+
+			-- dap
+			DapBreakpoint = { fg = "love" },
+			DapBreakpointCondition = { fg = "gold" },
+			DapLogPoint = { fg = "foam" },
+			DapStopped = { fg = "pine" },
+
+			-- nvim-dap-ui
+			DapUIBreakpointsCurrentLine = { fg = "gold" },
+			DapUIBreakpointsLine = { link = "LineNr" },
+			DapUIBreakpointsPath = { fg = "love" },
+			DapUIStoppedThread = { fg = "love" },
+			DapUIDecoration = { fg = "subtle" },
+			DapUILineNumber = { link = "LineNr" },
+			DapUINormal = { fg = "text" },
+			DapUINumber = { fg = "iris" },
+			DapUIPlayPause = { fg = "pine" },
+			DapUIRestart = { link = "DapUIPlayPause" },
+			DapUIStepBack = { fg = "foam" },
+			DapUIStepInto = { fg = "foam" },
+			DapUIStepOut = { fg = "foam" },
+			DapUIStepOver = { fg = "foam" },
+			DapUIStop = { fg = "love" },
+			DapUIType = { fg = "pine" },
+			DapUIValue = { fg = "gold" },
+			DapUIScope = { fg = "love" },
 
 			-- syntax
 			-- Number = { fg = "iris" }

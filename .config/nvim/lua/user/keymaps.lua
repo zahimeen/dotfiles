@@ -9,7 +9,8 @@ map("n", "N", "Nzz")
 map("v", ">", ">gv")
 map("v", "<", "<gv")
 
-map("n", "<esc>", "<cmd>noh<cr>")
+-- clears search highlight and cmdline
+map("n", "<esc>", "<cmd>noh | echo<cr>")
 
 map("n", "<leader>wv", "<C-w>v")
 map("n", "<leader>ws", "<C-w>s")
@@ -27,7 +28,7 @@ map("t", "<C-;>", "<C-\\><C-n>") -- FIXME: its not working idk why
 
 -- you can toggle an opt with !
 map("n", "<leader>ke", "<cmd>set sc!<cr>")
-map("n", "<leader>rn", "<cmd>set nu! rnu!<cr>")
+map("n", "<leader>ln", "<cmd>set nu! rnu!<cr>")
 
 map("n", "<leader>co", function()
 	-- some freaky nvim bs don worry bout it lil bro

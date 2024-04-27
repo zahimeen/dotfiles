@@ -18,7 +18,7 @@ autocmd("TextYankPost", {
 })
 
 -- easily close stupid windows
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
 	pattern = {
 		"netrw",
 		"Jaq",
@@ -35,9 +35,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"",
 	},
 	callback = function()
-		vim.cmd([[
-			nnoremap <silent> <buffer> q :close<CR>
-			set nobuflisted
-		]])
+		vim.keymap.set("n", "q", "<cmd>close<cr>", { silent = true, buffer = true })
+		vim.opt_local.buflisted = true
 	end,
 })

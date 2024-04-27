@@ -26,6 +26,7 @@ spec("user.plugins.telescope")
 spec("user.plugins.harpoon")
 spec("user.plugins.oil")
 spec("user.plugins.bqf")
+spec("user.plugins.dap")
 spec("user.plugins.neogit")
 spec("user.plugins.dropbar")
 spec("user.plugins.comment")
@@ -52,6 +53,13 @@ require("lazy").setup({
 			lazy = "(H) ",
 			loaded = "",
 			not_loaded = "",
+			list = {
+				"",
+				-- TODO: find better icons
+				"➜",
+				"★",
+				"‒",
+			}
 		},
 	},
 })

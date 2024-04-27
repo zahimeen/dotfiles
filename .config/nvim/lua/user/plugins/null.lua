@@ -20,6 +20,8 @@ function M.config()
 			function(source, methods)
 				mason.default_setup(source, methods)
 			end,
+
+			["pylint"] = function() end,
 		},
 	})
 end
