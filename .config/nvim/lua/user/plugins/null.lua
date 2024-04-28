@@ -1,7 +1,7 @@
 local M = {
 	"nvimtools/none-ls.nvim",
-	after = "neovim/nvim-lspconfig",
 	dependencies = {
+		"neovim/nvim-lspconfig",
 		"nvim-lua/plenary.nvim",
 		"nvimtools/none-ls-extras.nvim",
 		"jay-babu/mason-null-ls.nvim", -- not real dependency
@@ -17,9 +17,7 @@ function M.config()
 		automatic_installation = false,
 
 		handlers = {
-			function(source, methods)
-				mason.default_setup(source, methods)
-			end,
+			mason.default_setup,
 
 			["pylint"] = function() end,
 		},
