@@ -1,7 +1,7 @@
 local M = {
 	"NeogitOrg/neogit",
 	branch = "nightly",
-	event = "VeryLazy",
+	keys = { { "<leader>gg", "<cmd>Neogit<cr>" } },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"sindrets/diffview.nvim",
@@ -10,15 +10,10 @@ local M = {
 
 M.config = function()
 	local diffview = require("diffview")
-	diffview.setup({
-		show_help_hints = false,
-	})
+	diffview.setup({ show_help_hints = false })
 
 	local neogit = require("neogit")
 	neogit.setup({})
-
-	vim.keymap.set("n", "<leader>gg", neogit.open, {})
-	vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, {})
 end
 
 return M

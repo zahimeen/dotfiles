@@ -1,6 +1,9 @@
 local M = {
 	"EvWilson/slimux.nvim",
-	event = "VeryLazy",
+	keys = {
+		{ "<leader>r", "<cmd>TmuxSend<cr>" },
+		{ "<leader>R", "<cmd>TmuxPersistent<cr>" },
+	}
 }
 
 M.config = function()
@@ -44,8 +47,8 @@ M.config = function()
 		end)
 	end
 
-	vim.keymap.set("n", "<leader>r", sendcmd)
-	vim.keymap.set("n", "<leader>R", setpersistent)
+	vim.api.nvim_create_user_command("TmuxSend", sendcmd, {})
+	vim.api.nvim_create_user_command("TmuxPersistent", setpersistent, {})
 end
 
 return M

@@ -40,6 +40,7 @@ M.config = function()
 			DapBreakpointCondition = { fg = "gold" },
 			DapLogPoint = { fg = "foam" },
 			DapStopped = { fg = "pine" },
+			DapBreakpointRejected = { fg = "love" },
 
 			-- nvim-dap-ui
 			DapUIBreakpointsCurrentLine = { fg = "gold" },

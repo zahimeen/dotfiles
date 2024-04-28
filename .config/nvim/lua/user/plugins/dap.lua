@@ -1,5 +1,13 @@
 local M = {
 	"mfussenegger/nvim-dap",
+	keys = {
+		{ "m",          "<cmd>DapToggleBreakpoint<cr>" },
+		{ "M",          "<cmd>DapBreakpointCondition<cr>" },
+		{ "<leader>dj", "<cmd>DapContinue<cr>" },
+		{ "<leader>dk", "<cmd>DapStepInto<cr>" },
+		{ "<leader>dc", "<cmd>DapClearBreakpoints<cr>" },
+		{ "<leader>do", "<cmd>DapUIToggle<cr>" },
+	},
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
@@ -38,11 +46,6 @@ M.config = function()
 		},
 	})
 
-	dap.listeners.before.attach.dapui_config = dapui.open
-	dap.listeners.before.launch.dapui_config = dapui.open
-	dap.listeners.before.event_terminated.dapui_config = dapui.close
-	dap.listeners.before.event_exited.dapui_config = dapui.close
-
 	vim.api.nvim_create_autocmd({ "FileType" }, {
 		pattern = {
 			"dapui_scopes",
@@ -58,24 +61,34 @@ M.config = function()
 	})
 
 	require("persistent-breakpoints").setup({
-		load_breakpoints_event = { "BufReadPost" },
+		-- load_breakpoints_event = { "BufReadPost" },
 		save_dir = data .. "/dap/breakpoints",
 	})
 
 	local persistent = require("persistent-breakpoints.api")
 
-	vim.keymap.set("n", "<leader>dj", dap.continue)
-	vim.keymap.set("n", "<leader>dk", dap.step_into)
-	vim.keymap.set("n", "<leader>do", dapui.toggle)
-	vim.keymap.set("n", "m", persistent.toggle_breakpoint)
-	vim.keymap.set("n", "M", persistent.set_conditional_breakpoint)
-	vim.keymap.set("n", "<leader>dc", persistent.clear_all_breakpoints)
+	local create_cmd = vim.api.nvim_create_user_command
+	local sign_define = vim.fn.sign_define
+
+	create_cmd("DapUIToggle", dapui.toggle, {})
+	create_cmd("DapToggleBreakpoint", persistent.toggle_breakpoint, {})
+	create_cmd("DapBreakpointCondition", persistent.set_conditional_breakpoint, {})
+	create_cmd("DapClearBreakpoints", persistent.clear_all_breakpoints, {})
 
 	-- highlights at user.plugins.rosepine
-	vim.fn.sign_define("DapBreakpoint", { text = "B", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapBreakpointCondition", { text = "C", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapLogPoint", { text = "L", texthl = "DapLogPoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapStopped", { text = "❯", texthl = "DapStopped", linehl = "", numhl = "" })
+	sign_define("DapBreakpoint", { text = "B", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+	sign_define("DapBreakpointCondition", { text = "C", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+	sign_define("DapLogPoint", { text = "L", texthl = "DapLogPoint", linehl = "", numhl = "" })
+	sign_define("DapStopped", { text = "❯", texthl = "DapStopped", linehl = "", numhl = "" })
+	sign_define("DapBreakpointRejected", { text = "❯", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
+
+	dap.listeners.before.launch.dapui_config = function()
+		persistent.load_breakpoints()
+		dapui.open()
+	end
+	dap.listeners.before.attach.dapui_config = dapui.open
+	dap.listeners.before.event_terminated.dapui_config = dapui.close
+	dap.listeners.before.event_exited.dapui_config = dapui.close
 end
 
 return M
