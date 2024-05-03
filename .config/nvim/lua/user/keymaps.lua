@@ -12,8 +12,8 @@ map("v", "<", "<gv")
 -- clears search highlight and cmdline
 map("n", "<esc>", "<cmd>noh | echo<cr>")
 
-map("n", "<leader>wv", "<C-w>v")
-map("n", "<leader>ws", "<C-w>s")
+map("n", "<leader>v", "<C-w>v")
+map("n", "<leader>s", "<C-w>s")
 -- prolly already managed by tmux keymaps
 -- map({ "n", "v", "i", "t" }, "<A-h>", "<C-w>h")
 -- map({ "n", "v", "i", "t" }, "<A-l>", "<C-w>l")
@@ -40,7 +40,7 @@ map("n", "<leader>co", function()
 	vim.opt.colorcolumn = ""
 end)
 
-map("n", "<leader>so", function()
+map("n", "<leader>S", function()
 	local directory = vim.fn.expand("~/dotfiles/.config/nvim/lua/")
 	local filepath = vim.fn.expand("%:p")
 
