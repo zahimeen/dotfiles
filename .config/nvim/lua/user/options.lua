@@ -6,8 +6,8 @@ o.showtabline = 0
 o.showmode = false
 o.showcmd = false
 o.fillchars = { eob = " " }
-o.shortmess:append "cI"
-o.formatoptions:remove "cro"
+o.shortmess:append("cI")
+o.formatoptions:remove("cro")
 
 o.number = true
 o.relativenumber = true
@@ -26,7 +26,7 @@ o.smartcase = true
 -- o.guicursor = "a:block" -- no more line cursor
 o.ruler = false
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = "both"
 o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
@@ -40,8 +40,8 @@ o.scrolloff = 8
 o.sidescrolloff = 8
 o.linebreak = true
 o.wrap = false
-o.whichwrap:append "<>[]hl"
-o.iskeyword:append "-"
+o.whichwrap:append("<>[]hl")
+o.iskeyword:append("-")
 
 o.mouse = "a"
 o.clipboard = "unnamedplus" -- see "user.clipboard"

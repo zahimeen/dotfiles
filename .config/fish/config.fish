@@ -18,6 +18,7 @@ alias matr "unimatrix -s 96 -c magenta" # it too slow
 
 alias nivm "nvim"
 alias vnim "nvim"
+alias hx "helix"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim

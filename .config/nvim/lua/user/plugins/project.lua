@@ -11,11 +11,12 @@ function M.config()
 		patterns = { ".editorconfig", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
 	})
 
+	vim.keymap.set("n", "<leader>p", "<cmd>ProjectRoot<cr>")
+
 	local exists, telescope = pcall(require, "telescope")
 	if exists then
 		telescope.load_extension("projects")
 		vim.keymap.set("n", "<leader>fp", telescope.extensions.projects.projects)
-		vim.keymap.set("n", "<leader>pr", "<cmd>ProjectRoot<cr>")
 	end
 end
 

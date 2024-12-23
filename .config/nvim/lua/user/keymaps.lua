@@ -1,4 +1,6 @@
+---@diagnostic disable: undefined-field
 local map = vim.keymap.set
+local del = vim.keymap.del
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -8,6 +10,22 @@ map("n", "n", "nzz")
 map("n", "N", "Nzz")
 map("v", ">", ">gv")
 map("v", "<", "<gv")
+
+-- navigate through wrapped lines
+map("n", "<leader>wr", function()
+	if vim.opt.wrap._value then
+		vim.opt.wrap = false
+		del({ "n", "v" }, "j")
+		del({ "n", "v" }, "k")
+		vim.notify("Wrap disabled")
+		return
+	end
+
+	vim.opt.wrap = true
+	map({ "n", "v" }, "j", "gj")
+	map({ "n", "v" }, "k", "gk")
+	vim.notify("Wrap enabled")
+end)
 
 -- clears search highlight and cmdline
 map("n", "<esc>", "<cmd>noh | echo<cr>")

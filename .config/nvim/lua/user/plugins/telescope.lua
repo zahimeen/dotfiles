@@ -1,7 +1,6 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
-	event = "VeryLazy",
-	dependences = {
+	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
@@ -12,6 +11,7 @@ local M = {
 
 M.config = function()
 	local telescope = require("telescope")
+	local actions = require("telescope.actions")
 
 	telescope.setup({
 		defaults = {
@@ -20,7 +20,12 @@ M.config = function()
 			multi_icon = " + ",
 			entry_prefix = "  ",
 			initial_mode = "insert",
-			mappings = { i = { ["<Esc>"] = "close" } },
+			mappings = {
+				i = {
+					["<Esc>"] = actions.close,
+					["<A-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+				},
+			},
 			sorting_strategy = "ascending",
 			layout_strategy = "horizontal",
 			layout_config = {
@@ -61,6 +66,7 @@ M.config = function()
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 	vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
 	vim.keymap.set("n", "<leader>ft", builtin.builtin)
+	vim.keymap.set("n", "<leader>fk", builtin.keymaps)
 end
 
 return M

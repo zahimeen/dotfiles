@@ -1,6 +1,5 @@
 local M = {
 	"Bekaboo/dropbar.nvim",
-	dependencies = "nvim-telescope/telescope-fzf-native.nvim",
 }
 
 -- dropbar like doesnt show up all the time
@@ -11,8 +10,8 @@ M.config = function()
 	require("dropbar").setup({
 		bar = {
 			sources = function(buf, _)
-				local sources = require('dropbar.sources')
-				local utils = require('dropbar.utils')
+				local sources = require("dropbar.sources")
+				local utils = require("dropbar.utils")
 
 				local filename = {
 					get_symbols = function(buff, win, cursor)
@@ -21,16 +20,14 @@ M.config = function()
 					end,
 				}
 
-				if vim.bo[buf].ft == 'markdown' then
+				if vim.bo[buf].ft == "markdown" then
 					return {
 						filename,
 						sources.markdown,
 					}
 				end
-				if vim.bo[buf].buftype == 'terminal' then
-					return {
-						sources.terminal,
-					}
+				if vim.bo[buf].buftype == "terminal" then
+					return { sources.terminal }
 				end
 				return {
 					filename,
@@ -39,7 +36,7 @@ M.config = function()
 						sources.treesitter,
 					}),
 				}
-			end
+			end,
 		},
 
 		icons = {

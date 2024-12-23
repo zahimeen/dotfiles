@@ -4,22 +4,31 @@ local M = {
 		"neovim/nvim-lspconfig",
 		"nvim-lua/plenary.nvim",
 		"nvimtools/none-ls-extras.nvim",
-		"jay-babu/mason-null-ls.nvim", -- not real dependency
+		"jay-babu/mason-null-ls.nvim",
 	},
 }
 
 function M.config()
-	require("null-ls").setup({})
-	local mason = require("mason-null-ls")
+	local null = require("null-ls")
+	null.setup({})
 
+	local mason = require("mason-null-ls")
 	mason.setup({
-		ensure_installed = { "stylua", "pylint", "black" },
+		ensure_installed = { "stylua", "selene" },
 		automatic_installation = false,
 
 		handlers = {
 			mason.default_setup,
 
-			["pylint"] = function() end,
+			["selene"] = function()
+				if vim.opt.filetype._value == "luau" then
+					null.register(null.builtins.diagnostics.selene)
+				end
+			end,
+
+			["autopep8"] = function()
+				null.register(require("none-ls.formatting.autopep8"))
+			end,
 		},
 	})
 end

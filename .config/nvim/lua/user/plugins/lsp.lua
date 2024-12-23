@@ -4,9 +4,9 @@ local M = {
 	dependencies = { -- none of these are real dependencies
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"folke/neodev.nvim",
 		"folke/neoconf.nvim",
 		"hrsh7th/cmp-nvim-lsp", -- sets up for cmp
+		{ "folke/lazydev.nvim", ft = "lua" },
 	},
 }
 
@@ -20,13 +20,19 @@ local function on_attach(client, bufnr)
 	map("n", "gi", lsp.implementation, opts)
 	map("n", "gr", lsp.references, opts)
 	map("n", "gl", vim.diagnostic.open_float, opts)
-	map("n", "gj", vim.diagnostic.goto_next, opts)
-	map("n", "gk", vim.diagnostic.goto_prev, opts)
 	map("n", "gs", vim.diagnostic.setloclist, opts)
+
+	map("n", "gj", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, opts)
+	map("n", "gk", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, opts)
+
 	map("n", "K", lsp.hover, opts)
 
 	map("n", "<leader>wa", lsp.add_workspace_folder, opts)
-	map("n", "<leader>wr", lsp.remove_workspace_folder, opts)
+	map("n", "<leader>wd", lsp.remove_workspace_folder, opts)
 	map("n", "<leader>wl", function()
 		print(vim.inspect(lsp.list_workspace_folders()))
 	end, opts)
@@ -38,17 +44,11 @@ local function on_attach(client, bufnr)
 	end, opts)
 	map({ "n", "v" }, "<leader>ca", lsp.code_action, opts)
 
-	local function toggle_hints()
-		if client.supports_method("textDocument/inlayHint") then
-			vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
-			return true
-		end
-	end
-
 	map("n", "gh", function()
-		if not toggle_hints() then
-			error("No hints for " .. client.name)
+		if client.supports_method("textDocument/inlayHint") then
+			return vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr }))
 		end
+		vim.notify("No hints for " .. client.name, vim.log.levels.WARN)
 	end, opts)
 end
 
@@ -78,7 +78,7 @@ M.config = function()
 	})
 
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "tsserver", "pyright" },
+		ensure_installed = { "lua_ls", "luau_lsp", "ts_ls", "pyright" },
 		automatic_installation = false,
 	})
 
@@ -86,7 +86,7 @@ M.config = function()
 		handler,
 
 		["lua_ls"] = function()
-			require("neodev").setup()
+			require("lazydev").setup()
 			handler("lua_ls")
 		end,
 	})

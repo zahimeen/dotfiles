@@ -27,6 +27,9 @@
 					"setType": false
 				}
 			}
-		}
+		},
+		"luau_lsp": {
+			"sourcemap.autogenerate": false,
+		},
 	}
 }

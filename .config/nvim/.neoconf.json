@@ -10,13 +10,6 @@
 					"special": {
 						"spec": "require"
 					}
-				},
-				"workspace": {
-					"checkThirdParty": false,
-					"library": {
-						"$VIMRUNTIME/lua": true,
-						"$HOME/.config/nvim/lua": true
-					}
 				}
 			}
 		}

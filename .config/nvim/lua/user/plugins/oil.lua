@@ -1,24 +1,17 @@
 local M = {
 	"stevearc/oil.nvim",
-	event = "VeryLazy",
-}
-
-M.config = function()
-	local oil = require("oil")
-
-	oil.setup({
+	keys = { { "<leader>e", "<cmd>Oil --float<cr>" } },
+	opts = {
 		float = {
 			border = "single",
-			max_height = 20,
-			max_width = 60,
+			max_height = 25,
+			max_width = 65,
 		},
 
 		keymaps_help = {
 			border = "single",
 		},
-	})
-
-	vim.keymap.set("n", "<leader>e", oil.toggle_float, { noremap = true, silent = true })
-end
+	},
+}
 
 return M

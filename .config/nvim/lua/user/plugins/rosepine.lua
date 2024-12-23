@@ -6,6 +6,12 @@ local M = {
 
 M.config = function()
 	require("rose-pine").setup({
+		styles = {
+			bold = false,
+			italic = false,
+			transparency = false,
+		},
+
 		highlight_groups = {
 			-- statusline
 			StatusLine = { fg = "love", bg = "love", blend = 10 },
@@ -63,7 +69,13 @@ M.config = function()
 			DapUIScope = { fg = "love" },
 
 			-- syntax
-			-- Number = { fg = "iris" }
+			Number = { fg = "love" },
+
+			-- Cmp
+			CmpItemKind = { fg = "subtle" },
+
+			-- cursorline
+			CursorLine = { bg = "#221F2E" },
 		},
 	})
 

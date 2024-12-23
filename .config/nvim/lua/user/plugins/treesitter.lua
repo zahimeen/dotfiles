@@ -1,6 +1,5 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	event = "VeryLazy",
 	build = ":TSUpdate",
 	init = function(plugin)
 		require("lazy.core.loader").add_to_rtp(plugin)
