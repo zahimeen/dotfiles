@@ -4,8 +4,7 @@ local M = {
 	dependencies = { -- none of these are real dependencies
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"folke/neoconf.nvim",
-		"hrsh7th/cmp-nvim-lsp", -- sets up for cmp
+		"saghen/blink.cmp",
 		{ "folke/lazydev.nvim", ft = "lua" },
 	},
 }
@@ -54,9 +53,7 @@ end
 
 M.config = function()
 	local lspconfig = require("lspconfig")
-	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-	require("neoconf").setup()
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 	local function handler(server)
 		local opts = {

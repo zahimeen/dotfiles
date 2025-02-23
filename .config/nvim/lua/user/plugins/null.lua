@@ -14,7 +14,7 @@ function M.config()
 
 	local mason = require("mason-null-ls")
 	mason.setup({
-		ensure_installed = { "stylua", "selene" },
+		ensure_installed = { "stylua", "selene", "autopep8" },
 		automatic_installation = false,
 
 		handlers = {

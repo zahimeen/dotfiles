@@ -1,4 +1,6 @@
 ---@diagnostic disable: undefined-field
+-- some freaky lsp stuff don worry bout it
+
 local map = vim.keymap.set
 local del = vim.keymap.del
 
@@ -32,31 +34,32 @@ map("n", "<esc>", "<cmd>noh | echo<cr>")
 
 map("n", "<leader>v", "<C-w>v")
 map("n", "<leader>s", "<C-w>s")
--- prolly already managed by tmux keymaps
 -- map({ "n", "v", "i", "t" }, "<A-h>", "<C-w>h")
 -- map({ "n", "v", "i", "t" }, "<A-l>", "<C-w>l")
 -- map({ "n", "v", "i", "t" }, "<A-j>", "<C-w>j")
 -- map({ "n", "v", "i", "t" }, "<A-k>", "<C-w>k")
+-- above commented mappings are handled by tmux.nvim plugins
 
 -- quicker fixer windower
 map("n", "<A-q>", "<cmd>cw<cr>")
 
 -- terminal escape
-map("t", "<C-;>", "<C-\\><C-n>") -- FIXME: its not working idk why
+map("t", "<A-;>", "<C-\\><C-n>") -- FIXME: its not working idk why
 
 -- you can toggle an opt with !
 map("n", "<leader>ke", "<cmd>set sc!<cr>")
 map("n", "<leader>ln", "<cmd>set nu! rnu!<cr>")
 
-map("n", "<leader>co", function()
-	-- some freaky nvim bs don worry bout it lil bro
-	---@diagnostic disable-next-line: undefined-field
-	if vim.opt.colorcolumn._value == "" then
-		vim.opt.colorcolumn = "80"
-		return
+local function toggle_colorcolumn(val)
+	if vim.opt.colorcolumn._value ~= val then
+		vim.opt.colorcolumn = val
 	end
+
 	vim.opt.colorcolumn = ""
-end)
+end
+
+map("n", "<leader>co", function() toggle_colorcolumn("120") end)
+map("n", "<leader>cO", function() toggle_colorcolumn("80") end)
 
 map("n", "<leader>S", function()
 	local directory = vim.fn.expand("~/dotfiles/.config/nvim/lua/")

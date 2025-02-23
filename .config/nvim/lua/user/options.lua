@@ -35,7 +35,7 @@ o.timeoutlen = 400
 o.updatetime = 100
 
 o.pumheight = 10
---o.pumblend = 10 -- nifty lil thing aint it
+-- o.pumblend = 10 -- nifty lil thing aint it
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.linebreak = true
@@ -44,7 +44,7 @@ o.whichwrap:append("<>[]hl")
 o.iskeyword:append("-")
 
 o.mouse = "a"
-o.clipboard = "unnamedplus" -- see "user.clipboard"
+o.clipboard = "unnamedplus" -- check user.clipboard
 o.undofile = true
 o.title = false
 o.completeopt = { "menuone", "noselect" }

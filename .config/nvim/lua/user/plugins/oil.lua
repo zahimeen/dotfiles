@@ -1,5 +1,8 @@
 local M = {
 	"stevearc/oil.nvim",
+	-- if directory is opened, oil will not override netrw unless loaded
+	lazy = false,
+
 	keys = { { "<leader>e", "<cmd>Oil --float<cr>" } },
 	opts = {
 		float = {

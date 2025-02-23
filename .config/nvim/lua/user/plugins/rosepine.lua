@@ -4,6 +4,7 @@ local M = {
 	priority = 1000,
 }
 
+---@diagnostic disable: missing-fields
 M.config = function()
 	require("rose-pine").setup({
 		styles = {
@@ -71,21 +72,18 @@ M.config = function()
 			-- syntax
 			Number = { fg = "love" },
 
-			-- Cmp
-			CmpItemKind = { fg = "subtle" },
-
 			-- cursorline
 			CursorLine = { bg = "#221F2E" },
+
+			-- cursor
+			lCursor = { link = "Cursor" },
+			TermCursor = { link = "Cursor" },
 		},
 	})
 
 	vim.opt.statusline = " %f %m %= %l:%c  "
 
 	vim.cmd("colorscheme rose-pine")
-
-	-- temporary fix
-	vim.cmd("highlight WinBar guibg=NONE")
-	vim.cmd("highlight WinBarNC guibg=NONE")
 end
 
 return M

@@ -26,4 +26,4 @@ not a mistake. look at the [license](./license) file
 - [mvllow](https://github.com/mvllow) - Rosé Pine theme is best (i copied everything he owns)
 - [chris@machine](https://github.com/ChristianChiarulli) - his [launch.nvim](https://github.com/LunarVim/Launch.nvim) livestream carried
 - [ThePrimeagen](https://github.com/ThePrimeagen) - i buy my coconut oil from this guy
-- [dynamicwallpaper.club](https://dynamicwallpaper.club/wallpaper/e7l5ygyw9d) - wallpaper goes hard fr
+- [dynamicwallpaper.club](https://dynamicwallpaper.club/wallpaper/e7l5ygyw9d) - wallpaper goes hard fr (know of it cause of [mvllow](https://github.com/mvllow))
