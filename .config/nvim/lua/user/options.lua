@@ -39,6 +39,7 @@ o.pumheight = 10
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.linebreak = true
+o.breakindent = true
 o.wrap = false
 o.whichwrap:append("<>[]hl")
 o.iskeyword:append("-")

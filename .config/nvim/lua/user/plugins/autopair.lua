@@ -1,10 +1,9 @@
 return {
-	"altermo/ultimate-autopair.nvim",
-	event = { "InsertEnter", "CmdlineEnter" },
+	"windwp/nvim-autopairs",
+	event = "InsertEnter",
 	config = true,
 	dependencies = {
-		"kawre/neotab.nvim",
-		event = { "InsertEnter", "CmdlineEnter" },
+		"windwp/nvim-ts-autotag",
 		config = true,
-	}
+	},
 }

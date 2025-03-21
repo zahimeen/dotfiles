@@ -11,7 +11,7 @@
 -- AFTER  (nvim --startuptime)
 -- 046.024  000.130  000.130: sourcing $VIMRUNTIME/autoload/provider/clipboard.vim
 
-if vim.cmd("silent echo has('wsl')") then
+if vim.fn.has("wsl") then
 	vim.g.clipboard = {
 		name = "win32yank-wsl",
 		copy = {

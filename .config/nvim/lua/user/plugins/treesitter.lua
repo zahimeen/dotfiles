@@ -12,6 +12,8 @@ M.config = function()
 		sync_install = true,
 		auto_install = true,
 		ensure_installed = { "lua", "python", "rust", "go", "toml", "markdown" },
+		ignore_install = {},
+		modules = {},
 
 		indent = { enable = true },
 		highlight = {

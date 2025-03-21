@@ -1,6 +1,10 @@
 local M = {
 	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
+	dependencies = {
+		"Darazaki/indent-o-matic",
+		config = true,
+	},
 }
 
 M.config = function()
